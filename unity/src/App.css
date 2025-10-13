@@ -1,0 +1,809 @@
+/* 화살표 */
+.img1 {
+  position: absolute;
+  justify-content: flex-end;
+  bottom: 0px;
+  right: 50px;
+  width: 100px;
+  height: 150px;
+}
+.틀{
+  display: flex;
+  justify-content: center;
+  font-size : 12px;
+}
+
+/* 버튼 */
+.startbutton{
+  position: absolute;
+    display: flex;
+  top : 160px;
+  left : -90px;
+  width: 150px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+      justify-content: center;
+}
+.storybutton{
+  position: absolute;
+  display: flex;
+  top : 220px;
+  left : -90px;
+  width: 150px;
+  height: 40px;
+  font-size: 29px;
+    text-align: center;
+        justify-content: center;
+}
+.challbutton{
+  position: absolute;
+    display: flex;
+  top : 280px;
+  left : -90px;
+  width: 150px;
+  height: 40px;
+  font-size: 24px;
+    text-align: center;
+    justify-content: center;
+  
+}
+.ttbutton{
+  position: absolute;
+    display: flex;
+  top : 340px;
+  left : -90px;
+  width: 150px;
+  height: 40px;
+  font-size: 26px;
+    text-align: center;
+    justify-content: center;
+}
+
+.onepage{
+  position: absolute;
+  top : 35%;
+}
+
+.img2{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  right : 10px;
+  top : 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.도전과제text{
+  position: absolute;
+  font-size : 50px;
+  display: flex;
+  justify-content: center;
+  top : 100px;
+}
+
+.img3{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left : 10px;
+  bottom: 10px;
+}
+.살아남은날{
+  position: absolute;
+  font-size : 50px;
+  display: flex;
+  justify-content: center;
+  top : -30px;
+}
+.지도{
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  right : 450px;
+  top : 480px;
+}
+.선반{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  right : 30px;
+  top : 60px;
+}
+.선반l{
+  display: flex;
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+  position: absolute;
+  left: 40%;
+  top: 30%;
+}
+.책상{
+  position: absolute;
+  width: 700px;
+  height: 550px;
+  left : -80px;
+  top : -60px;
+  z-index: -100;
+}
+.배경{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left : 0px;
+  top : 0px;
+  z-index: -200;
+}
+.침대{
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  position: absolute;
+  top : 75%;
+  right: 10%;
+}
+.어둠{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left : 0px;
+  top : 0px;
+  z-index: 2;
+}
+.어둠text{
+  position: absolute;
+  font-size : 50px;
+  top : 100px;
+  color : white;
+  z-index: 3;
+}
+.어둠text1{
+  position: absolute;
+  font-size : 40px;
+  top : 50%;
+  color : white;
+  z-index: 3;
+}
+.어둠로딩{
+  position: absolute;
+  font-size : 40px;
+  top : 30%;
+  color : white;
+  z-index: 3;
+}
+
+.char1{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top : 11%;
+  left : 2.9%;
+  z-index: 1;
+}
+.char2{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top : 15%;
+  left : 3.5%;
+  z-index: 1;
+}
+.char3{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 40%;
+  left : 13.2%;
+  z-index: 1;
+}
+.char4{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top : 15%;
+  left : 2.5%;
+  z-index: 1;
+}
+
+.charchane{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top : 50%;
+  left : 27%;
+  z-index: 3;
+}
+.charchane1{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top : 50%;
+  left : 8%;
+  z-index: 3;
+  transform: rotate(180deg);
+}
+
+.charchane2{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top : 50%;
+  left : 24.5%;
+  z-index: 3;
+}
+.charchane3{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top : 50%;
+  left : 11%;
+  z-index: 3;
+  transform: rotate(180deg);
+}
+.캐릭터이름{
+  position: absolute;
+  z-index: 5;
+  font-size: 18px;
+  top : 550px;
+  left : 246px;
+}
+.char1no{
+  position: absolute;
+  top : 500px;
+  left : 170px;
+}
+
+.큰지도{
+  position: absolute;
+  top : 150px;
+  right: 200px;
+  width: 800px;
+  height: 500px;
+}
+
+
+
+.지도표시1{
+  position: absolute;
+  top : 75%;
+  right : 43.5%;
+  z-index: 3;
+}
+
+.지도표시2{
+  position: absolute;
+  top: 71%;
+  right: 25%;
+  z-index: 3;
+}
+.지도표시3{
+  position: absolute;
+  top: 45%;
+  right: 25%;
+  z-index: 3;
+}
+.지도표시4{
+  position: absolute;
+  top: 36%;
+  right: 43%;
+  z-index: 3;
+}
+.지도표시5{
+  position: absolute;
+  top: 27%;
+  right: 56%;
+  z-index: 3;
+}
+.물음표{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 35%;
+  left : 13.2%;
+  z-index: 1;  
+}
+
+.mainchar1{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 35%;
+  left : 32%;
+  z-index: 1;
+}
+.mainchar2{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 37%;
+  left : 42%;
+  z-index: 1;
+}
+.mainchar3{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 40%;
+  left : 50%;
+  z-index: 1;
+}
+.mainchar4{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 37%;
+  left : 56%;
+  z-index: 1;
+}
+.통조림{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 200px;
+}
+.통조림개수{
+  position: absolute;
+  top : 210px;
+  right: 700px;
+}
+.물{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 270px;
+}
+.물개수{
+  position: absolute;
+  top : 280px;
+  right: 700px;
+}
+.라면{
+  position: absolute;
+  top: 340px;
+  width: 90px;
+  height: 90px;
+}
+.라면개수{
+  position: absolute;
+  top : 350px;
+  right: 700px;
+}
+.사탕{
+  position: absolute;
+  top: 410px;
+  width: 90px;
+  height: 90px;
+}
+.사탕개수{
+  position: absolute;
+  top : 420px;
+  right: 700px;
+}
+.키트{
+  position: absolute;
+  top: 200px;
+  right: 600px;
+  width: 90px;
+  height: 90px;
+}
+.키트개수{
+  position: absolute;
+  top : 210px;
+  right: 585px;
+}
+.구급상자{
+  position: absolute;
+  top: 270px;
+  right: 600px;
+  width: 90px;
+  height: 90px;
+}
+.구급상자개수{
+  position: absolute;
+  top : 280px;
+  right: 585px;
+}
+.책{
+  position: absolute;
+  top: 340px;
+  right: 600px;
+  width: 90px;
+  height: 90px;
+}
+.책개수{
+  position: absolute;
+  top : 350px;
+  right: 585px;
+}
+.신문{
+  position: absolute;
+  top: 410px;
+  right: 600px;
+  width: 90px;
+  height: 90px;
+}
+.신문개수{
+  position: absolute;
+  top : 420px;
+  right: 585px;
+}
+.hW1{
+  position: absolute;
+  top : 550px;
+  left: 110px;
+  z-index: 10;
+}
+.메인배경{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+.m1{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 58%;
+  left : 36%;
+  z-index: 1;
+}
+.m2{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 59%;
+  left : 44%;
+  z-index: 1;
+}
+.m3{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 60%;
+  left : 53%;
+  z-index: 1;
+}
+.m4{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top : 59%;
+  left : 60%;
+  z-index: 1;
+}
+.정보{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top : 23%;
+  right : 2%;
+  z-index: 3;
+}
+.정보창{
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  top : 20%;
+  left : 30%;
+  z-index: 1;
+  background-color: rgba(112, 128, 144, 0.642);
+
+}
+.희섭정보{
+  position: absolute;
+  z-index: 1;
+  top : 22%;
+  left : 32%;
+  font-size : 15px;
+  color: aliceblue;   
+}
+.민정정보{
+  position: absolute;
+  z-index: 1;
+  top : 22%;
+  left : 42%;
+  font-size : 15px;
+  color: aliceblue;  
+}
+.은택정보{
+  position: absolute;
+  z-index: 1;
+  top : 22%;
+  left : 52%;
+  font-size : 15px;
+  color: aliceblue;
+  
+}
+.예린정보{
+  position: absolute;
+  z-index: 1;
+  top : 22%;
+  left : 62%;
+  font-size : 15px;
+  color: aliceblue;
+}
+.하루상태창{
+  position: absolute;
+  width: 1300px;
+  height: 700px;
+  bottom : 0px;
+  z-index: 2;
+}
+.하루책{
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  top: 68%;
+  left: 30%;
+  z-index: 10;
+}
+.하루나가기{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 70%;
+  right: 28%;
+  z-index: 10;
+}
+.통조림플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 25%;
+  left : 27%;
+  z-index: 15;
+}
+.통조림플러스텍스트{
+  position: absolute;
+  top : 24%;
+  left: 32%;
+  font-size: 30px;
+  z-index: 15;
+}
+.물플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 35%;
+  left : 27%;
+  z-index: 15;
+}
+.물플러스텍스트{
+  position: absolute;
+  top : 34%;
+  left: 32%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.라면플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 45%;
+  left : 27%;
+  z-index: 15;
+}
+.라면플러스텍스트{
+  position: absolute;
+  top : 44%;
+  left: 32%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.사탕플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 55%;
+  left : 27%;
+  z-index: 15;
+}
+.사탕플러스텍스트{
+  position: absolute;
+  top : 54%;
+  left: 32%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.키트플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 65%;
+  left : 27%;
+  z-index: 15;
+}
+.키트플러스텍스트{
+  position: absolute;
+  top : 64%;
+  left: 32%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.구급상자플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 25%;
+  left : 37%;
+  z-index: 15;
+}
+.구급상자플러스텍스트{
+  position: absolute;
+  top : 24%;
+  left: 42%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.도끼플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 35%;
+  left : 37%;
+  z-index: 15;
+}
+.도끼플러스텍스트{
+  position: absolute;
+  top : 34%;
+  left: 42%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.진압봉플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 45%;
+  left : 37%;
+  z-index: 15;
+}
+.진압봉플러스텍스트{
+  position: absolute;
+  top : 44%;
+  left: 42%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.야구방망이플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 55%;
+  left : 37%;
+  z-index: 15;
+}
+.야구방망이플러스텍스트{
+  position: absolute;
+  top : 54%;
+  left: 42%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.헬멧플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 65%;
+  left : 37%;
+  z-index: 15;
+}
+.헬멧플러스텍스트{
+  position: absolute;
+  top : 64%;
+  left: 42%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.보드게임플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 25%;
+  right : 43%;
+  z-index: 15;
+}
+.보드게임플러스텍스트{
+  position: absolute;
+  top : 24%;
+  right: 41%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.라디오플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 35%;
+  right : 43%;
+  z-index: 15;
+}
+.라디오플러스텍스트{
+  position: absolute;
+  top : 34%;
+  right: 41%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.책플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 25%;
+  right : 34%;
+  z-index: 15;
+}
+.책플러스텍스트{
+  position: absolute;
+  top : 24%;
+  right: 32%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.신문플러스{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top : 35%;
+  right : 34%;
+  z-index: 15;
+}
+.신문플러스텍스트{
+  position: absolute;
+  top : 34%;
+  right: 32%;
+  font-size: 30px;
+  z-index: 15;
+}
+
+.도끼{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 43%;
+  bottom: 0px;
+}
+.진압봉{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 53%;
+  bottom: 0px;
+}
+.야구방망이{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 63%;
+  bottom: 0px;
+}
+.헬멧{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 73%;
+  bottom: 0px;
+}
+.엑스{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 83%;
+  bottom: 30px;
+}
