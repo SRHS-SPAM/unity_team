@@ -10,7 +10,33 @@
 .틀{
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   font-size : 12px;
+  
+}
+.튜틀{
+  position: absolute;
+  bottom: 20px;
+    left : 34%;
+}
+.튜틀1{
+  position: absolute;
+  bottom: 20px;
+}
+.튜틀2{
+  position: absolute;
+  left : 30%;
+  bottom: 20px;
+}
+.튜틀3{
+  position: absolute;
+  bottom: 20px;
+  left : 36%;
+}
+.튜틀4{
+  position: absolute;
+  bottom: 20px;
+  
 }
 
 /* 버튼 */
