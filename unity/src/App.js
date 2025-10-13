@@ -137,15 +137,15 @@ function App() {
   let [etc3표시, setetc3표시] = useState(0); //책
   let [etc4표시, setetc4표시] = useState(0); //신문
 
-  let [무기, set무기] = useState("");
   let [무기장착, set무기장착] = useState(0);
+
+  let [무기, set무기] = useState("");
   let [무기장착여부, set무기장착여부] = useState(false);
 
   let [무기1, set무기1] = useState("");
   let [무기장착여부1, set무기장착여부1] = useState(false);
 
   let [무기2, set무기2] = useState("");
-  let [무기장착2, set무기장착2] = useState(0);
   let [무기장착여부2, set무기장착여부2] = useState(false);
 
   let [무기3, set무기3] = useState("");
@@ -476,9 +476,89 @@ function App() {
         settam4(true);
         set외로움(prev => prev + 1);
       }
+
     }
 
-
+      if(무기 == "도끼" || 무기1 == "도끼" || 무기2 == "도끼" || 무기3 == "도끼")
+      {
+        const randomValue = Math.floor(Math.random() * 20) + 1;
+        if(randomValue <= 1 && 무기1 == "도끼")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 4 && 무기 == "도끼")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 4 && 무기2 == "도끼")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 4 && 무기3 == "도끼")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "진압봉" || 무기1 == "진압봉" || 무기2 == "진압봉" || 무기3 == "진압봉")
+      {
+        const randomValue = Math.floor(Math.random() * 30) + 1;
+        if(randomValue <= 1 && 무기 == "진압봉")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "진압봉")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "진압봉")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "진압봉")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "헬멧" || 무기1 == "헬멧" || 무기2 == "헬멧" || 무기3 == "헬멧")
+      {
+        const randomValue = Math.floor(Math.random() * 40) + 1;
+        if(randomValue <= 1 && 무기 == "헬멧")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "헬멧")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "헬멧")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "헬멧")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "야구방망이" || 무기1 == "야구방망이" || 무기2 == "야구방망이" || 무기3 == "야구방망이")
+        {
+          const randomValue = Math.floor(Math.random() * 25) + 1;
+          if(randomValue <= 1 && 무기 == "야구방망이")
+          {
+            set무기("");
+          }
+          else if(randomValue <= 3 && 무기1 == "야구방망이")
+          {
+            set무기1("");
+          }
+          else if(randomValue <= 3 && 무기2 == "야구방망이")
+          {
+            set무기2("");
+          }
+          else if(randomValue <= 3 && 무기3 == "야구방망이")
+          {
+            set무기3("");
+          }
+        }
 
   }
   const mapa2 = () => { //맵 2 2~5 경찰서
@@ -676,7 +756,86 @@ function App() {
       }
     }
 
-
+    if(무기 == "도끼" || 무기1 == "도끼" || 무기2 == "도끼" || 무기3 == "도끼")
+      {
+        const randomValue = Math.floor(Math.random() * 15) + 1;
+        if(randomValue <= 1 && 무기1 == "도끼")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 4 && 무기 == "도끼")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 4 && 무기2 == "도끼")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 4 && 무기3 == "도끼")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "진압봉" || 무기1 == "진압봉" || 무기2 == "진압봉" || 무기3 == "진압봉")
+      {
+        const randomValue = Math.floor(Math.random() * 25) + 1;
+        if(randomValue <= 1 && 무기 == "진압봉")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "진압봉")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "진압봉")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "진압봉")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "헬멧" || 무기1 == "헬멧" || 무기2 == "헬멧" || 무기3 == "헬멧")
+      {
+        const randomValue = Math.floor(Math.random() * 35) + 1;
+        if(randomValue <= 1 && 무기 == "헬멧")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "헬멧")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "헬멧")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "헬멧")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "야구방망이" || 무기1 == "야구방망이" || 무기2 == "야구방망이" || 무기3 == "야구방망이")
+        {
+          const randomValue = Math.floor(Math.random() * 20) + 1;
+          if(randomValue <= 1 && 무기 == "야구방망이")
+          {
+            set무기("");
+          }
+          else if(randomValue <= 3 && 무기1 == "야구방망이")
+          {
+            set무기1("");
+          }
+          else if(randomValue <= 3 && 무기2 == "야구방망이")
+          {
+            set무기2("");
+          }
+          else if(randomValue <= 3 && 무기3 == "야구방망이")
+          {
+            set무기3("");
+          }
+        }
 
   }
   const mapa3 = () => { //맵 3 4~7 병원
@@ -873,7 +1032,86 @@ function App() {
         set외로움(prev => prev + 1);
       }
     }
-
+    if(무기 == "도끼" || 무기1 == "도끼" || 무기2 == "도끼" || 무기3 == "도끼")
+      {
+        const randomValue = Math.floor(Math.random() * 12) + 1;
+        if(randomValue <= 1 && 무기1 == "도끼")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 4 && 무기 == "도끼")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 4 && 무기2 == "도끼")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 4 && 무기3 == "도끼")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "진압봉" || 무기1 == "진압봉" || 무기2 == "진압봉" || 무기3 == "진압봉")
+      {
+        const randomValue = Math.floor(Math.random() * 22) + 1;
+        if(randomValue <= 1 && 무기 == "진압봉")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "진압봉")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "진압봉")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "진압봉")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "헬멧" || 무기1 == "헬멧" || 무기2 == "헬멧" || 무기3 == "헬멧")
+      {
+        const randomValue = Math.floor(Math.random() * 32) + 1;
+        if(randomValue <= 1 && 무기 == "헬멧")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "헬멧")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "헬멧")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "헬멧")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "야구방망이" || 무기1 == "야구방망이" || 무기2 == "야구방망이" || 무기3 == "야구방망이")
+        {
+          const randomValue = Math.floor(Math.random() * 17) + 1;
+          if(randomValue <= 1 && 무기 == "야구방망이")
+          {
+            set무기("");
+          }
+          else if(randomValue <= 3 && 무기1 == "야구방망이")
+          {
+            set무기1("");
+          }
+          else if(randomValue <= 3 && 무기2 == "야구방망이")
+          {
+            set무기2("");
+          }
+          else if(randomValue <= 3 && 무기3 == "야구방망이")
+          {
+            set무기3("");
+          }
+        }
 
   }
     const mapa4 = () => { //맵 4 1~4 서로고
@@ -1073,7 +1311,86 @@ function App() {
 
       }
     }
-
+    if(무기 == "도끼" || 무기1 == "도끼" || 무기2 == "도끼" || 무기3 == "도끼")
+      {
+        const randomValue = Math.floor(Math.random() * 14) + 1;
+        if(randomValue <= 1 && 무기1 == "도끼")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 4 && 무기 == "도끼")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 4 && 무기2 == "도끼")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 4 && 무기3 == "도끼")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "진압봉" || 무기1 == "진압봉" || 무기2 == "진압봉" || 무기3 == "진압봉")
+      {
+        const randomValue = Math.floor(Math.random() * 24) + 1;
+        if(randomValue <= 1 && 무기 == "진압봉")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "진압봉")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "진압봉")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "진압봉")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "헬멧" || 무기1 == "헬멧" || 무기2 == "헬멧" || 무기3 == "헬멧")
+      {
+        const randomValue = Math.floor(Math.random() * 34) + 1;
+        if(randomValue <= 1 && 무기 == "헬멧")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "헬멧")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "헬멧")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "헬멧")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "야구방망이" || 무기1 == "야구방망이" || 무기2 == "야구방망이" || 무기3 == "야구방망이")
+        {
+          const randomValue = Math.floor(Math.random() * 19) + 1;
+          if(randomValue <= 1 && 무기 == "야구방망이")
+          {
+            set무기("");
+          }
+          else if(randomValue <= 3 && 무기1 == "야구방망이")
+          {
+            set무기1("");
+          }
+          else if(randomValue <= 3 && 무기2 == "야구방망이")
+          {
+            set무기2("");
+          }
+          else if(randomValue <= 3 && 무기3 == "야구방망이")
+          {
+            set무기3("");
+          }
+        }
 
   }
     const mapa5 = () => { //맵 5 3~5 산
@@ -1270,7 +1587,86 @@ function App() {
         set외로움(prev => prev + 1);
       }
     }
- 
+     if(무기 == "도끼" || 무기1 == "도끼" || 무기2 == "도끼" || 무기3 == "도끼")
+      {
+        const randomValue = Math.floor(Math.random() * 10) + 1;
+        if(randomValue <= 1 && 무기1 == "도끼")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 4 && 무기 == "도끼")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 4 && 무기2 == "도끼")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 4 && 무기3 == "도끼")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "진압봉" || 무기1 == "진압봉" || 무기2 == "진압봉" || 무기3 == "진압봉")
+      {
+        const randomValue = Math.floor(Math.random() * 20) + 1;
+        if(randomValue <= 1 && 무기 == "진압봉")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "진압봉")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "진압봉")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "진압봉")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "헬멧" || 무기1 == "헬멧" || 무기2 == "헬멧" || 무기3 == "헬멧")
+      {
+        const randomValue = Math.floor(Math.random() * 30) + 1;
+        if(randomValue <= 1 && 무기 == "헬멧")
+        {
+          set무기("");
+        }
+        else if(randomValue <= 3 && 무기1 == "헬멧")
+        {
+          set무기1("");
+        }
+        else if(randomValue <= 3 && 무기2 == "헬멧")
+        {
+          set무기2("");
+        }
+        else if(randomValue <= 3 && 무기3 == "헬멧")
+        {
+          set무기3("");
+        }
+      }
+      else if(무기 == "야구방망이" || 무기1 == "야구방망이" || 무기2 == "야구방망이" || 무기3 == "야구방망이")
+        {
+          const randomValue = Math.floor(Math.random() * 15) + 1;
+          if(randomValue <= 1 && 무기 == "야구방망이")
+          {
+            set무기("");
+          }
+          else if(randomValue <= 3 && 무기1 == "야구방망이")
+          {
+            set무기1("");
+          }
+          else if(randomValue <= 3 && 무기2 == "야구방망이")
+          {
+            set무기2("");
+          }
+          else if(randomValue <= 3 && 무기3 == "야구방망이")
+          {
+            set무기3("");
+          }
+        }
   }
 
   const DayUp = () => { //하루 지남
