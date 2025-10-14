@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useEffect, use } from "react";
 /* eslint-disable */ 
-// 1~5 : 스토리 6 : 시작화면 7 : 도전과제 8 : *게임시작* 9 : 선반 10 : 지도 11 : 어둠(침대 클릭 후) 12 : 설명
+// 1~5 : 스토리 6 : 시작화면 7 : 도전과제 8 : *게임시작* 9 : 선반 10 : 지도 11 : 어둠(침대 클릭 후) 12 : 설명 13: 문입장
 function App() {
   let [page, setpage] = useState(1);
   let [loading, setloading] = useState(1);
@@ -150,6 +150,14 @@ function App() {
 
   let [무기3, set무기3] = useState("");
   let [무기장착여부3, set무기장착여부3] = useState(false);
+
+
+
+
+  let [문감지, set문감지] = useState(false);
+  let [문사람감지, set문사람감지] = useState(false);
+
+
   const [r1, setr1] = useState(0);
   const wtime = new Date();
   const year = wtime.getFullYear();
@@ -3221,8 +3229,11 @@ function App() {
 
           {page === 8 &&  book === true && <img src='/a20.png' className='하루상태창'></img>}
 
-        
-          
+          {page === 8 && <div className='문감지' onClick={() => {set문감지(true); setpage(13); }}></div>}
+          {page === 13 && <img src='a2.png' className='문나가기' onClick={() => {set문감지(false); setpage(8); } }></img>}
+          {page === 13 && <img src='a21.png' className='문확대'></img>}
+          {page === 13 && 문사람감지 === false && <h1 className='없는사람'>아무도 없다. . .</h1>}
+          {page === 13 && 문사람감지 === true && <h1 className='있는사람'>누군가 있다!</h1>}
         
       </div>
     </div>

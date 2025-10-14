@@ -833,3 +833,37 @@
   left: 83%;
   bottom: 30px;
 }
+.문감지{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  height: 400px;
+  width: 200px;
+  top : 30%;
+  left : 1px;
+}
+.문나가기{
+  position: absolute;
+  right: 30px;
+  bottom : 30px;
+  width: 90px;
+  height: 90px;
+}
+.없는사람{
+  position: absolute;
+  font-size: 90px;
+  top : 60%;
+  left : 34%;
+}
+.있는사람{
+  position: absolute;
+  font-size: 90px;
+  top : 60%;
+  left : 35%;
+}
+.문확대{
+  position: absolute;
+  top : 10%;
+  left : 10%;
+  width: 1000px;
+  height: 400px;
+}
