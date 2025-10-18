@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect, use } from "react";
 /* eslint-disable */ 
 // 1~5 : 스토리 6 : 시작화면 7 : 도전과제 8 : *게임시작* 9 : 선반 10 : 지도 11 : 어둠(침대 클릭 후) 12 : 설명 13: 문입장
+
 function App() {
   let [page, setpage] = useState(1);
   let [loading, setloading] = useState(1);
@@ -51,6 +52,33 @@ function App() {
   let [etc3, setetc3] = useState(0); //책
   let [etc4, setetc4] = useState(0); //신문
 
+  let [통조림, set통조림] = useState(0);
+  let [물, set물] = useState(0);
+  let [라면, set라면] = useState(0);
+  let [사탕, set사탕] = useState(0);
+
+  let [키트, set키트] = useState(0);
+  let [구급상자, set구급상자] = useState(0);
+
+  let [도끼, set도끼] = useState(0);
+  let [진압봉, set진압봉] = useState(0);
+  let [야구방망이, set야구방망이] = useState(0);
+  let [헬멧, set헬멧] = useState(0);
+
+  let [보드게임, set보드게임] = useState(0);
+  let [라디오, set라디오] = useState(0);
+  let [책, set책] = useState(0);
+  let [신문, set신문] = useState(0);
+
+  let [수치, set수치] = useState(0);
+
+
+  let [사람1, set사람1] = useState(false);
+  let [사람2, set사람2] = useState(false);
+  let [사람3, set사람3] = useState(false);
+  let [사람4, set사람4] = useState(false); 
+
+  let [masg1, setmasg1] = useState(0);
 
 
   let [감기여부1 , set감기여부1] = useState(false);
@@ -1695,7 +1723,6 @@ function App() {
     setweap2표시(0);
     setweap3표시(0);
     setweap4표시(0);
-    
     if(감기1 < 0)
     {
       set감기여부1(false);
@@ -1907,30 +1934,58 @@ function App() {
 
     if (chareat1 > 0 && tam1 == false)
     {      
-      setchareat1(prev => prev - 20)
-      setcharwtr1(prev => prev - 25);
+      setchareat1(prev => prev - 7);
+    }
+    else{
+      setchareat1(0);
+    }
+
+    if(charwtr1 > 0 && tam1 == false)
+    {
+      setcharwtr1(prev => prev - 10);
+    }
+    else{
+      setcharwtr1(0);
+    }
+    if(tam1 == false)
+    {
       if(외로움 === 1)
       {
-        setcharment1(prev => prev - 10);
+        setcharment1(prev => prev - 5);
       }
       else if(외로움 === 2)
       {
-        setcharment1(prev => prev - 12);
+        setcharment1(prev => prev - 7);
       }
       else if(외로움 === 3)
       {
-        setcharment1(prev => prev - 15);
+        setcharment1(prev => prev - 10);
       }
       else if(외로움 >= 4)
       {
-        setcharment1(prev => prev - 20);
+        setcharment1(prev => prev - 15);
       }
-  
     }
+
+
+
+
     if (chareat2 > 0 && tam2 == false) //하루 닳는 배고픔, 물 , 외로움
     {     
-      setchareat2(prev => prev - 15)
-      setcharwtr2(prev => prev - 30);
+      setchareat2(prev => prev - 6);
+    }
+    else{
+      setchareat2(0);
+    }
+    if(charwtr2 > 0 && tam2 == false)
+    {
+      setcharwtr2(prev => prev - 12);
+    }
+    else{
+      setcharwtr2(0);
+    }
+    if(tam2 == false)
+    {
       if(외로움 === 1)
       {
         setcharment2(prev => prev - 10);
@@ -1949,10 +2004,24 @@ function App() {
       }
     }
 
+
+
     if (chareat3 > 0 && tam3 == false)
     {
-      setchareat3(prev => prev - 20)
-      setcharwtr3(prev => prev - 10);
+      setchareat3(prev => prev - 10);
+    }
+    else{
+      setchareat3(0);
+    }
+    if(charwtr3 > 0 && tam3 == false)
+    {
+      setcharwtr3(prev => prev - 9);
+    }
+    else{
+      setcharwtr3(0);
+    }
+    if(tam3 == false)
+    {
       if(외로움 === 1)
       {
         setcharment3(prev => prev - 10);
@@ -1971,10 +2040,24 @@ function App() {
       }
     }
 
+
+
     if (chareat4 > 0 && tam4 == false)
     {   
-      setchareat4(prev => prev - 20);
-      setcharwtr4(prev => prev - 30);
+      setchareat4(prev => prev - 5);
+    }
+    else{
+      setchareat4(0);
+    }
+    if(charwtr4 > 0 && tam4 == false)
+    {
+      setcharwtr4(prev => prev - 11);
+    }
+    else{
+      setcharwtr4(0);
+    }
+    if(tam4 == false)
+    {
       if(외로움 === 1)
       {
         setcharment4(prev => prev - 10);
@@ -2232,7 +2315,49 @@ function App() {
       setetc2표시(prev => prev + 1);
     }
 
-  }    
+    }
+      const randman = Math.floor(Math.random() * 10) + 1;
+    if(randman <= 1)
+      {
+        set문사람감지(true);
+        const rand사람 = Math.floor(Math.random() * 4) + 1;
+      if(rand사람 === 1)
+      {
+        set사람1(true);
+        set사람2(false);
+        set사람3(false);
+        set사람4(false);
+        const randt = Math.floor(Math.random() * 4) + 1;
+        setmasg1(randt);
+      }
+      else if(rand사람 === 2)
+      {
+        set사람2(true);
+        set사람1(false);
+        set사람3(false);
+        set사람4(false);
+     }
+      else if(rand사람 === 3)
+     {
+       set사람3(true);
+        set사람1(false);
+        set사람2(false);
+        set사람4(false);
+      }
+      else if(rand사람 === 4)
+      {
+       set사람4(true);
+        set사람1(false);
+        set사람2(false);
+        set사람3(false);
+     }
+      }
+    else{
+        set문사람감지(false);
+    }
+
+
+    
   }
   
 }
@@ -2834,10 +2959,84 @@ function App() {
   }, [page]);
 
 
-  return (
-    
-    <div className="App">
 
+  function 보상()
+  {
+    if(masg1 == 1)
+    {
+    const rand보상 = Math.floor(Math.random() * 100) + 1;
+    if(rand보상 <= 90 && eat1 >= 4)
+    {
+      setweap1(prev => prev + 1);
+      seteat1(prev => prev - 4);
+    }
+    else{
+      if(eat1 >= 3)
+      {
+        seteat1(prev => prev - 3);
+      }
+      else if(eat2 >= 2)
+      {
+        seteat2(prev => prev - 2);
+      }
+      else if(eat3 >= 2)
+      {
+        seteat3(prev => prev - 2);
+      }
+      else if(eat4 >= 1)
+      {
+        seteat4(prev => prev - 1);
+      }
+    }
+    }
+  }
+
+  function 통조림증가량()
+  {
+    if(통조림 < eat1)
+    {
+      set통조림(prev => prev + 1);
+      set수치(prev => prev + 5);
+    }
+    else{
+      set수치(prev => prev - (5 * 통조림));
+      set통조림(0);
+    }
+  }
+  function 물증가량()
+  {
+    if(물 < eat2)
+    {
+      set물(prev => prev + 1);
+    }
+    else{
+      set물(0);
+    }
+  }
+  function 라면증가량()
+  {
+    if(라면 < eat3)
+    {
+      set라면(prev => prev + 1);
+    }
+    else{
+      set라면(0);
+    }
+  }
+  function 사탕증가량()
+  {
+    if(사탕 < eat4)
+    {
+      set사탕(prev => prev + 1);
+    }
+    else{
+      set사탕(0);
+    }
+  }
+
+  return (
+    <div className="App">
+      {<h1>{masg1}</h1>}
       {/* 스토리 스킵과 다음단계 */}
       {page < 6 && <img src='/a.png' className='img1' onClick={pagecound}></img>}
       {page < 6 && <img src='/a1.png' className='img2' onClick={() => setpage(6)}></img>}
@@ -2888,9 +3087,9 @@ function App() {
 
         {page === 10 && <img src='/a14.png' className='큰지도'></img>}
 
-        {charch === 1 &&무기장착여부 == false && weap1 >= 1 && tam1 === false && page === 10 && <img src='/a16.png' className='도끼' onClick={()=> {set무기장착(15); setweap1(prev => prev - 1); set무기("도끼"); set무기장착여부(true)}}></img>}
+        {charch === 1 &&무기장착여부 == false && weap1 >= 1 && tam1 === false && page === 10 && <img src='/a27.png' className='도끼' onClick={()=> {set무기장착(15); setweap1(prev => prev - 1); set무기("도끼"); set무기장착여부(true)}}></img>}
         {charch === 1 &&무기장착여부 == false && weap2 >= 1 && tam1 === false  && page === 10 && <img src='/a16.png' className='진압봉' onClick={()=> {set무기장착(10); setweap2(prev => prev -1); set무기("진압봉"); set무기장착여부(true)}}></img>}
-        {charch === 1 &&무기장착여부 == false && weap3 >= 1 && tam1 === false  && page === 10 && <img src='/a16.png' className='야구방망이' onClick={()=> {set무기장착(12); setweap3(prev => prev - 1); set무기("야구방망이"); set무기장착여부(true)}}></img>}
+        {charch === 1 &&무기장착여부 == false && weap3 >= 1 && tam1 === false  && page === 10 && <img src='/a26.png' className='야구방망이' onClick={()=> {set무기장착(12); setweap3(prev => prev - 1); set무기("야구방망이"); set무기장착여부(true)}}></img>}
         {charch === 1 &&무기장착여부 == false &&weap4 >= 1 && tam1 === false  && page === 10 && <img src='/a16.png' className='헬멧' onClick={()=> {set무기장착(5); setweap4(prev => prev - 1); set무기("헬멧"); set무기장착여부(true)}}></img>}
         {/* 개수 차감 */}
         {charch === 1 &&무기 === "도끼" && tam1 === false && page === 10 && <img src='/a2.png' className='엑스' onClick={()=> {set무기장착(0); set무기(""); setweap1(prev => prev + 1); set무기장착여부(false)}}></img>}
@@ -2900,9 +3099,9 @@ function App() {
 
 
 
-        {charch === 2 &&무기장착여부1 == false && weap1 >= 1 && tam2 === false && page === 10 && <img src='/a16.png' className='도끼' onClick={()=> {set무기장착(15); setweap1(prev => prev - 1); set무기1("도끼"); set무기장착여부1(true)}}></img>}
+        {charch === 2 &&무기장착여부1 == false && weap1 >= 1 && tam2 === false && page === 10 && <img src='/a27.png' className='도끼' onClick={()=> {set무기장착(15); setweap1(prev => prev - 1); set무기1("도끼"); set무기장착여부1(true)}}></img>}
         {charch === 2 &&무기장착여부1 == false && weap2 >= 1 && tam2 === false && page === 10 && <img src='/a16.png' className='진압봉' onClick={()=> {set무기장착(10); setweap2(prev => prev -1); set무기1("진압봉"); set무기장착여부1(true)}}></img>}
-        {charch === 2 &&무기장착여부1 == false && weap3 >= 1 && tam2 === false && page === 10 && <img src='/a16.png' className='야구방망이' onClick={()=> {set무기장착(12); setweap3(prev => prev - 1); set무기1("야구방망이"); set무기장착여부1(true)}}></img>}
+        {charch === 2 &&무기장착여부1 == false && weap3 >= 1 && tam2 === false && page === 10 && <img src='/a26.png' className='야구방망이' onClick={()=> {set무기장착(12); setweap3(prev => prev - 1); set무기1("야구방망이"); set무기장착여부1(true)}}></img>}
         {charch === 2 &&무기장착여부1 == false &&weap4 >= 1 && tam2 === false && page === 10 && <img src='/a16.png' className='헬멧' onClick={()=> {set무기장착(5); setweap4(prev => prev - 1); set무기1("헬멧"); set무기장착여부1(true)}}></img>}
         {/* 개수 차감 */}
         {charch === 2 &&무기1 === "도끼" && tam2 === false && page === 10 && <img src='/a2.png' className='엑스' onClick={()=> {set무기장착(0); set무기1(""); setweap1(prev => prev + 1); set무기장착여부1(false)}}></img>}
@@ -2912,9 +3111,9 @@ function App() {
 
 
 
-        {charch === 3 &&무기장착여부2 == false && weap1 >= 1 && tam3 === false && page === 10 && <img src='/a16.png' className='도끼' onClick={()=> {set무기장착(15); setweap1(prev => prev - 1); set무기2("도끼"); set무기장착여부2(true)}}></img>}
+        {charch === 3 &&무기장착여부2 == false && weap1 >= 1 && tam3 === false && page === 10 && <img src='/a27.png' className='도끼' onClick={()=> {set무기장착(15); setweap1(prev => prev - 1); set무기2("도끼"); set무기장착여부2(true)}}></img>}
         {charch === 3 &&무기장착여부2 == false && weap2 >= 1 && tam3 === false  && page === 10 && <img src='/a16.png' className='진압봉' onClick={()=> {set무기장착(10); setweap2(prev => prev -1); set무기2("진압봉"); set무기장착여부2(true)}}></img>}
-        {charch === 3 &&무기장착여부2 == false && weap3 >= 1 && tam3 === false  && page === 10 && <img src='/a16.png' className='야구방망이' onClick={()=> {set무기장착(12); setweap3(prev => prev - 1); set무기2("야구방망이"); set무기장착여부2(true)}}></img>}
+        {charch === 3 &&무기장착여부2 == false && weap3 >= 1 && tam3 === false  && page === 10 && <img src='/a26.png' className='야구방망이' onClick={()=> {set무기장착(12); setweap3(prev => prev - 1); set무기2("야구방망이"); set무기장착여부2(true)}}></img>}
         {charch === 3 &&무기장착여부2 == false &&weap4 >= 1 && tam3 === false  && page === 10 && <img src='/a16.png' className='헬멧' onClick={()=> {set무기장착(5); setweap4(prev => prev - 1); set무기2("헬멧"); set무기장착여부2(true)}}></img>}
         {/* 개수 차감 */}
         {charch === 3 &&무기2 === "도끼" && tam3 === false && page === 10 && <img src='/a2.png' className='엑스' onClick={()=> {set무기장착(0); set무기2(""); setweap1(prev => prev + 1); set무기장착여부2(false)}}></img>}
@@ -2924,9 +3123,9 @@ function App() {
 
 
 
-        {charch === 4 &&무기장착여부3 == false && weap1 >= 1 && tam4 === false && page === 10 && <img src='/a16.png' className='도끼' onClick={()=> {set무기장착(15); setweap1(prev => prev - 1); set무기3("도끼"); set무기장착여부3(true)}}></img>}
+        {charch === 4 &&무기장착여부3 == false && weap1 >= 1 && tam4 === false && page === 10 && <img src='/a27.png' className='도끼' onClick={()=> {set무기장착(15); setweap1(prev => prev - 1); set무기3("도끼"); set무기장착여부3(true)}}></img>}
         {charch === 4 &&무기장착여부3 == false && weap2 >= 1 && tam4 === false && page === 10 && <img src='/a16.png' className='진압봉' onClick={()=> {set무기장착(10); setweap2(prev => prev -1); set무기3("진압봉"); set무기장착여부3(true)}}></img>}
-        {charch === 4 &&무기장착여부3 == false && weap3 >= 1 && tam4 === false && page === 10 && <img src='/a16.png' className='야구방망이' onClick={()=> {set무기장착(12); setweap3(prev => prev - 1); set무기3("야구방망이"); set무기장착여부3(true)}}></img>}
+        {charch === 4 &&무기장착여부3 == false && weap3 >= 1 && tam4 === false && page === 10 && <img src='/a26.png' className='야구방망이' onClick={()=> {set무기장착(12); setweap3(prev => prev - 1); set무기3("야구방망이"); set무기장착여부3(true)}}></img>}
         {charch === 4 &&무기장착여부3 == false &&weap4 >= 1 &&  tam4 === false && page === 10 && <img src='/a16.png' className='헬멧' onClick={()=> {set무기장착(5); setweap4(prev => prev - 1); set무기3("헬멧"); set무기장착여부3(true)}}></img>}
         {/* 개수 차감 */}
         {charch === 4 &&무기3 === "도끼" && tam4 === false && page === 10 && <img src='/a2.png' className='엑스' onClick={()=> {set무기장착(0); set무기3(""); setweap1(prev => prev + 1); set무기장착여부3(false)}}></img>}
@@ -2962,59 +3161,60 @@ function App() {
         {tam4 === false &&charwtr4+25 >= 100 && eat2 > 0 && charch1 === 4 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr4(100); seteat2(prev => prev -1); }}></img>}
         {page === 9 && <h2 className='물개수'>: {eat2}개</h2>} 
 
-        {page === 9 && <img src='/a16.png' className='라면'></img>} 
-        {tam1 === false &&chareat1+50 < 100 && eat3 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='라면' onClick={() => {setchareat1(prev => prev + 50); seteat3(prev => prev -1); }}></img>} 
-        {tam1 === false &&chareat1+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='라면' onClick={() => {setchareat1(100); seteat3(prev => prev -1); }}></img>} 
-        {tam2 === false &&chareat2+50 < 100 && eat3 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='라면' onClick={() => {setchareat2(prev => prev + 50); seteat3(prev => prev -1); }}></img>} 
-        {tam2 === false &&chareat2+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='라면' onClick={() => {setchareat2(100); seteat3(prev => prev -1); }}></img>}
-        {tam3 === false &&chareat3+50 < 100 && eat3 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='라면' onClick={() => {setchareat3(prev => prev + 50); seteat3(prev => prev -1); }}></img>} 
-        {tam3 === false &&chareat3+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='라면' onClick={() => {setchareat3(100); seteat3(prev => prev -1); }}></img>}
-        {tam4 === false &&chareat4+50 < 100 && eat3 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='라면' onClick={() => {setchareat4(prev => prev + 50); seteat3(prev => prev -1); }}></img>}
-        {tam4 === false &&chareat4+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='라면' onClick={() => {setchareat4(100); seteat3(prev => prev -1); }}></img>}
+
+        {page === 9 && <img src='/a22.png' className='라면'></img>} 
+        {tam1 === false &&chareat1+50 < 100 && eat3 > 0 && page === 9 && charch1 === 1 && <img src='/a22.png' className='라면' onClick={() => {setchareat1(prev => prev + 50); seteat3(prev => prev -1); }}></img>} 
+        {tam1 === false &&chareat1+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 1 && <img src='/a22.png' className='라면' onClick={() => {setchareat1(100); seteat3(prev => prev -1); }}></img>} 
+        {tam2 === false &&chareat2+50 < 100 && eat3 > 0 && page === 9 && charch1 === 2 && <img src='/a22.png' className='라면' onClick={() => {setchareat2(prev => prev + 50); seteat3(prev => prev -1); }}></img>} 
+        {tam2 === false &&chareat2+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 2 && <img src='/a22.png' className='라면' onClick={() => {setchareat2(100); seteat3(prev => prev -1); }}></img>}
+        {tam3 === false &&chareat3+50 < 100 && eat3 > 0 && page === 9 && charch1 === 3 && <img src='/a22.png' className='라면' onClick={() => {setchareat3(prev => prev + 50); seteat3(prev => prev -1); }}></img>} 
+        {tam3 === false &&chareat3+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 3 && <img src='/a22.png' className='라면' onClick={() => {setchareat3(100); seteat3(prev => prev -1); }}></img>}
+        {tam4 === false &&chareat4+50 < 100 && eat3 > 0 && page === 9 && charch1 === 4 && <img src='/a22.png' className='라면' onClick={() => {setchareat4(prev => prev + 50); seteat3(prev => prev -1); }}></img>}
+        {tam4 === false &&chareat4+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 4 && <img src='/a22.png' className='라면' onClick={() => {setchareat4(100); seteat3(prev => prev -1); }}></img>}
         {page === 9 && <h2 className='라면개수'>: {eat3}개</h2>}
 
-        {page === 9 && <img src='/a16.png' className='사탕'></img>} 
-        {tam1 === false &&chareat1+10 < 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='사탕' onClick={() => {setchareat1(prev => prev + 10); seteat4(prev => prev -1); }}></img>}
-        {tam1 === false &&chareat1+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='사탕' onClick={() => {setchareat1(100); seteat4(prev => prev -1); }}></img>}  
-        {tam2 === false &&chareat2+10 < 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='사탕' onClick={() => {setchareat2(prev => prev + 10); seteat4(prev => prev -1); }}></img>} 
-        {tam2 === false &&chareat2+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='사탕' onClick={() => {setchareat2(100); seteat4(prev => prev -1); }}></img>} 
-        {tam3 === false &&chareat3+10 < 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='사탕' onClick={() => {setchareat3(prev => prev + 10); seteat4(prev => prev -1); }}></img>} 
-        {tam3 === false &&chareat3+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='사탕' onClick={() => {setchareat3(100); seteat4(prev => prev -1); }}></img>} 
-        {tam4 === false &&chareat4+10 < 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='사탕' onClick={() => {setchareat4(prev => prev + 10); seteat4(prev => prev -1); }}></img>}
-        {tam4 === false &&chareat4+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='사탕' onClick={() => {setchareat4(100); seteat4(prev => prev -1); }}></img>} 
+        {page === 9 && <img src='/a25.png' className='사탕'></img>} 
+        {tam1 === false &&chareat1+10 < 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a25.png' className='사탕' onClick={() => {setchareat1(prev => prev + 10); seteat4(prev => prev -1); }}></img>}
+        {tam1 === false &&chareat1+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a25.png' className='사탕' onClick={() => {setchareat1(100); seteat4(prev => prev -1); }}></img>}  
+        {tam2 === false &&chareat2+10 < 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a25.png' className='사탕' onClick={() => {setchareat2(prev => prev + 10); seteat4(prev => prev -1); }}></img>} 
+        {tam2 === false &&chareat2+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a25.png' className='사탕' onClick={() => {setchareat2(100); seteat4(prev => prev -1); }}></img>} 
+        {tam3 === false &&chareat3+10 < 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a25.png' className='사탕' onClick={() => {setchareat3(prev => prev + 10); seteat4(prev => prev -1); }}></img>} 
+        {tam3 === false &&chareat3+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a25.png' className='사탕' onClick={() => {setchareat3(100); seteat4(prev => prev -1); }}></img>} 
+        {tam4 === false &&chareat4+10 < 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a25.png' className='사탕' onClick={() => {setchareat4(prev => prev + 10); seteat4(prev => prev -1); }}></img>}
+        {tam4 === false &&chareat4+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a25.png' className='사탕' onClick={() => {setchareat4(100); seteat4(prev => prev -1); }}></img>} 
         {page === 9 && <h2 className='사탕개수'>: {eat4}개</h2>}
 
-        {page === 9 && <img src='/a16.png' className='키트'></img>} 
-        {tam1 === false &&charment1+10 < 100 && med1 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='키트' onClick={() => {setcharment1(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
-        {tam1 === false &&charment1+10 >= 100 && med1 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='키트' onClick={() => {setcharment1(100); setmed1(prev => prev -1); }}></img>} 
-        {tam2 === false &&charment2+10 < 100 && med1 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='키트' onClick={() => {setcharment2(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
-        {tam2 === false &&charment2+10 >= 100 && med1 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='키트' onClick={() => {setcharment2(100); setmed1(prev => prev -1); }}></img>} 
-        {tam3 === false &&charment3+10 < 100 && med1 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='키트' onClick={() => {setcharment3(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
-        {tam3 === false &&charment3+10 >= 100 && med1 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='키트' onClick={() => {setcharment3(100); setmed1(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+10 < 100 && med1 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='키트' onClick={() => {setcharment4(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+10 >= 100 && med1 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='키트' onClick={() => {setcharment4(100); setmed1(prev => prev -1); }}></img>} 
+        {page === 9 && <img src='/a24.png' className='키트'></img>} 
+        {tam1 === false &&charment1+10 < 100 && med1 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className='키트' onClick={() => {setcharment1(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
+        {tam1 === false &&charment1+10 >= 100 && med1 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className='키트' onClick={() => {setcharment1(100); setmed1(prev => prev -1); }}></img>} 
+        {tam2 === false &&charment2+10 < 100 && med1 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='키트' onClick={() => {setcharment2(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
+        {tam2 === false &&charment2+10 >= 100 && med1 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='키트' onClick={() => {setcharment2(100); setmed1(prev => prev -1); }}></img>} 
+        {tam3 === false &&charment3+10 < 100 && med1 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='키트' onClick={() => {setcharment3(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
+        {tam3 === false &&charment3+10 >= 100 && med1 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='키트' onClick={() => {setcharment3(100); setmed1(prev => prev -1); }}></img>} 
+        {tam4 === false &&charment4+10 < 100 && med1 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='키트' onClick={() => {setcharment4(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
+        {tam4 === false &&charment4+10 >= 100 && med1 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='키트' onClick={() => {setcharment4(100); setmed1(prev => prev -1); }}></img>} 
         {page === 9 && <h2 className='키트개수'>: {med1}개</h2>}
 
-        {page === 9 && <img src='/a16.png' className='구급상자'></img>} 
-        {tam1 === false &&charment1+10 < 100 && med2 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className= '구급상자' onClick={() => {setcharment1(prev => prev + 10); setmed2(prev => prev -1); }}></img>} 
-        {tam1 === false &&charment1+10 >= 100 && med2 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className= '구급상자' onClick={() => {setcharment1(100); setmed2(prev => prev -1); }}></img>} 
-        {tam2 === false &&charment2+10 < 100 && med2 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='구급상자' onClick={() => {setcharment2(prev => prev + 10); setmed2(prev => prev -1); }}></img>} 
-        {tam2 === false &&charment2+10 >= 100 && med2 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='구급상자' onClick={() => {setcharment2(100); setmed2(prev => prev -1); }}></img>} 
-        {tam3 === false &&charment3+10 < 100 && med2 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='구급상자' onClick={() => {setcharment3(prev => prev + 10); setmed2(prev => prev -1); }}></img>}
-        {tam3 === false &&charment3+10 >= 100 && med2 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='구급상자' onClick={() => {setcharment3(100); setmed2(prev => prev -1); }}></img>}  
-        {tam4 === false &&charment4+10 < 100 && med2 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='구급상자' onClick={() => {setcharment4(prev => prev + 10); setmed2(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+10 >= 100 && med2 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='구급상자' onClick={() => {setcharment4(100); setmed2(prev => prev -1); }}></img>} 
+        {page === 9 && <img src='/a24.png' className='구급상자'></img>} 
+        {tam1 === false &&charment1+10 < 100 && med2 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className= '구급상자' onClick={() => {setcharment1(prev => prev + 10); setmed2(prev => prev -1); }}></img>} 
+        {tam1 === false &&charment1+10 >= 100 && med2 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className= '구급상자' onClick={() => {setcharment1(100); setmed2(prev => prev -1); }}></img>} 
+        {tam2 === false &&charment2+10 < 100 && med2 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment2(prev => prev + 10); setmed2(prev => prev -1); }}></img>} 
+        {tam2 === false &&charment2+10 >= 100 && med2 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment2(100); setmed2(prev => prev -1); }}></img>} 
+        {tam3 === false &&charment3+10 < 100 && med2 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment3(prev => prev + 10); setmed2(prev => prev -1); }}></img>}
+        {tam3 === false &&charment3+10 >= 100 && med2 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment3(100); setmed2(prev => prev -1); }}></img>}  
+        {tam4 === false &&charment4+10 < 100 && med2 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment4(prev => prev + 10); setmed2(prev => prev -1); }}></img>} 
+        {tam4 === false &&charment4+10 >= 100 && med2 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment4(100); setmed2(prev => prev -1); }}></img>} 
         {page === 9 && <h2 className='구급상자개수'>: {med2}개</h2>}
 
-        {page === 9 && <img src='/a16.png' className='책'></img>} 
-        {tam1 === false &&charment1+30 < 100 && etc3 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='책' onClick={() => {setcharment1(prev => prev + 18); setetc3(prev => prev -1); }}></img>}
-        {tam1 === false &&charment1+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='책' onClick={() => {setcharment1(100); setetc3(prev => prev -1); }}></img>} 
-        {tam2 === false &&charment2+30 < 100 && etc3 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='책' onClick={() => {setcharment2(prev => prev + 18); setetc3(prev => prev -1); }}></img>}
-        {tam2 === false &&charment2+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='책' onClick={() => {setcharment2(100); setetc3(prev => prev -1); }}></img>}  
-        {tam3 === false &&charment3+30 < 100 && etc3 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='책' onClick={() => {setcharment3(prev => prev + 18); setetc3(prev => prev -1); }}></img>} 
-        {tam3 === false &&charment3+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='책' onClick={() => {setcharment3(100); setetc3(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+30 < 100 && etc3 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='책' onClick={() => {setcharment4(prev => prev + 18); setetc3(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='책' onClick={() => {setcharment4(100); setetc3(prev => prev -1); }}></img>} 
+        {page === 9 && <img src='/a23.png' className='책'></img>} 
+        {tam1 === false &&charment1+30 < 100 && etc3 > 0 && page === 9 && charch1 === 1 && <img src='/a23.png' className='책' onClick={() => {setcharment1(prev => prev + 18); setetc3(prev => prev -1); }}></img>}
+        {tam1 === false &&charment1+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 1 && <img src='/a23.png' className='책' onClick={() => {setcharment1(100); setetc3(prev => prev -1); }}></img>} 
+        {tam2 === false &&charment2+30 < 100 && etc3 > 0 && page === 9 && charch1 === 2 && <img src='/a23.png' className='책' onClick={() => {setcharment2(prev => prev + 18); setetc3(prev => prev -1); }}></img>}
+        {tam2 === false &&charment2+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 2 && <img src='/a23.png' className='책' onClick={() => {setcharment2(100); setetc3(prev => prev -1); }}></img>}  
+        {tam3 === false &&charment3+30 < 100 && etc3 > 0 && page === 9 && charch1 === 3 && <img src='/a23.png' className='책' onClick={() => {setcharment3(prev => prev + 18); setetc3(prev => prev -1); }}></img>} 
+        {tam3 === false &&charment3+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 3 && <img src='/a23.png' className='책' onClick={() => {setcharment3(100); setetc3(prev => prev -1); }}></img>} 
+        {tam4 === false &&charment4+30 < 100 && etc3 > 0 && page === 9 && charch1 === 4 && <img src='/a23.png' className='책' onClick={() => {setcharment4(prev => prev + 18); setetc3(prev => prev -1); }}></img>} 
+        {tam4 === false &&charment4+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 4 && <img src='/a23.png' className='책' onClick={() => {setcharment4(100); setetc3(prev => prev -1); }}></img>} 
         {page === 9 && <h2 className='책개수'>: {etc3}개</h2>}
 
         
@@ -3034,7 +3234,7 @@ function App() {
 
         {/* 침대 형식 11*/}
         {page === 11 && <img src='/a8.png' className='어둠' onClick={() => setloading(prev => prev + 1)}></img>}
-        {page === 8 && <img src='/a6.png' className='침대' onClick={DayUp}></img>} 
+        {page === 8 && <img src='/a28.png' className='침대' onClick={DayUp}></img>} 
         {page === 11 && <h1 className='어둠text'>Day-{Day}</h1>}
         {loading === 1 && page === 11 && <h1 className='어둠로딩'>.</h1>}
         {loading === 2 && page === 11 && <h1 className='어둠로딩'>..</h1>}
@@ -3182,7 +3382,7 @@ function App() {
           
           {charch === 4 && page === 10 && <h1>선예린</h1>} 
         </div>
-          {book === false && page === 8 && <img src='/a20.png' className='하루책' onClick={()=> setbook(true)}></img>}
+          {book === false && page === 8 && <img src='/a23.png' className='하루책' onClick={()=> setbook(true)}></img>}
           {book === true && page === 8 && <img src='/a2.png' className='하루나가기' onClick={()=> setbook(false)}></img>}
           {page === 8 && book === true && <img className='통조림플러스' src='/a16.png'></img>}
           {page === 8 && book === true && <h1 className='통조림플러스텍스트'> +{eat2표시}</h1>}
@@ -3190,16 +3390,16 @@ function App() {
           {page === 8 && book === true && <img className='물플러스' src='/a17.png'></img>}
           {page === 8 && book === true && <h1 className='물플러스텍스트'> +{eat2표시}</h1>}
 
-          {page === 8 && book === true && <img className='라면플러스' src='/a16.png'></img>}
+          {page === 8 && book === true && <img className='라면플러스' src='/a22.png'></img>}
           {page === 8 && book === true && <h1 className='라면플러스텍스트'> +{eat3표시}</h1>}
 
-          {page === 8 && book === true && <img className='사탕플러스' src='/a16.png'></img>}
+          {page === 8 && book === true && <img className='사탕플러스' src='/a25.png'></img>}
           {page === 8 && book === true && <h1 className='사탕플러스텍스트'> +{eat4표시}</h1>}
 
-          {page === 8 && book === true && <img className='키트플러스' src='/a16.png'></img>}
+          {page === 8 && book === true && <img className='키트플러스' src='/a24.png'></img>}
           {page === 8 && book === true && <h1 className='키트플러스텍스트'> +{med1표시}</h1>}
         
-          {page === 8 && book === true && <img className='구급상자플러스' src='/a16.png'></img>}
+          {page === 8 && book === true && <img className='구급상자플러스' src='/a24.png'></img>}
           {page === 8 && book === true && <h1 className='구급상자플러스텍스트'> +{med2표시}</h1>}
 
           {page === 8 && book === true && <img className='도끼플러스' src='/a16.png'></img>}
@@ -3221,7 +3421,7 @@ function App() {
           {page === 8 && book === true && <img className='라디오플러스' src='/a16.png'></img>}
           {page === 8 && book === true && <h1 className='라디오플러스텍스트'> +{etc2표시}</h1>}
 
-          {page === 8 && book === true && <img className='책플러스' src='/a16.png'></img>}
+          {page === 8 && book === true && <img className='책플러스' src='/a23.png'></img>}
           {page === 8 && book === true && <h1 className='책플러스텍스트'> +{etc3표시}</h1>}
 
           {page === 8 && book === true && <img className='신문플러스' src='/a16.png'></img>}
@@ -3234,7 +3434,48 @@ function App() {
           {page === 13 && <img src='a21.png' className='문확대'></img>}
           {page === 13 && 문사람감지 === false && <h1 className='없는사람'>아무도 없다. . .</h1>}
           {page === 13 && 문사람감지 === true && <h1 className='있는사람'>누군가 있다!</h1>}
-        
+          {page === 13 && 문사람감지 === true && <h1 className='열어준다' onClick={() => {보상(); set문사람감지(false);}}>열어준다.</h1>}
+          {page === 13 && 문사람감지 === true && <h1 className='열어주지않는다' onClick={()=> set문사람감지(false)}>열어주지않는다.</h1>}
+          {page === 8 && 문사람감지 === true && <h1 className='감지'>!</h1>}
+          {page === 13 && 문사람감지 === true && 사람1 == true && <h1 className='사람1'>상인</h1>}
+          {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 1 && <div className='상인글1'>
+            <h1>안녕하세요!</h1>
+            <h1>저는 그저 거래를 하고싶어서 찾아왔습니다!</h1>
+            <h1>제가 도끼를 드릴테니 주실수있는게있을까요?</h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 2 && <div className='상인글1'>
+            <h1>안녕하세요!</h1>
+            <h1></h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 3 && <div className='상인글1'>
+            <h1>안녕하세요!</h1>
+            <h1>저는 그저 거래를 하고싶어서 찾아왔습니다!</h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람1 == true && masg1 === 4 && <div className='상인글1'>
+            <h1>안녕하세요!</h1>
+            <h1>저는 그저 거래를 하고싶어서 찾아왔습니다!</h1>
+          </div>}
+
+          {page === 13 && 문사람감지 === true && 사람2 == true && <h1 className='사람1'>??</h1>}
+          {page === 13 && 문사람감지 === true && 사람3 == true && <h1 className='사람1'>할머니</h1>}
+          {page === 13 && 문사람감지 === true && 사람4 == true && <h1 className='사람1'>수상한 사람</h1>}
+          
+
+            <div className='음식'>
+              {page === 13 && <img src="a16.png" className='크기' onClick={()=> 통조림증가량()}></img>}
+              {page === 13 && <img src="a17.png" className='크기' onClick={() => 물증가량()}></img>}
+              {page === 13 && <img src="a22.png" className='크기' onClick={()=> 라면증가량()}></img>}        
+              {page === 13 && <img src="a25.png" className='크기' onClick={()=> 사탕증가량()}></img>}              
+            </div>
+            {page===13 && <div>
+              <h1 className='통조림13'>{eat1}/{통조림}</h1>
+              <h1 className='물13'>{eat2}/{물}</h1>
+              <h1 className='라면13'>{eat3}/{라면}</h1>
+              <h1 className='사탕13'>{eat4}/{사탕}</h1>
+            </div>}
+          
+
+
       </div>
     </div>
   );
