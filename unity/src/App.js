@@ -79,7 +79,8 @@ function App() {
   let [사람4, set사람4] = useState(false); 
 
   let [masg1, setmasg1] = useState(0);
-
+  
+  let [열림, set열림] = useState(false);
 
   let [감기여부1 , set감기여부1] = useState(false);
   let [감기여부2, set감기여부2] = useState(false);
@@ -1705,6 +1706,74 @@ function App() {
         }
   }
 
+  if (수치 >= 30 && 열림 === true && 사람1 === true) {
+      seteat1(prev => prev + 3);
+      setetc1(prev => prev + 1);
+      seteat2(prev => prev + 7);
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+    }
+  if (수치 >= 25 && 열림 === true && 사람2 === true) {
+      seteat3(prev => prev + 3);
+      setetc4(prev => prev + 1);
+      seteat4(prev => prev + 8);
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+    }
+  if (열림 === true && 사람3 === true) {
+      seteat1(prev => prev + 2);
+      seteat3(prev => prev + 6);
+      seteat2(prev => prev + 4);
+      seteat4(prev => prev + 8);
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set열림(false);
+    }
+    if (수치 >= 30 && 열림 === true && 사람4 === true) {
+      if(eat1 >= 1){
+        seteat1(prev => prev - 4);
+      }
+      if(eat2 >= 1){
+        seteat2(prev => prev - 1);
+      }
+      if(eat3 >= 1){
+        seteat3(prev => prev - 2);
+      }
+      if(eat4 >= 1){
+        seteat4(prev => prev - 1);
+      }
+      if(setweap1 === 0){
+        setweap1(prev => prev + 1);
+      }
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+    }
   const DayUp = () => { //하루 지남
     seteat1표시(0);
     seteat2표시(0);
@@ -2946,6 +3015,7 @@ function App() {
     }
   }
   }
+
 }
 }
 
@@ -2988,6 +3058,9 @@ function App() {
         seteat4(prev => prev - 1);
       }
     }
+    {    
+  }
+
     }
   }
 
@@ -3008,9 +3081,11 @@ function App() {
     if(물 < eat2)
     {
       set물(prev => prev + 1);
+      set수치(prev => prev + 3);
     }
     else{
       set물(0);
+      set수치(prev => prev - (3 * 물));
     }
   }
   function 라면증가량()
@@ -3018,9 +3093,11 @@ function App() {
     if(라면 < eat3)
     {
       set라면(prev => prev + 1);
+      set수치(prev => prev + 6);
     }
     else{
       set라면(0);
+      set수치(prev => prev - (6 * 라면));
     }
   }
   function 사탕증가량()
@@ -3028,15 +3105,20 @@ function App() {
     if(사탕 < eat4)
     {
       set사탕(prev => prev + 1);
+      set수치(prev => prev + 4);
     }
     else{
       set사탕(0);
+      set수치(prev => prev - (4 * 사탕));
     }
   }
 
+
+
+
   return (
     <div className="App">
-      {<h1>{masg1}</h1>}
+      {<h1>{수치}</h1>}
       {/* 스토리 스킵과 다음단계 */}
       {page < 6 && <img src='/a.png' className='img1' onClick={pagecound}></img>}
       {page < 6 && <img src='/a1.png' className='img2' onClick={() => setpage(6)}></img>}
@@ -3434,33 +3516,47 @@ function App() {
           {page === 13 && <img src='a21.png' className='문확대'></img>}
           {page === 13 && 문사람감지 === false && <h1 className='없는사람'>아무도 없다. . .</h1>}
           {page === 13 && 문사람감지 === true && <h1 className='있는사람'>누군가 있다!</h1>}
-          {page === 13 && 문사람감지 === true && <h1 className='열어준다' onClick={() => {보상(); set문사람감지(false);}}>열어준다.</h1>}
+          {page === 13 && 문사람감지 === true && <h1 className='열어준다' onClick={() => {set열림(true); set문사람감지(false);}}>열어준다.</h1>} 
           {page === 13 && 문사람감지 === true && <h1 className='열어주지않는다' onClick={()=> set문사람감지(false)}>열어주지않는다.</h1>}
           {page === 8 && 문사람감지 === true && <h1 className='감지'>!</h1>}
+          
           {page === 13 && 문사람감지 === true && 사람1 == true && <h1 className='사람1'>상인</h1>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 1 && <div className='상인글1'>
             <h1>안녕하세요!</h1>
-            <h1>저는 그저 거래를 하고싶어서 찾아왔습니다!</h1>
-            <h1>제가 도끼를 드릴테니 주실수있는게있을까요?</h1>
+            <h1>오랜만에 살아 있는 인간을 보네. 교환 좀 하지 않을래?</h1>
+            <h1> 통조림, 물, 보드게임를 드릴게요!</h1>
           </div>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 2 && <div className='상인글1'>
             <h1>안녕하세요!</h1>
-            <h1></h1>
+            <h1>음식 조금만 나눠줄래?</h1>
+            <h1> 통조림, 물, 보드게임를 드릴게요!</h1>
           </div>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 3 && <div className='상인글1'>
             <h1>안녕하세요!</h1>
-            <h1>저는 그저 거래를 하고싶어서 찾아왔습니다!</h1>
+            <h1>나도 오래 굶었거든. 그러니까 서로 도와보자?</h1>
+            <h1> 통조림, 물, 보드게임를 줄게</h1>
           </div>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 === 4 && <div className='상인글1'>
             <h1>안녕하세요!</h1>
-            <h1>저는 그저 거래를 하고싶어서 찾아왔습니다!</h1>
+            <h1>저는 그저 거래를 하고 싶어서 찾아왔습니다!</h1>
+            <h1> 통조림, 물, 보드게임를 드릴게요!</h1>
           </div>}
 
           {page === 13 && 문사람감지 === true && 사람2 == true && <h1 className='사람1'>??</h1>}
+          {page === 13 && 문사람감지 === true && 사람2 == true && masg1 === 4 && <div className='엥글1'>
+            <h1>문을 열어주세요.</h1>
+          </div>}
           {page === 13 && 문사람감지 === true && 사람3 == true && <h1 className='사람1'>할머니</h1>}
+          {page === 13 && 문사람감지 === true && 사람3 == true && masg1 === 4 && <div className='할머니글1'>
+            <h1>왜 이렇게 말랐니... 이거 먹고 힘내렴</h1>
+          </div>}
           {page === 13 && 문사람감지 === true && 사람4 == true && <h1 className='사람1'>수상한 사람</h1>}
+          {page === 13 && 문사람감지 === true && 사람4 == true && masg1 === 4 && <div className='수상한사람글1'>
+            <h1>문을 열어주세요.</h1>
+          </div>}
           
-
+          
+          
             <div className='음식'>
               {page === 13 && <img src="a16.png" className='크기' onClick={()=> 통조림증가량()}></img>}
               {page === 13 && <img src="a17.png" className='크기' onClick={() => 물증가량()}></img>}
