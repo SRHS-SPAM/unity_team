@@ -862,10 +862,10 @@
 }
 .문확대{
   position: absolute;
-  top : 10%;
-  left : 10%;
-  width: 1000px;
-  height: 400px;
+  top : 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -4;
 }
 .감지{
   position: absolute;
@@ -964,4 +964,153 @@
   top : 200px;
   right : 41px;
   font-size: 40px;
+}
+.엥글1{
+  position: absolute;
+  top : 32%;
+  left : 50px;
+  font-size : 10px;
+}
+.할머니글1{
+  position: absolute;
+  top : 32%;
+  left : 50px;
+  font-size : 10px;
+}
+.수상한사람글1{
+  position: absolute;
+  top : 32%;
+  left : 50px;
+  font-size : 10px;
+}
+.글1{
+  position: absolute;
+  top : 32%;
+  left : 50px;
+  font-size : 10px;
+}
+.수치적{
+  position: absolute;
+  top : 80%;
+  left : 10px;
+}
+.도둑감지{
+  position: absolute;
+  left : 1%;
+  top : 70%;
+  font-size : 30px;
+}
+.거래완료{
+  position: absolute;
+  left : 1%;
+  top : 70%;
+  font-size : 30px;
+}
+.배경1{
+  width: 100%;
+  height: 738px;
+}
+.거래실패{
+  position: absolute;
+  left : 1%;
+  top : 70%;
+  font-size : 30px;
+}
+.라디오{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left : 79%;
+  top : 64%;
+  z-index: 3;
+}
+
+
+/* 길어질수도있지만 방법이 생각이 안나 쓰는글 */
+.라디오텍스트{
+  position: absolute;
+  right: 110px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+
+.라디오텍스트1{
+  position: absolute;
+  right: 118px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트2{
+  position: absolute;
+  right: 178px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트3{
+  position: absolute;
+  right: 190px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트4{
+  position: absolute;
+  right: 210px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+
+.라디오텍스트5{
+  position: absolute;
+  right: 148px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트6{
+  position: absolute;
+  right: 158px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트7{
+  position: absolute;
+  right: 90px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트8{
+  position: absolute;
+  right: 160px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+
+.라디오텍스트9{
+  position: absolute;
+  right: 128px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트10{
+  position: absolute;
+  right: 88px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트11{
+  position: absolute;
+  right: 90px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트12{
+  position: absolute;
+  right: 160px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
+}
+.라디오텍스트13{
+  position: absolute;
+  right: 160px;
+  top : 415px;
+  color :rgba(0, 0, 0, 0.802)
 }

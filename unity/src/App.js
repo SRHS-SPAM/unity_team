@@ -72,6 +72,7 @@ function App() {
 
   let [수치, set수치] = useState(0);
 
+  let [문얻는거, set문얻는거] = useState(false);
 
   let [사람1, set사람1] = useState(false);
   let [사람2, set사람2] = useState(false);
@@ -79,7 +80,10 @@ function App() {
   let [사람4, set사람4] = useState(false); 
 
   let [masg1, setmasg1] = useState(0);
-  
+  let [masg2, setmasg2] = useState(0);
+  let [masg3, setmasg3] = useState(0);
+  let [masg4, setmasg4] = useState(0);
+
   let [열림, set열림] = useState(false);
 
   let [감기여부1 , set감기여부1] = useState(false);
@@ -185,7 +189,24 @@ function App() {
 
   let [문감지, set문감지] = useState(false);
   let [문사람감지, set문사람감지] = useState(false);
+  let [문통조림랜덤, set문통조림랜덤] = useState(0);
+  let [문물랜덤, set문물랜덤] = useState(0);
+  let [문라면랜덤, set문라면랜덤] = useState(0);
+  let [문사탕랜덤, set문사탕랜덤] = useState(0);
+  let [문신문랜덤, set문신문랜덤] = useState(0);
 
+  let [도둑감지, set도둑감지] = useState(false);
+  let [거래완료, set거래완료] = useState(false);
+  let [거래실패, set거래실패] = useState(false);
+
+  let [라디오확률, set라디오확률] = useState(0);
+  let [라디오대사, set라디오대사] = useState(0);
+  let [라디오하루대사, set라디오하루대사] = useState(0);
+
+  let [외출제한1, set외출제한1] = useState(false);
+  let [외출제한2, set외출제한2] = useState(false);
+  let [외출제한3, set외출제한3] = useState(false);
+  let [외출제한4, set외출제한4] = useState(false);
 
   const [r1, setr1] = useState(0);
   const wtime = new Date();
@@ -348,32 +369,39 @@ function App() {
         set탐험물1(randomValue);
         setmaplo1(1);
        if (randomValue === 1){
-        setchareat1(prev => prev - 5);
-        setcharwtr1(prev => prev - 5);
+        setchareat1(prev => prev - 15);
+        setcharwtr1(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat1(prev => prev - 10);
-        setcharwtr1(prev => prev - 12);
+        setchareat1(prev => prev - 20);
+        setcharwtr1(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat1(prev => prev - 15);
-        setcharwtr1(prev => prev - 20);
+        setchareat1(prev => prev - 23);
+        setcharwtr1(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat1(prev => prev - 20);
-        setcharwtr1(prev => prev - 30);
+        setchareat1(prev => prev - 26);
+        setcharwtr1(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat1(prev => prev - 25);
-        setcharwtr1(prev => prev - 40);
+        setchareat1(prev => prev - 29);
+        setcharwtr1(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat1(prev => prev - 30);
-        setcharwtr1(prev => prev - 52);
+        setchareat1(prev => prev - 32);
+        setcharwtr1(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat1(prev => prev - 50);
-        setcharwtr1(prev => prev - 65);
+        setchareat1(prev => prev - 40);
+        setcharwtr1(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 2 && tam2 === false){
@@ -385,32 +413,39 @@ function App() {
         set탐험물2(randomValue);
         setmaplo2(1);
        if (randomValue === 1){
-        setchareat2(prev => prev - 5);
-        setcharwtr2(prev => prev - 5);
+        setchareat2(prev => prev - 15);
+        setcharwtr2(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat2(prev => prev - 10);
-        setcharwtr2(prev => prev - 12);
+        setchareat2(prev => prev - 20);
+        setcharwtr2(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat2(prev => prev - 15);
-        setcharwtr2(prev => prev - 20);
+        setchareat2(prev => prev - 23);
+        setcharwtr2(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat2(prev => prev - 20);
-        setcharwtr2(prev => prev - 30);
+        setchareat2(prev => prev - 26);
+        setcharwtr2(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat2(prev => prev - 25);
-        setcharwtr2(prev => prev - 40);
+        setchareat2(prev => prev - 29);
+        setcharwtr2(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat2(prev => prev - 30);
-        setcharwtr2(prev => prev - 52);
+        setchareat2(prev => prev - 32);
+        setcharwtr2(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat2(prev => prev - 50);
-        setcharwtr2(prev => prev - 65);
+        setchareat2(prev => prev - 40);
+        setcharwtr2(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 3 && tam3 === false){
@@ -422,32 +457,39 @@ function App() {
         set탐험물3(randomValue);
         setmaplo3(1);
        if (randomValue === 1){
-        setchareat3(prev => prev - 5);
-        setcharwtr3(prev => prev - 5);
+        setchareat3(prev => prev - 15);
+        setcharwtr3(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat3(prev => prev - 10);
-        setcharwtr3(prev => prev - 12);
+        setchareat3(prev => prev - 20);
+        setcharwtr3(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat3(prev => prev - 15);
-        setcharwtr3(prev => prev - 20);
+        setchareat3(prev => prev - 23);
+        setcharwtr3(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat3(prev => prev - 20);
-        setcharwtr3(prev => prev - 30);
+        setchareat3(prev => prev - 26);
+        setcharwtr3(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat3(prev => prev - 25);
-        setcharwtr3(prev => prev - 40);
+        setchareat3(prev => prev - 29);
+        setcharwtr3(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat3(prev => prev - 30);
-        setcharwtr3(prev => prev - 52);
+        setchareat3(prev => prev - 32);
+        setcharwtr3(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat3(prev => prev - 50);
-        setcharwtr3(prev => prev - 65);
+        setchareat3(prev => prev - 40);
+        setcharwtr3(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 4 && tam4 === false){
@@ -459,32 +501,39 @@ function App() {
         set탐험물4(randomValue);
         setmaplo4(1);
         if (randomValue === 1){
-        setchareat4(prev => prev - 5);
-        setcharwtr4(prev => prev - 5);
+        setchareat4(prev => prev - 15);
+        setcharwtr4(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat4(prev => prev - 10);
-        setcharwtr4(prev => prev - 12);
+        setchareat4(prev => prev - 20);
+        setcharwtr4(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat4(prev => prev - 15);
-        setcharwtr4(prev => prev - 20);
+        setchareat4(prev => prev - 23);
+        setcharwtr4(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat4(prev => prev - 20);
-        setcharwtr4(prev => prev - 30);
+        setchareat4(prev => prev - 26);
+        setcharwtr4(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat4(prev => prev - 25);
-        setcharwtr4(prev => prev - 40);
+        setchareat4(prev => prev - 29);
+        setcharwtr4(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat4(prev => prev - 30);
-        setcharwtr4(prev => prev - 52);
+        setchareat4(prev => prev - 32);
+        setcharwtr4(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat4(prev => prev - 50);
-        setcharwtr4(prev => prev - 65);
+        setchareat4(prev => prev - 40);
+        setcharwtr4(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
     }
@@ -616,153 +665,181 @@ function App() {
       set무기장착여부3(false)
     }
     const rands = Math.floor(Math.random() * (100+무기장착));
-    if (rands >= 25){
-      if (charch === 1 && tam1 === false){
+    if (rands >= 15){
+       if (charch === 1 && tam1 === false){
         settam1(true);
-        const randomValue = Math.floor(Math.random() * 4) + 2;
+        const randomValue = Math.floor(Math.random() * 3) + 1;
         setDayD1(randomValue);
         set외로움(prev => prev + 1);
         set탐험배1(randomValue);
         set탐험물1(randomValue);
-        setmaplo1(2);
+        setmaplo1(1);
        if (randomValue === 1){
-        setchareat1(prev => prev - 5);
-        setcharwtr1(prev => prev - 5);
+        setchareat1(prev => prev - 15);
+        setcharwtr1(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat1(prev => prev - 10);
-        setcharwtr1(prev => prev - 12);
+        setchareat1(prev => prev - 20);
+        setcharwtr1(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat1(prev => prev - 15);
-        setcharwtr1(prev => prev - 20);
+        setchareat1(prev => prev - 23);
+        setcharwtr1(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat1(prev => prev - 20);
-        setcharwtr1(prev => prev - 30);
+        setchareat1(prev => prev - 26);
+        setcharwtr1(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat1(prev => prev - 25);
-        setcharwtr1(prev => prev - 40);
+        setchareat1(prev => prev - 29);
+        setcharwtr1(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat1(prev => prev - 30);
-        setcharwtr1(prev => prev - 52);
+        setchareat1(prev => prev - 32);
+        setcharwtr1(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat1(prev => prev - 50);
-        setcharwtr1(prev => prev - 65);
+        setchareat1(prev => prev - 40);
+        setcharwtr1(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 2 && tam2 === false){
         settam2(true);
-        const randomValue1 = Math.floor(Math.random() * 4) + 2;
-        setDayD2(randomValue1);
+        const randomValue = Math.floor(Math.random() * 3) + 1;
+        setDayD2(randomValue);
         set외로움(prev => prev + 1);
-        set탐험배2(randomValue1);
-        set탐험물2(randomValue1);
-        setmaplo2(2);
-       if (randomValue1 === 1){
-        setchareat2(prev => prev - 5);
-        setcharwtr2(prev => prev - 5);
-       } 
-       else if (randomValue1 === 2){
-        setchareat2(prev => prev - 10);
-        setcharwtr2(prev => prev - 12);
-       } 
-       else if (randomValue1 === 3){
+        set탐험배2(randomValue);
+        set탐험물2(randomValue);
+        setmaplo2(1);
+       if (randomValue === 1){
         setchareat2(prev => prev - 15);
-        setcharwtr2(prev => prev - 20);
-       }
-       else if (randomValue1 === 4){
-        setchareat2(prev => prev - 20);
-        setcharwtr2(prev => prev - 30);
-       }        
-       else if (randomValue1 === 5){
-        setchareat2(prev => prev - 25);
-        setcharwtr2(prev => prev - 40);
-       }   
-       else if (randomValue1 === 6){
-        setchareat2(prev => prev - 30);
-        setcharwtr2(prev => prev - 52);
+        setcharwtr2(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
-       else if (randomValue1 === 7){
-        setchareat2(prev => prev - 50);
-        setcharwtr2(prev => prev - 65);
+       else if (randomValue === 2){
+        setchareat2(prev => prev - 20);
+        setcharwtr2(prev => prev - 22);
+        setcharment1(prev => prev - 15);
+       } 
+       else if (randomValue === 3){
+        setchareat2(prev => prev - 23);
+        setcharwtr2(prev => prev - 24);
+        setcharment1(prev => prev - 20);
+       }
+       else if (randomValue === 4){
+        setchareat2(prev => prev - 26);
+        setcharwtr2(prev => prev - 27);
+        setcharment1(prev => prev - 25);
+       }        
+       else if (randomValue === 5){
+        setchareat2(prev => prev - 29);
+        setcharwtr2(prev => prev - 30);
+        setcharment1(prev => prev - 30);
+       }   
+       else if (randomValue === 6){
+        setchareat2(prev => prev - 32);
+        setcharwtr2(prev => prev - 34);
+        setcharment1(prev => prev - 35);
+       } 
+       else if (randomValue === 7){
+        setchareat2(prev => prev - 40);
+        setcharwtr2(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 3 && tam3 === false){
         settam3(true);
-        const randomValue2 = Math.floor(Math.random() * 4) + 2;
-        setDayD3(randomValue2);
+        const randomValue = Math.floor(Math.random() * 3) + 1;
+        setDayD3(randomValue);
         set외로움(prev => prev + 1);
-        set탐험배3(randomValue2);
-        set탐험물3(randomValue2);
-        setmaplo3(2);
-       if (randomValue2 === 1){
-        setchareat3(prev => prev - 5);
-        setcharwtr3(prev => prev - 5);
-       } 
-       else if (randomValue2 === 2){
-        setchareat3(prev => prev - 10);
-        setcharwtr3(prev => prev - 12);
-       } 
-       else if (randomValue2 === 3){
+        set탐험배3(randomValue);
+        set탐험물3(randomValue);
+        setmaplo3(1);
+       if (randomValue === 1){
         setchareat3(prev => prev - 15);
-        setcharwtr3(prev => prev - 20);
-       }
-       else if (randomValue2 === 4){
-        setchareat3(prev => prev - 20);
-        setcharwtr3(prev => prev - 30);
-       }        
-       else if (randomValue2 === 5){
-        setchareat3(prev => prev - 25);
-        setcharwtr3(prev => prev - 40);
-       }   
-       else if (randomValue2 === 6){
-        setchareat3(prev => prev - 30);
-        setcharwtr3(prev => prev - 52);
+        setcharwtr3(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
-       else if (randomValue2 === 7){
-        setchareat3(prev => prev - 50);
-        setcharwtr3(prev => prev - 65);
+       else if (randomValue === 2){
+        setchareat3(prev => prev - 20);
+        setcharwtr3(prev => prev - 22);
+        setcharment1(prev => prev - 15);
+       } 
+       else if (randomValue === 3){
+        setchareat3(prev => prev - 23);
+        setcharwtr3(prev => prev - 24);
+        setcharment1(prev => prev - 20);
+       }
+       else if (randomValue === 4){
+        setchareat3(prev => prev - 26);
+        setcharwtr3(prev => prev - 27);
+        setcharment1(prev => prev - 25);
+       }        
+       else if (randomValue === 5){
+        setchareat3(prev => prev - 29);
+        setcharwtr3(prev => prev - 30);
+        setcharment1(prev => prev - 30);
+       }   
+       else if (randomValue === 6){
+        setchareat3(prev => prev - 32);
+        setcharwtr3(prev => prev - 34);
+        setcharment1(prev => prev - 35);
+       } 
+       else if (randomValue === 7){
+        setchareat3(prev => prev - 40);
+        setcharwtr3(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 4 && tam4 === false){
         settam4(true);
-        const randomValue3 = Math.floor(Math.random() * 4) + 2;
-        setDayD4(randomValue3);
+        const randomValue = Math.floor(Math.random() * 3) + 1;
+        setDayD4(randomValue);
         set외로움(prev => prev + 1);
-        set탐험배4(randomValue3);
-        set탐험물4(randomValue3);
-        setmaplo4(2);
-       if (randomValue3 === 1){
-        setchareat4(prev => prev - 5);
-        setcharwtr4(prev => prev - 5);
-       } 
-       else if (randomValue3 === 2){
-        setchareat4(prev => prev - 10);
-        setcharwtr4(prev => prev - 12);
-       } 
-       else if (randomValue3 === 3){
+        set탐험배4(randomValue);
+        set탐험물4(randomValue);
+        setmaplo4(1);
+        if (randomValue === 1){
         setchareat4(prev => prev - 15);
-        setcharwtr4(prev => prev - 20);
-       }
-       else if (randomValue3 === 4){
-        setchareat4(prev => prev - 20);
-        setcharwtr4(prev => prev - 30);
-       }        
-       else if (randomValue3 === 5){
-        setchareat4(prev => prev - 25);
-        setcharwtr4(prev => prev - 40);
-       }   
-       else if (randomValue3 === 6){
-        setchareat4(prev => prev - 30);
-        setcharwtr4(prev => prev - 52);
+        setcharwtr4(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
-       else if (randomValue3 === 7){
-        setchareat4(prev => prev - 50);
-        setcharwtr4(prev => prev - 65);
+       else if (randomValue === 2){
+        setchareat4(prev => prev - 20);
+        setcharwtr4(prev => prev - 22);
+        setcharment1(prev => prev - 15);
+       } 
+       else if (randomValue === 3){
+        setchareat4(prev => prev - 23);
+        setcharwtr4(prev => prev - 24);
+        setcharment1(prev => prev - 20);
+       }
+       else if (randomValue === 4){
+        setchareat4(prev => prev - 26);
+        setcharwtr4(prev => prev - 27);
+        setcharment1(prev => prev - 25);
+       }        
+       else if (randomValue === 5){
+        setchareat4(prev => prev - 29);
+        setcharwtr4(prev => prev - 30);
+        setcharment1(prev => prev - 30);
+       }   
+       else if (randomValue === 6){
+        setchareat4(prev => prev - 32);
+        setcharwtr4(prev => prev - 34);
+        setcharment1(prev => prev - 35);
+       } 
+       else if (randomValue === 7){
+        setchareat4(prev => prev - 40);
+        setcharwtr4(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
     }
@@ -791,6 +868,7 @@ function App() {
         settam4(true);
         set외로움(prev => prev + 1);
       }
+
     }
 
     if(무기 == "도끼" || 무기1 == "도끼" || 무기2 == "도끼" || 무기3 == "도끼")
@@ -875,7 +953,7 @@ function App() {
         }
 
   }
-  const mapa3 = () => { //맵 3 4~7 병원
+  const mapa3 = () => { //맵 3 4~7 병원 여기카지
     if(charch === 1)
     {
       set무기장착여부(false);
@@ -894,152 +972,180 @@ function App() {
     }
     const rands = Math.floor(Math.random() * (100+무기장착));
     if (rands >= 15){
-      if (charch === 1 && tam1 === false){
+       if (charch === 1 && tam1 === false){
         settam1(true);
-        const randomValue = Math.floor(Math.random() * 4) + 4;
+        const randomValue = Math.floor(Math.random() * 3) + 1;
         setDayD1(randomValue);
         set외로움(prev => prev + 1);
         set탐험배1(randomValue);
         set탐험물1(randomValue);
-        setmaplo1(3);
+        setmaplo1(1);
        if (randomValue === 1){
-        setchareat1(prev => prev - 5);
-        setcharwtr1(prev => prev - 5);
+        setchareat1(prev => prev - 15);
+        setcharwtr1(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat1(prev => prev - 10);
-        setcharwtr1(prev => prev - 12);
+        setchareat1(prev => prev - 20);
+        setcharwtr1(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat1(prev => prev - 15);
-        setcharwtr1(prev => prev - 20);
+        setchareat1(prev => prev - 23);
+        setcharwtr1(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat1(prev => prev - 20);
-        setcharwtr1(prev => prev - 30);
+        setchareat1(prev => prev - 26);
+        setcharwtr1(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat1(prev => prev - 25);
-        setcharwtr1(prev => prev - 40);
+        setchareat1(prev => prev - 29);
+        setcharwtr1(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat1(prev => prev - 30);
-        setcharwtr1(prev => prev - 52);
+        setchareat1(prev => prev - 32);
+        setcharwtr1(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat1(prev => prev - 50);
-        setcharwtr1(prev => prev - 65);
+        setchareat1(prev => prev - 40);
+        setcharwtr1(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 2 && tam2 === false){
         settam2(true);
-        const randomValue = Math.floor(Math.random() * 4) + 4;
+        const randomValue = Math.floor(Math.random() * 3) + 1;
         setDayD2(randomValue);
         set외로움(prev => prev + 1);
         set탐험배2(randomValue);
         set탐험물2(randomValue);
-        setmaplo2(3);
+        setmaplo2(1);
        if (randomValue === 1){
-        setchareat2(prev => prev - 5);
-        setcharwtr2(prev => prev - 5);
+        setchareat2(prev => prev - 15);
+        setcharwtr2(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat2(prev => prev - 10);
-        setcharwtr2(prev => prev - 12);
+        setchareat2(prev => prev - 20);
+        setcharwtr2(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat2(prev => prev - 15);
-        setcharwtr2(prev => prev - 20);
+        setchareat2(prev => prev - 23);
+        setcharwtr2(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat2(prev => prev - 20);
-        setcharwtr2(prev => prev - 30);
+        setchareat2(prev => prev - 26);
+        setcharwtr2(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat2(prev => prev - 25);
-        setcharwtr2(prev => prev - 40);
+        setchareat2(prev => prev - 29);
+        setcharwtr2(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat2(prev => prev - 30);
-        setcharwtr2(prev => prev - 52);
+        setchareat2(prev => prev - 32);
+        setcharwtr2(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat2(prev => prev - 50);
-        setcharwtr2(prev => prev - 65);
+        setchareat2(prev => prev - 40);
+        setcharwtr2(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 3 && tam3 === false){
         settam3(true);
-        const randomValue = Math.floor(Math.random() * 4) + 4;
+        const randomValue = Math.floor(Math.random() * 3) + 1;
         setDayD3(randomValue);
         set외로움(prev => prev + 1);
         set탐험배3(randomValue);
         set탐험물3(randomValue);
-        setmaplo3(3);
+        setmaplo3(1);
        if (randomValue === 1){
-        setchareat3(prev => prev - 5);
-        setcharwtr3(prev => prev - 5);
+        setchareat3(prev => prev - 15);
+        setcharwtr3(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat3(prev => prev - 10);
-        setcharwtr3(prev => prev - 12);
+        setchareat3(prev => prev - 20);
+        setcharwtr3(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat3(prev => prev - 15);
-        setcharwtr3(prev => prev - 20);
+        setchareat3(prev => prev - 23);
+        setcharwtr3(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat3(prev => prev - 20);
-        setcharwtr3(prev => prev - 30);
+        setchareat3(prev => prev - 26);
+        setcharwtr3(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat3(prev => prev - 25);
-        setcharwtr3(prev => prev - 40);
+        setchareat3(prev => prev - 29);
+        setcharwtr3(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat3(prev => prev - 30);
-        setcharwtr3(prev => prev - 52);
+        setchareat3(prev => prev - 32);
+        setcharwtr3(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat3(prev => prev - 50);
-        setcharwtr3(prev => prev - 65);
+        setchareat3(prev => prev - 40);
+        setcharwtr3(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 4 && tam4 === false){
         settam4(true);
-        const randomValue = Math.floor(Math.random() * 4) + 4;
+        const randomValue = Math.floor(Math.random() * 3) + 1;
         setDayD4(randomValue);
         set외로움(prev => prev + 1);
         set탐험배4(randomValue);
         set탐험물4(randomValue);
-        setmaplo4(3);
-       if (randomValue === 1){
-        setchareat4(prev => prev - 5);
-        setcharwtr4(prev => prev - 5);
+        setmaplo4(1);
+        if (randomValue === 1){
+        setchareat4(prev => prev - 15);
+        setcharwtr4(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat4(prev => prev - 10);
-        setcharwtr4(prev => prev - 12);
+        setchareat4(prev => prev - 20);
+        setcharwtr4(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat4(prev => prev - 15);
-        setcharwtr4(prev => prev - 20);
+        setchareat4(prev => prev - 23);
+        setcharwtr4(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat4(prev => prev - 20);
-        setcharwtr4(prev => prev - 30);
+        setchareat4(prev => prev - 26);
+        setcharwtr4(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat4(prev => prev - 25);
-        setcharwtr4(prev => prev - 40);
+        setchareat4(prev => prev - 29);
+        setcharwtr4(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat4(prev => prev - 30);
-        setcharwtr4(prev => prev - 52);
+        setchareat4(prev => prev - 32);
+        setcharwtr4(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat4(prev => prev - 50);
-        setcharwtr4(prev => prev - 65);
+        setchareat4(prev => prev - 40);
+        setcharwtr4(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
     }
@@ -1047,20 +1153,20 @@ function App() {
       if(charch === 1)
       {
         setDie1(true);
-        set외로움(prev => prev + 1);
         settam1(true);
+        set외로움(prev => prev + 1);
       }
       else if(charch === 2)
       {
         setDie2(true);
-        set외로움(prev => prev + 1);
         settam2(true);
+        set외로움(prev => prev + 1);
       }
       else if(charch === 3)
       {
         setDie3(true);
-        set외로움(prev => prev + 1);
         settam3(true);
+        set외로움(prev => prev + 1);
       }
       else if(charch === 4)
       {
@@ -1068,6 +1174,7 @@ function App() {
         settam4(true);
         set외로움(prev => prev + 1);
       }
+
     }
     if(무기 == "도끼" || 무기1 == "도끼" || 무기2 == "도끼" || 무기3 == "도끼")
       {
@@ -1169,153 +1276,181 @@ function App() {
       set무기장착여부3(false)
     }
     const rands = Math.floor(Math.random() * (100+무기장착));
-    if (rands >= 30){
-      if (charch === 1 && tam1 === false){
+    if (rands >= 20){
+        if (charch === 1 && tam1 === false){
         settam1(true);
-        const randomValue = Math.floor(Math.random() * 4) + 1;
+        const randomValue = Math.floor(Math.random() * 3) + 1;
         setDayD1(randomValue);
         set외로움(prev => prev + 1);
         set탐험배1(randomValue);
         set탐험물1(randomValue);
-        setmaplo1(4);
-        if (randomValue === 1){
-        setchareat1(prev => prev - 5);
-        setcharwtr1(prev => prev - 5);
+        setmaplo1(1);
+       if (randomValue === 1){
+        setchareat1(prev => prev - 15);
+        setcharwtr1(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat1(prev => prev - 10);
-        setcharwtr1(prev => prev - 12);
+        setchareat1(prev => prev - 20);
+        setcharwtr1(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat1(prev => prev - 15);
-        setcharwtr1(prev => prev - 20);
+        setchareat1(prev => prev - 23);
+        setcharwtr1(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat1(prev => prev - 20);
-        setcharwtr1(prev => prev - 30);
+        setchareat1(prev => prev - 26);
+        setcharwtr1(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat1(prev => prev - 25);
-        setcharwtr1(prev => prev - 40);
+        setchareat1(prev => prev - 29);
+        setcharwtr1(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat1(prev => prev - 30);
-        setcharwtr1(prev => prev - 52);
+        setchareat1(prev => prev - 32);
+        setcharwtr1(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat1(prev => prev - 50);
-        setcharwtr1(prev => prev - 65);
-      } 
+        setchareat1(prev => prev - 40);
+        setcharwtr1(prev => prev - 45);
+        setcharment1(prev => prev - 40);
+      }
       }
       else if(charch === 2 && tam2 === false){
         settam2(true);
-        const randomValue = Math.floor(Math.random() * 4) + 1;
+        const randomValue = Math.floor(Math.random() * 3) + 1;
         setDayD2(randomValue);
         set외로움(prev => prev + 1);
         set탐험배2(randomValue);
         set탐험물2(randomValue);
-        setmaplo2(4);
+        setmaplo2(1);
        if (randomValue === 1){
-        setchareat2(prev => prev - 5);
-        setcharwtr2(prev => prev - 5);
+        setchareat2(prev => prev - 15);
+        setcharwtr2(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat2(prev => prev - 10);
-        setcharwtr2(prev => prev - 12);
+        setchareat2(prev => prev - 20);
+        setcharwtr2(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat2(prev => prev - 15);
-        setcharwtr2(prev => prev - 20);
+        setchareat2(prev => prev - 23);
+        setcharwtr2(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat2(prev => prev - 20);
-        setcharwtr2(prev => prev - 30);
+        setchareat2(prev => prev - 26);
+        setcharwtr2(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat2(prev => prev - 25);
-        setcharwtr2(prev => prev - 40);
+        setchareat2(prev => prev - 29);
+        setcharwtr2(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat2(prev => prev - 30);
-        setcharwtr2(prev => prev - 52);
+        setchareat2(prev => prev - 32);
+        setcharwtr2(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat2(prev => prev - 50);
-        setcharwtr2(prev => prev - 65);
+        setchareat2(prev => prev - 40);
+        setcharwtr2(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 3 && tam3 === false){
         settam3(true);
-        const randomValue = Math.floor(Math.random() * 4) + 1;
+        const randomValue = Math.floor(Math.random() * 3) + 1;
         setDayD3(randomValue);
         set외로움(prev => prev + 1);
         set탐험배3(randomValue);
         set탐험물3(randomValue);
-        setmaplo3(4);
+        setmaplo3(1);
        if (randomValue === 1){
-        setchareat3(prev => prev - 5);
-        setcharwtr3(prev => prev - 5);
+        setchareat3(prev => prev - 15);
+        setcharwtr3(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat3(prev => prev - 10);
-        setcharwtr3(prev => prev - 12);
+        setchareat3(prev => prev - 20);
+        setcharwtr3(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat3(prev => prev - 15);
-        setcharwtr3(prev => prev - 20);
+        setchareat3(prev => prev - 23);
+        setcharwtr3(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat3(prev => prev - 20);
-        setcharwtr3(prev => prev - 30);
+        setchareat3(prev => prev - 26);
+        setcharwtr3(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat3(prev => prev - 25);
-        setcharwtr3(prev => prev - 40);
+        setchareat3(prev => prev - 29);
+        setcharwtr3(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat3(prev => prev - 30);
-        setcharwtr3(prev => prev - 52);
+        setchareat3(prev => prev - 32);
+        setcharwtr3(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat3(prev => prev - 50);
-        setcharwtr3(prev => prev - 65);
+        setchareat3(prev => prev - 40);
+        setcharwtr3(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
       else if(charch === 4 && tam4 === false){
         settam4(true);
-        const randomValue = Math.floor(Math.random() * 4) + 1;
+        const randomValue = Math.floor(Math.random() * 3) + 1;
         setDayD4(randomValue);
         set외로움(prev => prev + 1);
         set탐험배4(randomValue);
         set탐험물4(randomValue);
-        setmaplo4(4);
-       if (randomValue === 1){
-        setchareat4(prev => prev - 5);
-        setcharwtr4(prev => prev - 5);
+        setmaplo4(1);
+        if (randomValue === 1){
+        setchareat4(prev => prev - 15);
+        setcharwtr4(prev => prev - 15);
+        setcharment1(prev => prev - 10);
        } 
        else if (randomValue === 2){
-        setchareat4(prev => prev - 10);
-        setcharwtr4(prev => prev - 12);
+        setchareat4(prev => prev - 20);
+        setcharwtr4(prev => prev - 22);
+        setcharment1(prev => prev - 15);
        } 
        else if (randomValue === 3){
-        setchareat4(prev => prev - 15);
-        setcharwtr4(prev => prev - 20);
+        setchareat4(prev => prev - 23);
+        setcharwtr4(prev => prev - 24);
+        setcharment1(prev => prev - 20);
        }
        else if (randomValue === 4){
-        setchareat4(prev => prev - 20);
-        setcharwtr4(prev => prev - 30);
+        setchareat4(prev => prev - 26);
+        setcharwtr4(prev => prev - 27);
+        setcharment1(prev => prev - 25);
        }        
        else if (randomValue === 5){
-        setchareat4(prev => prev - 25);
-        setcharwtr4(prev => prev - 40);
+        setchareat4(prev => prev - 29);
+        setcharwtr4(prev => prev - 30);
+        setcharment1(prev => prev - 30);
        }   
        else if (randomValue === 6){
-        setchareat4(prev => prev - 30);
-        setcharwtr4(prev => prev - 52);
+        setchareat4(prev => prev - 32);
+        setcharwtr4(prev => prev - 34);
+        setcharment1(prev => prev - 35);
        } 
        else if (randomValue === 7){
-        setchareat4(prev => prev - 50);
-        setcharwtr4(prev => prev - 65);
+        setchareat4(prev => prev - 40);
+        setcharwtr4(prev => prev - 45);
+        setcharment1(prev => prev - 40);
       }
       }
     }
@@ -1323,30 +1458,28 @@ function App() {
       if(charch === 1)
       {
         setDie1(true);
-        set외로움(prev => prev + 1);
         settam1(true);
-
+        set외로움(prev => prev + 1);
       }
       else if(charch === 2)
       {
         setDie2(true);
+        settam2(true);
         set외로움(prev => prev + 1);
-        settam2(true);;
       }
       else if(charch === 3)
       {
         setDie3(true);
-        set외로움(prev => prev + 1);
         settam3(true);
-
+        set외로움(prev => prev + 1);
       }
       else if(charch === 4)
       {
         setDie4(true);
-        set외로움(prev => prev + 1);
         settam4(true);
-
+        set외로움(prev => prev + 1);
       }
+
     }
     if(무기 == "도끼" || 무기1 == "도끼" || 무기2 == "도끼" || 무기3 == "도끼")
       {
@@ -1448,7 +1581,7 @@ function App() {
       set무기장착여부3(false)
     }
     const rands = Math.floor(Math.random() * (100+무기장착));
-    if (rands >= 50){
+    if (rands >= 25){
       if (charch === 1 && tam1 === false){
         settam1(true);
         const randomValue = Math.floor(Math.random() * 3) + 3;
@@ -1705,11 +1838,10 @@ function App() {
           }
         }
   }
-
-  if (수치 >= 30 && 열림 === true && 사람1 === true) {
-      seteat1(prev => prev + 3);
+ if (수치 >= 30 && 열림 === true && 사람1 === true && masg1 == 1) {
+      seteat1(prev => prev + 문통조림랜덤);
       setetc1(prev => prev + 1);
-      seteat2(prev => prev + 7);
+      seteat2(prev => prev + 문물랜덤);
       seteat1(prev => prev - (통조림));
       seteat2(prev => prev - (물));
       seteat3(prev => prev - (라면));
@@ -1720,11 +1852,98 @@ function App() {
       set사탕(0);
       set수치(0);
       set열림(false);
+      set거래완료(true);          //아 진짜 왜 이따위로 만들어놨지??????????????????? 이해할수가없네 바로 업로드좀 시켜주지 진심 갑자기 난이도가 헬로 만들어버리는 클라스;;
     }
-  if (수치 >= 25 && 열림 === true && 사람2 === true) {
-      seteat3(prev => prev + 3);
+  else if(수치 < 30 && 열림 === true && 사람1 === true && masg1 == 1)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+ if (수치 >= 15 && 열림 === true && 사람1 === true && masg1 == 2) {
+      seteat1(prev => prev + 문통조림랜덤);
+      setetc3(prev => prev + 1);
+      seteat2(prev => prev + 문물랜덤);
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+      set거래완료(true);
+    }
+  else if(수치 < 15 && 열림 === true && 사람1 === true && masg2 == 2)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+ if (수치 >= 15 && 열림 === true && 사람1 === true && masg1 == 3) {
+      seteat1(prev => prev + 문통조림랜덤);
       setetc4(prev => prev + 1);
-      seteat4(prev => prev + 8);
+      seteat2(prev => prev + 문물랜덤);
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+      set거래완료(true);
+    }
+  else if(수치 < 15 && 열림 === true && 사람1 === true && masg1 == 3)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+ if (수치 >= 10 && 열림 === true && 사람1 === true && masg1 == 4) {
+      seteat1(prev => prev + 문통조림랜덤);
+      seteat2(prev => prev + 문물랜덤);
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+      set거래완료(true);
+    }
+  else if(수치 < 10 && 열림 === true && 사람1 === true && masg1 == 4)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+
+
+  if (수치 >= 10 && 열림 === true && 사람2 === true && masg2 == 1) {
+      const q = Math.floor(Math.random() * 4) + 1;
+      if(q <= 3)
+      {
+      seteat3(prev => prev + 문라면랜덤);
+      seteat4(prev => prev + 문사탕랜덤);
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+      set거래완료(true);
+      }
+      else{
+        set도둑감지(true);
+      }
       seteat1(prev => prev - (통조림));
       seteat2(prev => prev - (물));
       seteat3(prev => prev - (라면));
@@ -1736,32 +1955,141 @@ function App() {
       set수치(0);
       set열림(false);
     }
+  else if(수치 < 10 && 열림 === true && 사람2 === true && masg2 == 1)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+  if (수치 >= 15 && 열림 === true && 사람2 === true && masg2 == 2) {
+      const q = Math.floor(Math.random() * 4) + 1;
+      if(q <= 3)
+      {
+      seteat3(prev => prev + 문라면랜덤 + 2);
+      seteat4(prev => prev + 문사탕랜덤 + 3);
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+      set거래완료(true);
+      }
+      else{
+        set도둑감지(true);
+      }
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+    }
+else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+  if (수치 >= 20 && 열림 === true && 사람2 === true && masg2 == 3) {
+      const q = Math.floor(Math.random() * 4) + 1;
+      if(q <= 3)
+      {
+      seteat3(prev => prev + 문통조림랜덤);
+      seteat4(prev => prev + 문사탕랜덤);
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+      set거래완료(true);
+      }
+      else{
+        set도둑감지(true);
+      }
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+    }
+  else if(수치 < 20 && 열림 === true && 사람2 === true && masg2 == 3)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+  if (수치 >= 5 && 열림 === true && 사람2 === true && masg2 == 4) {
+      const q = Math.floor(Math.random() * 4) + 1;
+      if(q <= 3)
+      {
+      seteat3(prev => prev + 1);
+      seteat4(prev => prev + 1);
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+      set거래완료(true);
+      }
+      else{
+        set도둑감지(true);
+      }
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+    }
+  else if(수치 < 5 && 열림 === true && 사람2 === true && masg2 == 4)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+
+
+
   if (열림 === true && 사람3 === true) {
-      seteat1(prev => prev + 2);
-      seteat3(prev => prev + 6);
-      seteat2(prev => prev + 4);
-      seteat4(prev => prev + 8);
+      seteat1(prev => prev + 문통조림랜덤);
+      seteat3(prev => prev + 문라면랜덤);
+      seteat2(prev => prev + 문물랜덤);
+      seteat4(prev => prev + 문사탕랜덤);
       set통조림(0);
       set물(0);
       set라면(0);
       set사탕(0);
       set열림(false);
+      set거래완료(true);
     }
-    if (수치 >= 30 && 열림 === true && 사람4 === true) {
-      if(eat1 >= 1){
-        seteat1(prev => prev - 4);
+
+
+
+
+    if (수치 >= 30 && 열림 === true && 사람4 === true && masg4 == 1) {
+      const ra = Math.floor(Math.random() * 4) + 1;
+      if(ra <= 2)
+      {
+        setweap1(1);
+        set거래완료(true);
       }
-      if(eat2 >= 1){
-        seteat2(prev => prev - 1);
-      }
-      if(eat3 >= 1){
-        seteat3(prev => prev - 2);
-      }
-      if(eat4 >= 1){
-        seteat4(prev => prev - 1);
-      }
-      if(setweap1 === 0){
-        setweap1(prev => prev + 1);
+      else{
+        set도둑감지(true);
       }
       seteat1(prev => prev - (통조림));
       seteat2(prev => prev - (물));
@@ -1774,7 +2102,143 @@ function App() {
       set수치(0);
       set열림(false);
     }
+  else if(수치 < 30 && 열림 === true && 사람4 === true && masg4 == 1)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+    if (수치 >= 20 && 열림 === true && 사람4 === true && masg4 == 2) {
+      const ra = Math.floor(Math.random() * 4) + 1;
+      if(ra <= 2)
+      {
+        setweap2(1);
+        set거래완료(true);
+      }
+      else{
+        set도둑감지(true);
+      }
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+    }
+  else if(수치 < 20 && 열림 === true && 사람4 === true && masg4 == 2)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+    if (수치 >= 25 && 열림 === true && 사람4 === true && masg4 == 3) {
+      const ra = Math.floor(Math.random() * 4) + 1;
+      if(ra <= 2)
+      {
+        setweap3(1);
+        set거래완료(true);
+      }
+      else{
+        set도둑감지(true);
+      }
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+    }
+  else if(수치 < 25 && 열림 === true && 사람4 === true && masg4 == 3)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+    if (수치 >= 17 && 열림 === true && 사람4 === true && masg4 == 4) {
+      const ra = Math.floor(Math.random() * 4) + 1;
+      if(ra <= 2)
+      {
+        setweap4(1);
+        set거래완료(true);
+      }
+      else{
+        set도둑감지(true);
+      }
+      seteat1(prev => prev - (통조림));
+      seteat2(prev => prev - (물));
+      seteat3(prev => prev - (라면));
+      seteat4(prev => prev - (사탕));
+      set통조림(0);
+      set물(0);
+      set라면(0);
+      set사탕(0);
+      set수치(0);
+      set열림(false);
+    }
+  else if(수치 < 17 && 열림 === true && 사람4 === true && masg4 == 4)
+  {
+    set거래실패(true);
+    set열림(false);
+  }
+
+  if(weap1 >= 2)
+  {
+    setweap1(1);
+  }
+  if(weap2 >= 2)
+  {
+    setweap2(1);
+  }
+  if(weap3 >= 2)
+  {
+    setweap3(1);
+  }
+  if(weap4 >= 2)
+  {
+    setweap4(1);
+  }
+
+  if(etc2 > 1)
+  {
+    setetc2(1);
+  }
+
+
   const DayUp = () => { //하루 지남
+
+    if (감기여부1 || 독감여부1 || 식중독여부1 || 출혈여부1 || 골절여부1) {
+        set외출제한1(true);
+    }
+    if (감기여부2 || 독감여부2 || 식중독여부2 || 출혈여부2 || 골절여부2) {
+        set외출제한2(true);
+
+    }
+    if (감기여부3 || 독감여부3 || 식중독여부3 || 출혈여부3 || 골절여부3) {
+        set외출제한3(true);
+    }
+    if (감기여부4 || 독감여부4 || 식중독여부4 || 출혈여부4 || 골절여부4) {
+        set외출제한4(true);
+    }
+    if(etc2 >= 1)
+    {
+      if(라디오확률 <= 0)
+      {
+        set라디오확률(Math.floor(Math.random() * 5) + 5);
+        set라디오대사(prev => prev + 1);
+
+      }
+      set라디오확률(prev => prev -1);
+      set라디오하루대사(5);
+    }
+
     seteat1표시(0);
     seteat2표시(0);
     seteat3표시(0);
@@ -2005,7 +2469,7 @@ function App() {
     {      
       setchareat1(prev => prev - 7);
     }
-    else{
+    else if(tam1 == false && chareat1-7 <= 0){
       setchareat1(0);
     }
 
@@ -2013,7 +2477,7 @@ function App() {
     {
       setcharwtr1(prev => prev - 10);
     }
-    else{
+    else if(tam1 == false && charwtr1-10 <= 0){
       setcharwtr1(0);
     }
     if(tam1 == false)
@@ -2043,33 +2507,33 @@ function App() {
     {     
       setchareat2(prev => prev - 6);
     }
-    else{
+    else if(tam2 == false && chareat2-6 <= 0){
       setchareat2(0);
     }
     if(charwtr2 > 0 && tam2 == false)
     {
       setcharwtr2(prev => prev - 12);
     }
-    else{
+    else if(tam2 == false && charwtr2-12 <= 0){
       setcharwtr2(0);
     }
     if(tam2 == false)
     {
       if(외로움 === 1)
       {
-        setcharment2(prev => prev - 10);
+        setcharment2(prev => prev - 5);
       }
       else if(외로움 === 2)
       {
-        setcharment2(prev => prev - 12);
+        setcharment2(prev => prev - 8);
       }
       else if(외로움 === 3)
       {
-        setcharment2(prev => prev - 15);
+        setcharment2(prev => prev - 12);
       }
       else if(외로움 === 4)
       {
-        setcharment2(prev => prev - 20);
+        setcharment2(prev => prev - 15);
       }
     }
 
@@ -2079,29 +2543,29 @@ function App() {
     {
       setchareat3(prev => prev - 10);
     }
-    else{
+    else if(tam3 == false && chareat3-10 <= 0){
       setchareat3(0);
     }
     if(charwtr3 > 0 && tam3 == false)
     {
       setcharwtr3(prev => prev - 9);
     }
-    else{
+    else if(tam3 == false && charwtr3-9 <= 0){
       setcharwtr3(0);
     }
     if(tam3 == false)
     {
       if(외로움 === 1)
       {
-        setcharment3(prev => prev - 10);
+        setcharment3(prev => prev - 4);
       }
       else if(외로움 === 2)
       {
-        setcharment3(prev => prev - 12);
+        setcharment3(prev => prev - 6);
       }
       else if(외로움 === 3)
       {
-        setcharment3(prev => prev - 15);
+        setcharment3(prev => prev - 8);
       }
       else if(외로움 === 4)
       {
@@ -2115,36 +2579,71 @@ function App() {
     {   
       setchareat4(prev => prev - 5);
     }
-    else{
+    else if(tam4 == false && chareat4-5 <= 0){
       setchareat4(0);
     }
     if(charwtr4 > 0 && tam4 == false)
     {
       setcharwtr4(prev => prev - 11);
     }
-    else{
+    else if(tam4 == false && charwtr4-11 <= 0){
       setcharwtr4(0);
     }
     if(tam4 == false)
     {
       if(외로움 === 1)
       {
-        setcharment4(prev => prev - 10);
+        setcharment4(prev => prev - 7);
       }
       else if(외로움 === 2)
       {
-        setcharment4(prev => prev - 12);
+        setcharment4(prev => prev - 8);
       }
       else if(외로움 === 3)
       {
-        setcharment4(prev => prev - 15);
+        setcharment4(prev => prev - 9);
       }
       else if(외로움 === 4)
       {
-        setcharment4(prev => prev - 20);
+        setcharment4(prev => prev - 10);
       }
     }
 
+    if((chareat1-7) <= 0)
+    {
+      setDie1(true);
+    }
+    if((charwtr1-10) <= 0)
+    {
+      setDie1(true);
+    }
+
+    if((chareat2-6) <= 0)
+    {
+      setDie2(true);
+    }
+    if((charwtr2-12) <= 0)
+    {
+      setDie2(true);
+    }
+
+    if((chareat3-10) <= 0)
+    {
+      setDie3(true);
+    }
+    if((charwtr3-9) <= 0)
+    {
+      setDie3(true);
+    }
+
+    if((chareat4-5) <= 0)
+    {
+      setDie4(true);
+    }
+    if((charwtr4-11) <= 0)
+    {
+      setDie4(true);
+    }
 
   setDay(prev => prev +1);
   setpage(11); 
@@ -2204,9 +2703,13 @@ function App() {
       }
       const rand1 = Math.floor(Math.random() * 100) + 1;
       if (rand1 <= 20){
-        const rand1 = 1;
-        setweap4(prev => prev + rand1);
-        setweap4표시(prev => prev + rand1);
+        if(weap4 < 1)
+        {
+          const rand1 = 1;
+          setweap4(prev => prev + rand1);
+          setweap4표시(prev => prev + rand1);
+        }
+
       }
       const rand2 = Math.floor(Math.random() * 100) + 1;
       if (rand2 <= 50){
@@ -2216,7 +2719,7 @@ function App() {
       }
       const rand3 = Math.floor(Math.random() * 100) + 1;
       if (rand3 <= 30){
-        const rand1 = Math.floor(Math.random() * 3) + 1;
+        const rand1 = Math.floor(Math.random() * 5) + 1;
         seteat4(prev => prev + rand1);
         seteat4표시(prev => prev + rand1);
       }
@@ -2225,9 +2728,12 @@ function App() {
     {
       const rand = Math.floor(Math.random() * 100) + 1;
      if (rand <= 12){
-      const rand1 = 1;
-      setetc2(prev => prev + rand1);
-      setetc2표시(prev => prev + rand1);
+      if(etc2 < 1)
+      {
+        const rand1 = 1;
+        setetc2(prev => prev + rand1);
+        setetc2표시(prev => prev + rand1);
+      }
     }
     const rand1 = Math.floor(Math.random() * 100) + 1;
     if (rand1 <= 60){
@@ -2250,14 +2756,17 @@ function App() {
     const rand4 = Math.floor(Math.random() * 100) + 1;
     if (rand4 <= 100){
       const rand1 = Math.floor(Math.random() * 3) + 1;
-      setetc3(prev => prev + rand1);
-      setetc3표시(prev => prev + rand1);
+      seteat1(prev => prev + rand1);
+      seteat1표시(prev => prev + rand1);
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
     if (rand5 < 15){
-      const rand1 = 1;
-      setweap2(prev => prev + rand1);
-      setweap2표시(prev => prev + rand1);
+      if(weap2 < 1)
+      {
+        const rand1 = 1;
+        setweap2(prev => prev + rand1);
+        setweap2표시(prev => prev + rand1);
+      }
     }
     }
     if (maplo1 === 3)
@@ -2299,7 +2808,7 @@ function App() {
      if (rand < 40){
       const rand1 = Math.floor(Math.random() * 3) + 1;
       seteat3(prev => prev + rand1);
-      setetc1표시(prev => prev + rand1);
+      seteat3표시(prev => prev + rand1);
     }
     const rand1 = Math.floor(Math.random() * 100) + 1;
     if (rand1 < 35){
@@ -2326,7 +2835,7 @@ function App() {
       setmed1표시(prev => prev + rand1);
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
-    if (rand5 < 20){
+    if (rand5 < 15){
       setetc1(prev => prev + 1);
       setetc1표시(prev => prev + 1);
     }
@@ -2338,14 +2847,18 @@ function App() {
     }
     const rand7 = Math.floor(Math.random() * 100) + 1;
     if (rand7 < 10){
-      setweap3(prev => prev + 1);
-      setweap3표시(prev => prev + 1);
+      if(weap3 < 1)
+      {
+        setweap3(prev => prev + 1);
+        setweap3표시(prev => prev + 1);
+      }
+
     }
     const rand8 = Math.floor(Math.random() * 100) + 1;
     if (rand8 < 45){
       const rand1 = Math.floor(Math.random() * 3) + 1;
-      setweap3(prev => prev + 1);
-      setweap3표시(prev => prev + 1);
+      setetc4(prev => prev + rand1);
+      setetc4표시(prev => prev + rand1);
     }
     }
     if (maplo1 === 5){
@@ -2375,55 +2888,25 @@ function App() {
     }
     const rand4 = Math.floor(Math.random() * 100) + 1;
     if (rand4 < 25){
-      setweap1(prev => prev + 1);
-      setweap1표시(prev => prev + 1);
+      if(weap1 < 1)
+      {
+        setweap1(prev => prev + 1);
+        setweap1표시(prev => prev + 1);
+      }
+
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
     if (rand5 < 25){
-      setetc2(prev => prev + 1);
-      setetc2표시(prev => prev + 1);
+      if(etc2 < 1)
+      {
+        setetc2(prev => prev + 1);
+        setetc2표시(prev => prev + 1);
+      }
+
     }
 
     }
-      const randman = Math.floor(Math.random() * 10) + 1;
-    if(randman <= 1)
-      {
-        set문사람감지(true);
-        const rand사람 = Math.floor(Math.random() * 4) + 1;
-      if(rand사람 === 1)
-      {
-        set사람1(true);
-        set사람2(false);
-        set사람3(false);
-        set사람4(false);
-        const randt = Math.floor(Math.random() * 4) + 1;
-        setmasg1(randt);
-      }
-      else if(rand사람 === 2)
-      {
-        set사람2(true);
-        set사람1(false);
-        set사람3(false);
-        set사람4(false);
-     }
-      else if(rand사람 === 3)
-     {
-       set사람3(true);
-        set사람1(false);
-        set사람2(false);
-        set사람4(false);
-      }
-      else if(rand사람 === 4)
-      {
-       set사람4(true);
-        set사람1(false);
-        set사람2(false);
-        set사람3(false);
-     }
-      }
-    else{
-        set문사람감지(false);
-    }
+
 
 
     
@@ -2443,9 +2926,13 @@ function App() {
       }
       const rand1 = Math.floor(Math.random() * 100) + 1;
       if (rand1 <= 20){
-        const rand1 = 1;
-        setweap4(prev => prev + rand1);
-        setweap4표시(prev => prev + rand1);
+        if(weap4 < 1)
+        {
+          const rand1 = 1;
+          setweap4(prev => prev + rand1);
+          setweap4표시(prev => prev + rand1);
+        }
+
       }
       const rand2 = Math.floor(Math.random() * 100) + 1;
       if (rand2 <= 50){
@@ -2455,7 +2942,7 @@ function App() {
       }
       const rand3 = Math.floor(Math.random() * 100) + 1;
       if (rand3 <= 30){
-        const rand1 = Math.floor(Math.random() * 3) + 1;
+        const rand1 = Math.floor(Math.random() * 5) + 1;
         seteat4(prev => prev + rand1);
         seteat4표시(prev => prev + rand1);
       }
@@ -2464,9 +2951,13 @@ function App() {
     {
       const rand = Math.floor(Math.random() * 100) + 1;
      if (rand <= 12){
-      const rand1 = 1;
-      setetc2(prev => prev + rand1);
-      setetc2표시(prev => prev + rand1);
+      if(etc2 < 1)
+      {
+        const rand1 = 1;
+        setetc2(prev => prev + rand1);
+        setetc2표시(prev => prev + rand1);
+      }
+
     }
     const rand1 = Math.floor(Math.random() * 100) + 1;
     if (rand1 <= 60){
@@ -2489,14 +2980,18 @@ function App() {
     const rand4 = Math.floor(Math.random() * 100) + 1;
     if (rand4 <= 100){
       const rand1 = Math.floor(Math.random() * 3) + 1;
-      setetc3(prev => prev + rand1);
-      setetc3표시(prev => prev + rand1);
+      seteat1(prev => prev + rand1);
+      seteat1표시(prev => prev + rand1);
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
     if (rand5 < 15){
-      const rand1 = 1;
-      setweap2(prev => prev + rand1);
-      setweap2표시(prev => prev + rand1);
+      if(weap2 < 1)
+      {
+        const rand1 = 1;
+        setweap2(prev => prev + rand1);
+        setweap2표시(prev => prev + rand1);
+      }
+
     }
     }
     if (maplo2 === 3)
@@ -2538,7 +3033,7 @@ function App() {
      if (rand < 40){
       const rand1 = Math.floor(Math.random() * 3) + 1;
       seteat3(prev => prev + rand1);
-      setetc1표시(prev => prev + rand1);
+      seteat3표시(prev => prev + rand1);
     }
     const rand1 = Math.floor(Math.random() * 100) + 1;
     if (rand1 < 35){
@@ -2565,7 +3060,7 @@ function App() {
       setmed1표시(prev => prev + rand1);
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
-    if (rand5 < 20){
+    if (rand5 < 15){
       setetc1(prev => prev + 1);
       setetc1표시(prev => prev + 1);
     }
@@ -2577,14 +3072,18 @@ function App() {
     }
     const rand7 = Math.floor(Math.random() * 100) + 1;
     if (rand7 < 10){
-      setweap3(prev => prev + 1);
-      setweap3표시(prev => prev + 1);
+      if(weap3 < 1)
+      {
+        setweap3(prev => prev + 1);
+        setweap3표시(prev => prev + 1);
+      }
+
     }
     const rand8 = Math.floor(Math.random() * 100) + 1;
     if (rand8 < 45){
       const rand1 = Math.floor(Math.random() * 3) + 1;
-      setweap3(prev => prev + 1);
-      setweap3표시(prev => prev + 1);
+      setetc4(prev => prev + rand1);
+      setetc4표시(prev => prev + rand1);
     }
     }
     if (maplo2 === 5){
@@ -2614,13 +3113,21 @@ function App() {
     }
     const rand4 = Math.floor(Math.random() * 100) + 1;
     if (rand4 < 25){
-      setweap1(prev => prev + 1);
-      setweap1표시(prev => prev + 1);
+      if(weap1 < 1)
+      {
+        setweap1(prev => prev + 1);
+        setweap1표시(prev => prev + 1);
+      }
+
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
     if (rand5 < 25){
-      setetc2(prev => prev + 1);
-      setetc2표시(prev => prev + 1);
+      if(etc2 < 1)
+      {
+        setetc2(prev => prev + 1);
+        setetc2표시(prev => prev + 1);
+      }
+
     }}
  
   }
@@ -2638,9 +3145,13 @@ function App() {
       }
       const rand1 = Math.floor(Math.random() * 100) + 1;
       if (rand1 <= 20){
-        const rand1 = 1;
-        setweap4(prev => prev + rand1);
-        setweap4표시(prev => prev + rand1);
+        if(weap4 < 1)
+        {
+          const rand1 = 1;
+          setweap4(prev => prev + rand1);
+          setweap4표시(prev => prev + rand1);
+        }
+
       }
       const rand2 = Math.floor(Math.random() * 100) + 1;
       if (rand2 <= 50){
@@ -2650,7 +3161,7 @@ function App() {
       }
       const rand3 = Math.floor(Math.random() * 100) + 1;
       if (rand3 <= 30){
-        const rand1 = Math.floor(Math.random() * 3) + 1;
+        const rand1 = Math.floor(Math.random() * 5) + 1;
         seteat4(prev => prev + rand1);
         seteat4표시(prev => prev + rand1);
       }
@@ -2659,9 +3170,13 @@ function App() {
     {
       const rand = Math.floor(Math.random() * 100) + 1;
      if (rand <= 12){
-      const rand1 = 1;
-      setetc2(prev => prev + rand1);
-      setetc2표시(prev => prev + rand1);
+      if(etc2 < 1)
+      {
+        const rand1 = 1;
+        setetc2(prev => prev + rand1);
+        setetc2표시(prev => prev + rand1);
+      }
+
     }
     const rand1 = Math.floor(Math.random() * 100) + 1;
     if (rand1 <= 60){
@@ -2684,14 +3199,18 @@ function App() {
     const rand4 = Math.floor(Math.random() * 100) + 1;
     if (rand4 <= 100){
       const rand1 = Math.floor(Math.random() * 3) + 1;
-      setetc3(prev => prev + rand1);
-      setetc3표시(prev => prev + rand1);
+      seteat1(prev => prev + rand1);
+      seteat1표시(prev => prev + rand1);
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
     if (rand5 < 15){
-      const rand1 = 1;
-      setweap2(prev => prev + rand1);
-      setweap2표시(prev => prev + rand1);
+      if(weap2 < 1)
+      {
+        const rand1 = 1;
+        setweap2(prev => prev + rand1);
+        setweap2표시(prev => prev + rand1);
+      }
+
     }
     }
     if (maplo3 === 3)
@@ -2733,7 +3252,7 @@ function App() {
      if (rand < 40){
       const rand1 = Math.floor(Math.random() * 3) + 1;
       seteat3(prev => prev + rand1);
-      setetc1표시(prev => prev + rand1);
+      seteat3표시(prev => prev + rand1);
     }
     const rand1 = Math.floor(Math.random() * 100) + 1;
     if (rand1 < 35){
@@ -2760,7 +3279,7 @@ function App() {
       setmed1표시(prev => prev + rand1);
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
-    if (rand5 < 20){
+    if (rand5 <  15){
       setetc1(prev => prev + 1);
       setetc1표시(prev => prev + 1);
     }
@@ -2772,14 +3291,18 @@ function App() {
     }
     const rand7 = Math.floor(Math.random() * 100) + 1;
     if (rand7 < 10){
-      setweap3(prev => prev + 1);
-      setweap3표시(prev => prev + 1);
+      if(weap3 < 1)
+      {
+        setweap3(prev => prev + 1);
+        setweap3표시(prev => prev + 1);
+      }
+
     }
     const rand8 = Math.floor(Math.random() * 100) + 1;
     if (rand8 < 45){
       const rand1 = Math.floor(Math.random() * 3) + 1;
-      setweap3(prev => prev + 1);
-      setweap3표시(prev => prev + 1);
+      setetc4(prev => prev + rand1);
+      setetc4표시(prev => prev + rand1);
     }
     }
     if (maplo3 === 5){
@@ -2809,13 +3332,21 @@ function App() {
     }
     const rand4 = Math.floor(Math.random() * 100) + 1;
     if (rand4 < 25){
-      setweap1(prev => prev + 1);
-      setweap1표시(prev => prev + 1);
+      if(weap1 < 25)
+      {
+        setweap1(prev => prev + 1);
+        setweap1표시(prev => prev + 1);
+      }
+
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
     if (rand5 < 25){
-      setetc2(prev => prev + 1);
-      setetc2표시(prev => prev + 1);
+      if(etc2 < 1)
+      {
+        setetc2(prev => prev + 1);
+        setetc2표시(prev => prev + 1);
+      }
+
     }
   }
   }
@@ -2834,9 +3365,13 @@ function App() {
       }
       const rand1 = Math.floor(Math.random() * 100) + 1;
       if (rand1 <= 20){
-        const rand1 = 1;
-        setweap4(prev => prev + rand1);
-        setweap4표시(prev => prev + rand1);
+        if(weap4 < 1)
+        {
+          const rand1 = 1;
+          setweap4(prev => prev + rand1);
+          setweap4표시(prev => prev + rand1);
+        }
+
       }
       const rand2 = Math.floor(Math.random() * 100) + 1;
       if (rand2 <= 50){
@@ -2846,7 +3381,7 @@ function App() {
       }
       const rand3 = Math.floor(Math.random() * 100) + 1;
       if (rand3 <= 30){
-        const rand1 = Math.floor(Math.random() * 3) + 1;
+        const rand1 = Math.floor(Math.random() * 5) + 1;
         seteat4(prev => prev + rand1);
         seteat4표시(prev => prev + rand1);
       }
@@ -2855,9 +3390,13 @@ function App() {
     {
       const rand = Math.floor(Math.random() * 100) + 1;
      if (rand <= 12){
-      const rand1 = 1;
-      setetc2(prev => prev + rand1);
-      setetc2표시(prev => prev + rand1);
+      if(etc2 < 1)
+      {
+        const rand1 = 1;
+        setetc2(prev => prev + rand1);
+        setetc2표시(prev => prev + rand1);
+      }
+
     }
     const rand1 = Math.floor(Math.random() * 100) + 1;
     if (rand1 <= 60){
@@ -2880,14 +3419,18 @@ function App() {
     const rand4 = Math.floor(Math.random() * 100) + 1;
     if (rand4 <= 100){
       const rand1 = Math.floor(Math.random() * 3) + 1;
-      setetc3(prev => prev + rand1);
-      setetc3표시(prev => prev + rand1);
+      seteat1(prev => prev + rand1);
+      seteat1표시(prev => prev + rand1);
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
     if (rand5 < 15){
-      const rand1 = 1;
-      setweap2(prev => prev + rand1);
-      setweap2표시(prev => prev + rand1);
+      if(weap2 < 1)
+      {
+        const rand1 = 1;
+        setweap2(prev => prev + rand1);
+        setweap2표시(prev => prev + rand1);
+      }
+
     }
     }
     if (maplo4 === 3)
@@ -2929,7 +3472,7 @@ function App() {
      if (rand < 40){
       const rand1 = Math.floor(Math.random() * 3) + 1;
       seteat3(prev => prev + rand1);
-      setetc1표시(prev => prev + rand1);
+      seteat3표시(prev => prev + rand1);
     }
     const rand1 = Math.floor(Math.random() * 100) + 1;
     if (rand1 < 35){
@@ -2956,7 +3499,7 @@ function App() {
       setmed1표시(prev => prev + rand1);
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
-    if (rand5 < 20){
+    if (rand5 < 15){
       setetc1(prev => prev + 1);
       setetc1표시(prev => prev + 1);
     }
@@ -2968,14 +3511,18 @@ function App() {
     }
     const rand7 = Math.floor(Math.random() * 100) + 1;
     if (rand7 < 10){
-      setweap3(prev => prev + 1);
-      setweap3표시(prev => prev + 1);
+      if(weap3 < 1)
+      {
+        setweap3(prev => prev + 1);
+        setweap3표시(prev => prev + 1);
+      }
+
     }
     const rand8 = Math.floor(Math.random() * 100) + 1;
     if (rand8 < 45){
       const rand1 = Math.floor(Math.random() * 3) + 1;
-      setweap3(prev => prev + 1);
-      setweap3표시(prev => prev + 1);
+      setetc4(prev => prev + rand1);
+      setetc4표시(prev => prev + rand1);
     }
     }
     if (maplo4 === 5){
@@ -3005,18 +3552,298 @@ function App() {
     }
     const rand4 = Math.floor(Math.random() * 100) + 1;
     if (rand4 < 25){
-      setweap1(prev => prev + 1);
-      setweap1표시(prev => prev + 1);
+      if(weap1 < 1)
+      {
+        setweap1(prev => prev + 1);
+        setweap1표시(prev => prev + 1);
+      }
+
     }
     const rand5 = Math.floor(Math.random() * 100) + 1;
     if (rand5 < 25){
-      setetc2(prev => prev + 1);
-      setetc2표시(prev => prev + 1);
+      if(etc2 < 1)
+      {
+        setetc2(prev => prev + 1);
+        setetc2표시(prev => prev + 1);
+      }
+
     }
   }
   }
-
 }
+  const randman = Math.floor(Math.random() * 10) + 1;
+    if(randman <= 1)
+      {
+        set문사람감지(true);
+        const rand사람 = Math.floor(Math.random() * 4) + 1;
+      if(rand사람 === 1)
+      {
+        set사람1(true);
+        set사람2(false);
+        set사람3(false);
+        set사람4(false);
+        const randt = Math.floor(Math.random() * 4) + 1;
+        setmasg1(randt);
+        set문통조림랜덤(Math.floor(Math.random() * 3) + 1);
+        set문물랜덤(Math.floor(Math.random() * 2) + 1);
+      }
+      else if(rand사람 === 2)
+      {
+        set사람2(true);
+        set사람1(false);
+        set사람3(false);
+        set사람4(false);
+        const randt = Math.floor(Math.random() * 4) + 1;
+        setmasg2(randt);
+        const randt3 = Math.floor(Math.random() * 6) + 1;
+        set문라면랜덤(Math.floor(Math.random() * 3) + 1);
+        set문사탕랜덤(Math.floor(Math.random() * 4) + 1);
+     }
+      else if(rand사람 === 3)
+     {
+       set사람3(true);
+        set사람1(false);
+        set사람2(false);
+        set사람4(false);
+        const randt = Math.floor(Math.random() * 4) + 1;
+        setmasg3(randt);
+        set문통조림랜덤(Math.floor(Math.random() * 2) + 1);
+        set문물랜덤(Math.floor(Math.random() * 4) + 1);
+        set문라면랜덤(Math.floor(Math.random() * 3) + 1);
+        set문사탕랜덤(Math.floor(Math.random() * 5) + 1);
+      }
+      else if(rand사람 === 4)
+      {
+       set사람4(true);
+        set사람1(false);
+        set사람2(false);
+        set사람3(false);
+        const randt = Math.floor(Math.random() * 4) + 1;
+        setmasg4(randt);
+     }
+      }
+    else{
+        set문사람감지(false);
+    }
+
+
+    if(charment1 < 0 && charment1 >= -30)
+    {
+      //슬퍼짐 -> 배고픔, 목마름 평소보다 (- 3)
+      setchareat1(prev => prev - 3);
+      setcharwtr1(prev => prev - 3);
+    if (!감기여부1 && !독감여부1 && !식중독여부1 && !출혈여부1 && !골절여부1) {
+        set외출제한1(false);
+    }
+    }
+    else if(charment1 < -30 && charment1 >= -60)
+    {
+      //약간 우울함 -> 외출 제한, 배고픔, 갈증 평소보다 (- 5)
+      setchareat1(prev => prev - 5);
+      setcharwtr1(prev => prev - 5);
+      set외출제한1(true);
+    }
+    else if(charment1 < -60 && charment1 > -100)
+    {
+      //우울함 -> 배고픔, 갈증 평소보다 (- 10), 외출 제한
+      setchareat1(prev => prev - 10);
+      setcharwtr1(prev => prev - 10);
+      set외출제한1(true);
+    }
+    else if(charment1 <= -100)
+    {
+      //자살
+      setDie1(true);
+      set외출제한1(true);
+    }
+
+    
+    if(charment1 >= 0 && charment1 <= 50)
+    {
+      //그냥그럼
+    if (!감기여부1 && !독감여부1 && !식중독여부1 && !출혈여부1 && !골절여부1) {
+        set외출제한1(false);
+    }
+    }
+    else if(charment1 > 50 && charment1 <= 200)
+    {
+      //행복함 -> 배고픔, 갈증 평소보다 (+ 3)
+      setchareat1(prev => prev + 3);
+      setcharwtr1(prev => prev + 3);
+    if (!감기여부1 && !독감여부1 && !식중독여부1 && !출혈여부1 && !골절여부1) {
+        set외출제한1(false);
+    }
+    }
+    else if(charment1 > 200)
+    {
+      //미침
+      set외출제한1(true);
+
+    }
+
+
+    if(charment2 < 0 && charment2 >= -30)
+    {
+      //슬퍼짐 -> 배고픔, 목마름 평소보다 (- 3)
+      setchareat2(prev => prev - 3);
+      setcharwtr2(prev => prev - 3);
+    if (!감기여부2 && !독감여부2 && !식중독여부2 && !출혈여부2 && !골절여부2) {
+        set외출제한2(false);
+    }
+    }
+    else if(charment2 < -30 && charment2 >= -60)
+    {
+      //약간 우울함 -> 외출 제한, 배고픔, 갈증 평소보다 (- 5)
+      setchareat2(prev => prev - 5);
+      setcharwtr2(prev => prev - 5);
+      set외출제한2(true);
+    }
+    else if(charment2 < -60 && charment2 > -100)
+    {
+      //우울함 -> 배고픔, 갈증 평소보다 (- 10), 외출 제한
+      setchareat2(prev => prev - 10);
+      setcharwtr2(prev => prev - 10);
+      set외출제한2(true);
+    }
+    else if(charment2 <= -100)
+    {
+      //자살
+      setDie2(true);
+      set외출제한2(true);
+    }
+
+    
+    if(charment2 >= 0 && charment2 <= 50)
+    {
+      //그냥그럼
+    if (!감기여부2 && !독감여부2 && !식중독여부2 && !출혈여부2 && !골절여부2) {
+        set외출제한2(false);
+    }
+    }
+    else if(charment2 > 50 && charment2 <= 200)
+    {
+      //행복함 -> 배고픔, 갈증 평소보다 (+ 3)
+      setchareat2(prev => prev + 3);
+      setcharwtr2(prev => prev + 3);
+    if (!감기여부2 && !독감여부2 && !식중독여부2 && !출혈여부2 && !골절여부2) {
+        set외출제한2(false);
+    }
+    }
+    else if(charment2 > 200)
+    {
+      //미침
+      set외출제한2(true);
+
+    }
+
+    if(charment3 < 0 && charment3 >= -30)
+    {
+      //슬퍼짐 -> 배고픔, 목마름 평소보다 (- 3)
+      setchareat3(prev => prev - 3);
+      setcharwtr3(prev => prev - 3);
+    if (!감기여부3 && !독감여부3 && !식중독여부3 && !출혈여부3 && !골절여부3) {
+        set외출제한3(false);
+    }
+    }
+    else if(charment3 < -30 && charment3 >= -60)
+    {
+      //약간 우울함 -> 외출 제한, 배고픔, 갈증 평소보다 (- 5)
+      setchareat3(prev => prev - 5);
+      setcharwtr3(prev => prev - 5);
+      set외출제한3(true);
+    }
+    else if(charment3 < -60 && charment3 > -100)
+    {
+      //우울함 -> 배고픔, 갈증 평소보다 (- 10), 외출 제한
+      setchareat3(prev => prev - 10);
+      setcharwtr3(prev => prev - 10);
+      set외출제한3(true);
+    }
+    else if(charment3 <= -100)
+    {
+      //자살
+      setDie3(true);
+      set외출제한3(true);
+    }
+
+    
+    if(charment3 >= 0 && charment3 <= 50)
+    {
+      //그냥그럼
+    if (!감기여부3 && !독감여부3 && !식중독여부3 && !출혈여부3 && !골절여부3) {
+        set외출제한3(false);
+    }
+    }
+    else if(charment3 > 50 && charment3 <= 200)
+    {
+      //행복함 -> 배고픔, 갈증 평소보다 (+ 3)
+      setchareat3(prev => prev + 3);
+      setcharwtr3(prev => prev + 3);
+    if (!감기여부3 && !독감여부3 && !식중독여부3 && !출혈여부3 && !골절여부3) {
+        set외출제한3(false);
+    }
+    }
+    else if(charment3 > 200)
+    {
+      //미침
+      set외출제한3(true);
+
+    }
+
+    if(charment4 < 0 && charment4 >= -30)
+    {
+      //슬퍼짐 -> 배고픔, 목마름 평소보다 (- 3)
+      setchareat4(prev => prev - 3);
+      setcharwtr4(prev => prev - 3);
+    if (!감기여부4 && !독감여부4 && !식중독여부4 && !출혈여부4 && !골절여부4) {
+        set외출제한4(false);
+    }
+    }
+    else if(charment4 < -30 && charment4 >= -60)
+    {
+      //약간 우울함 -> 외출 제한, 배고픔, 갈증 평소보다 (- 5)
+      setchareat4(prev => prev - 5);
+      setcharwtr4(prev => prev - 5);
+      set외출제한4(true);
+    }
+    else if(charment4 < -60 && charment4 > -100)
+    {
+      //우울함 -> 배고픔, 갈증 평소보다 (- 10), 외출 제한
+      setchareat4(prev => prev - 10);
+      setcharwtr4(prev => prev - 10);
+      set외출제한4(true);
+    }
+    else if(charment4 <= -100)
+    {
+      //자살
+      setDie4(true);
+      set외출제한4(true);
+    }
+
+    
+    if(charment4 >= 0 && charment4 <= 50)
+    {
+      //그냥그럼
+    if (!감기여부4 && !독감여부4 && !식중독여부4 && !출혈여부4 && !골절여부4) {
+        set외출제한4(false);
+    }
+    }
+    else if(charment4 > 50 && charment4 <= 200)
+    {
+      //행복함 -> 배고픔, 갈증 평소보다 (+ 3)
+      setchareat4(prev => prev + 3);
+      setcharwtr4(prev => prev + 3);
+    if (!감기여부4 && !독감여부4 && !식중독여부4 && !출혈여부4 && !골절여부4) {
+        set외출제한4(false);
+    }
+    }
+    else if(charment4 > 200)
+    {
+      //미침
+      set외출제한4(true);
+
+    }
+
 }
 
     useEffect(() => {
@@ -3030,39 +3857,7 @@ function App() {
 
 
 
-  function 보상()
-  {
-    if(masg1 == 1)
-    {
-    const rand보상 = Math.floor(Math.random() * 100) + 1;
-    if(rand보상 <= 90 && eat1 >= 4)
-    {
-      setweap1(prev => prev + 1);
-      seteat1(prev => prev - 4);
-    }
-    else{
-      if(eat1 >= 3)
-      {
-        seteat1(prev => prev - 3);
-      }
-      else if(eat2 >= 2)
-      {
-        seteat2(prev => prev - 2);
-      }
-      else if(eat3 >= 2)
-      {
-        seteat3(prev => prev - 2);
-      }
-      else if(eat4 >= 1)
-      {
-        seteat4(prev => prev - 1);
-      }
-    }
-    {    
-  }
 
-    }
-  }
 
   function 통조림증가량()
   {
@@ -3113,12 +3908,8 @@ function App() {
     }
   }
 
-
-
-
   return (
     <div className="App">
-      {<h1>{수치}</h1>}
       {/* 스토리 스킵과 다음단계 */}
       {page < 6 && <img src='/a.png' className='img1' onClick={pagecound}></img>}
       {page < 6 && <img src='/a1.png' className='img2' onClick={() => setpage(6)}></img>}
@@ -3154,18 +3945,40 @@ function App() {
 
 
           {/* {page === 8 && <img src='/a7.png' className='배경'></img>} */}
-        
+        {/* 배경모음 */}
+        {page === 1 && <img src='/a32.png' className='배경1'></img>}
 
         {page === 8 && <img src='/a18.png'className='메인배경'></img>}
         {page === 8 && <h1 className='살아남은날'>Day-{Day}</h1>}
         {/* 지도 형식 10 */}
         {page === 8 && <img src='/a3.png' className='지도' onClick={() => setpage(10)}></img>}
         {page === 10 && <img src='/a2.png' className='img3' onClick={() => setpage(8)}></img>}
-        {page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
-        {page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
-        {page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
-        {page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
-        {page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
+
+        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
+        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
+        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
+        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
+        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
+
+        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
+        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
+        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
+        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
+        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
+
+        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
+        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
+        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
+        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
+        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
+
+        {외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
+        {외출제한4 == false &&  charch == 4 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
+        {외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
+        {외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
+        {외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
+
+        
 
         {page === 10 && <img src='/a14.png' className='큰지도'></img>}
 
@@ -3256,14 +4069,14 @@ function App() {
         {page === 9 && <h2 className='라면개수'>: {eat3}개</h2>}
 
         {page === 9 && <img src='/a25.png' className='사탕'></img>} 
-        {tam1 === false &&chareat1+10 < 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a25.png' className='사탕' onClick={() => {setchareat1(prev => prev + 10); seteat4(prev => prev -1); }}></img>}
-        {tam1 === false &&chareat1+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a25.png' className='사탕' onClick={() => {setchareat1(100); seteat4(prev => prev -1); }}></img>}  
-        {tam2 === false &&chareat2+10 < 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a25.png' className='사탕' onClick={() => {setchareat2(prev => prev + 10); seteat4(prev => prev -1); }}></img>} 
-        {tam2 === false &&chareat2+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a25.png' className='사탕' onClick={() => {setchareat2(100); seteat4(prev => prev -1); }}></img>} 
-        {tam3 === false &&chareat3+10 < 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a25.png' className='사탕' onClick={() => {setchareat3(prev => prev + 10); seteat4(prev => prev -1); }}></img>} 
-        {tam3 === false &&chareat3+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a25.png' className='사탕' onClick={() => {setchareat3(100); seteat4(prev => prev -1); }}></img>} 
-        {tam4 === false &&chareat4+10 < 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a25.png' className='사탕' onClick={() => {setchareat4(prev => prev + 10); seteat4(prev => prev -1); }}></img>}
-        {tam4 === false &&chareat4+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a25.png' className='사탕' onClick={() => {setchareat4(100); seteat4(prev => prev -1); }}></img>} 
+        {tam1 === false &&chareat1+10 < 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a25.png' className='사탕' onClick={() => {setchareat1(prev => prev + 10); seteat4(prev => prev -1); setcharment1(prev => prev + 7); }}></img>}
+        {tam1 === false &&chareat1+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a25.png' className='사탕' onClick={() => {setchareat1(100); seteat4(prev => prev -1); setcharment1(prev => prev + 7);}}></img>}  
+        {tam2 === false &&chareat2+10 < 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a25.png' className='사탕' onClick={() => {setchareat2(prev => prev + 10); seteat4(prev => prev -1); setcharment2(prev => prev + 7); }}></img>} 
+        {tam2 === false &&chareat2+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a25.png' className='사탕' onClick={() => {setchareat2(100); seteat4(prev => prev -1); setcharment2(prev => prev + 7);}}></img>} 
+        {tam3 === false &&chareat3+10 < 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a25.png' className='사탕' onClick={() => {setchareat3(prev => prev + 10); seteat4(prev => prev -1); setcharment3(prev => prev + 7); }}></img>} 
+        {tam3 === false &&chareat3+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a25.png' className='사탕' onClick={() => {setchareat3(100); seteat4(prev => prev -1); setcharment3(prev => prev + 7);}}></img>} 
+        {tam4 === false &&chareat4+10 < 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a25.png' className='사탕' onClick={() => {setchareat4(prev => prev + 10); seteat4(prev => prev -1); setcharment4(prev => prev + 7);}}></img>}
+        {tam4 === false &&chareat4+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a25.png' className='사탕' onClick={() => {setchareat4(100); seteat4(prev => prev -1); setcharment4(prev => prev + 7);}}></img>} 
         {page === 9 && <h2 className='사탕개수'>: {eat4}개</h2>}
 
         {page === 9 && <img src='/a24.png' className='키트'></img>} 
@@ -3511,52 +4324,143 @@ function App() {
 
           {page === 8 &&  book === true && <img src='/a20.png' className='하루상태창'></img>}
 
+          {page === 13 && 거래완료 === true && <h1 className='거래완료'>거래가 완료되었습니다.</h1>}
+          {page === 13 && 도둑감지 === true && <h1 className='도둑감지'>그는 도둑이였습니다...</h1>}
+          {page === 13 && 거래실패 === true && <h1 className='거래실패'>거래가 실패하였습니다.</h1>}
+
           {page === 8 && <div className='문감지' onClick={() => {set문감지(true); setpage(13); }}></div>}
-          {page === 13 && <img src='a2.png' className='문나가기' onClick={() => {set문감지(false); setpage(8); } }></img>}
-          {page === 13 && <img src='a21.png' className='문확대'></img>}
+          {page === 13 && <img src='a2.png' className='문나가기' onClick={() => {set문감지(false); setpage(8); set문얻는거(false); set거래완료(false); set도둑감지(false); set거래실패(false);} }></img>}
+          {page === 13 && <img src='a30.png' className='문확대'></img>}
           {page === 13 && 문사람감지 === false && <h1 className='없는사람'>아무도 없다. . .</h1>}
           {page === 13 && 문사람감지 === true && <h1 className='있는사람'>누군가 있다!</h1>}
-          {page === 13 && 문사람감지 === true && <h1 className='열어준다' onClick={() => {set열림(true); set문사람감지(false);}}>열어준다.</h1>} 
-          {page === 13 && 문사람감지 === true && <h1 className='열어주지않는다' onClick={()=> set문사람감지(false)}>열어주지않는다.</h1>}
+          {page === 13 && 문사람감지 === true && <h1 className='열어준다' onClick={() => {set열림(true); set문사람감지(false); set문얻는거(true);}}>열어준다.</h1>} 
+          {page === 13 && 문사람감지 === true && <h1 className='열어주지않는다' onClick={()=> {set문사람감지(false); set거래실패(true);}}>열어주지않는다.</h1>}
           {page === 8 && 문사람감지 === true && <h1 className='감지'>!</h1>}
-          
-          {page === 13 && 문사람감지 === true && 사람1 == true && <h1 className='사람1'>상인</h1>}
+
+
+          {page === 13 && 사람1 == true && 수치 < 10 && 문사람감지 === true && masg1 === 1 && <h1 className='수치적'>(상인은 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람1 == true && 수치 >= 10 && 수치 < 30 && 문사람감지 === true &&  masg1 === 1 && <h1 className='수치적'>(상인은 애매한것같다.)</h1>}
+          {page === 13 && 사람1 == true && 수치 >= 30 && 문사람감지 === true &&  masg1 === 1 &&  <h1 className='수치적'>(상인은 만족스럽다.)</h1>}
+
+          {page === 13 && 사람1 == true && 수치 < 7 && 문사람감지 === true && masg1 === 2 && <h1 className='수치적'>(상인은 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람1 == true && 수치 >= 7 && 수치 < 15 && 문사람감지 === true &&  masg1 === 2 && <h1 className='수치적'>(상인은 애매한것같다.)</h1>}
+          {page === 13 && 사람1 == true && 수치 >= 15 && 문사람감지 === true &&  masg1 === 2 &&  <h1 className='수치적'>(상인은 만족스럽다.)</h1>}
+
+          {page === 13 && 사람1 == true && 수치 < 7 && 문사람감지 === true && masg1 === 3 && <h1 className='수치적'>(상인은 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람1 == true && 수치 >= 7 && 수치 < 15 && 문사람감지 === true &&  masg1 === 3 && <h1 className='수치적'>(상인은 애매한것같다.)</h1>}
+          {page === 13 && 사람1 == true && 수치 >= 15 && 문사람감지 === true &&  masg1 === 3 &&  <h1 className='수치적'>(상인은 만족스럽다.)</h1>}
+
+          {page === 13 && 사람1 == true && 수치 < 3 && 문사람감지 === true && masg1 === 4 && <h1 className='수치적'>(상인은 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람1 == true && 수치 >= 3 && 수치 < 10 && 문사람감지 === true &&  masg1 === 4 && <h1 className='수치적'>(상인은 애매한것같다.)</h1>}
+          {page === 13 && 사람1 == true && 수치 >= 10 && 문사람감지 === true &&  masg1 === 4 &&  <h1 className='수치적'>(상인은 만족스럽다.)</h1>}
+
+
+
+          {page === 13 && 사람2 == true && 수치 < 3 && 문사람감지 === true && masg2 == 1 && <h1 className='수치적'>(??는 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람2 == true && 수치 >= 3 && 수치 < 10 && 문사람감지 === true && masg2 == 1 &&  <h1 className='수치적'>(??는 아직 애매하다.)</h1>}
+          {page === 13 && 사람2 == true && 수치 >= 10 && 문사람감지 === true && masg2 == 1 && <h1 className='수치적'>(??는 만족스럽다.)</h1>}
+
+          {page === 13 && 사람2 == true && 수치 < 7 && 문사람감지 === true && masg2 == 2 && <h1 className='수치적'>(??는 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람2 == true && 수치 >= 7 && 수치 < 15 && 문사람감지 === true && masg2 == 2 &&  <h1 className='수치적'>(??는 아직 애매하다.)</h1>}
+          {page === 13 && 사람2 == true && 수치 >= 15 && 문사람감지 === true && masg2 == 2 && <h1 className='수치적'>(??는 만족스럽다.)</h1>}
+
+          {page === 13 && 사람2 == true && 수치 < 15 && 문사람감지 === true && masg2 == 3 && <h1 className='수치적'>(??는 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람2 == true && 수치 >= 15 && 수치 < 20 && 문사람감지 === true && masg2 == 3 &&  <h1 className='수치적'>(??는 아직 애매하다.)</h1>}
+          {page === 13 && 사람2 == true && 수치 >= 20 && 문사람감지 === true && masg2 == 3 && <h1 className='수치적'>(??는 만족스럽다.)</h1>}
+
+          {page === 13 && 사람2 == true && 수치 < 1 && 문사람감지 === true && masg2 == 4 && <h1 className='수치적'>(??는 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람2 == true && 수치 >= 1 && 수치 < 5 && 문사람감지 === true && masg2 == 4 &&  <h1 className='수치적'>(??는 아직 애매하다.)</h1>}
+          {page === 13 && 사람2 == true && 수치 >= 5 && 문사람감지 === true && masg2 == 4 && <h1 className='수치적'>(??는 만족스럽다.)</h1>}
+
+
+
+          {page === 13 && 사람3 == true && 문사람감지 === true && <h1 className='수치적'>(할머니는 만족스럽다.)</h1>}
+
+
+
+          {page === 13 && 사람4 == true && 수치 < 10 && 문사람감지 === true && masg4 == 1 && <h1 className='수치적'>(수상한사람은 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람4 == true && 수치 >= 10 && 수치 < 30 && 문사람감지 === true && masg4 == 1 && <h1 className='수치적'>(수상한사람은 아직 애매하다.)</h1>}
+          {page === 13 && 사람4 == true && 수치 >= 30 && 문사람감지 === true && masg4 == 1 && <h1 className='수치적'>(수상한사람은 만족스럽다.)</h1>}
+
+          {page === 13 && 사람4 == true && 수치 < 10 && 문사람감지 === true && masg4 == 2 && <h1 className='수치적'>(수상한사람은 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람4 == true && 수치 >= 10 && 수치 < 20 && 문사람감지 === true && masg4 == 2 && <h1 className='수치적'>(수상한사람은 아직 애매하다.)</h1>}
+          {page === 13 && 사람4 == true && 수치 >= 20 && 문사람감지 === true && masg4 == 2 && <h1 className='수치적'>(수상한사람은 만족스럽다.)</h1>}
+
+          {page === 13 && 사람4 == true && 수치 < 15 && 문사람감지 === true && masg4 == 3 && <h1 className='수치적'>(수상한사람은 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람4 == true && 수치 >= 15 && 수치 < 25 && 문사람감지 === true && masg4 == 3 && <h1 className='수치적'>(수상한사람은 아직 애매하다.)</h1>}
+          {page === 13 && 사람4 == true && 수치 >= 25 && 문사람감지 === true && masg4 == 3 && <h1 className='수치적'>(수상한사람은 만족스럽다.)</h1>}
+
+          {page === 13 && 사람4 == true && 수치 < 10 && 문사람감지 === true && masg4 == 4 && <h1 className='수치적'>(수상한사람은 아직 불만인것같다.)</h1>}
+          {page === 13 && 사람4 == true && 수치 >= 10 && 수치 < 17 && 문사람감지 === true && masg4 == 4 && <h1 className='수치적'>(수상한사람은 아직 애매하다.)</h1>}
+          {page === 13 && 사람4 == true && 수치 >= 17 && 문사람감지 === true && masg4 == 4 && <h1 className='수치적'>(수상한사람은 만족스럽다.)</h1>}
+
+
+
+          {page === 13 && 문사람감지 === true && 사람1 == true &&  <h1 className='사람1'>상인</h1>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 1 && <div className='상인글1'>
-            <h1>안녕하세요!</h1>
             <h1>오랜만에 살아 있는 인간을 보네. 교환 좀 하지 않을래?</h1>
-            <h1> 통조림, 물, 보드게임를 드릴게요!</h1>
+            <h1>통조림 {문통조림랜덤}개, 물 {문물랜덤}개, 보드게임을 드릴게요!</h1>
           </div>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 2 && <div className='상인글1'>
-            <h1>안녕하세요!</h1>
             <h1>음식 조금만 나눠줄래?</h1>
-            <h1> 통조림, 물, 보드게임를 드릴게요!</h1>
+            <h1> 통조림 {문통조림랜덤}개, 물 {문물랜덤}개, 책을 드릴게요!</h1>
           </div>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 3 && <div className='상인글1'>
             <h1>안녕하세요!</h1>
+            <h1>저는 그저 거래를 하고싶어서 찾아왔습니다!</h1>
             <h1>나도 오래 굶었거든. 그러니까 서로 도와보자?</h1>
-            <h1> 통조림, 물, 보드게임를 줄게</h1>
+            <h1> 통조림 {문통조림랜덤}개, 물 {문물랜덤}개, 신문을 줄게</h1>
           </div>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 === 4 && <div className='상인글1'>
-            <h1>안녕하세요!</h1>
-            <h1>저는 그저 거래를 하고 싶어서 찾아왔습니다!</h1>
-            <h1> 통조림, 물, 보드게임를 드릴게요!</h1>
+           <h1>안녕하세요!</h1>
+            <h1>저는 그저 거래를 하고싶어서 찾아왔습니다!</h1>
+            <h1> 통조림 {문통조림랜덤}개, 물 {문물랜덤}개를 드릴게요!</h1>
           </div>}
-
           {page === 13 && 문사람감지 === true && 사람2 == true && <h1 className='사람1'>??</h1>}
-          {page === 13 && 문사람감지 === true && 사람2 == true && masg1 === 4 && <div className='엥글1'>
-            <h1>문을 열어주세요.</h1>
+          {page === 13 && 문사람감지 === true && 사람2 == true && masg2 === 1 && <div className='엥글1'>
+            <h1>문을 열어주세요. . .</h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람2 == true && masg2 === 2 && <div className='엥글1'>
+            <h1>. . .</h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람2 == true && masg2 === 3 && <div className='엥글1'>
+            <h1>미안해요...</h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람2 == true && masg2 === 4 && <div className='엥글1'>
+            <h1>..</h1>
           </div>}
           {page === 13 && 문사람감지 === true && 사람3 == true && <h1 className='사람1'>할머니</h1>}
-          {page === 13 && 문사람감지 === true && 사람3 == true && masg1 === 4 && <div className='할머니글1'>
+          {page === 13 && 문사람감지 === true && 사람3 == true && masg3 === 1 && <div className='할머니글1'>
             <h1>왜 이렇게 말랐니... 이거 먹고 힘내렴</h1>
           </div>}
-          {page === 13 && 문사람감지 === true && 사람4 == true && <h1 className='사람1'>수상한 사람</h1>}
-          {page === 13 && 문사람감지 === true && 사람4 == true && masg1 === 4 && <div className='수상한사람글1'>
-            <h1>문을 열어주세요.</h1>
+          {page === 13 && 문사람감지 === true && 사람3 == true && masg3 === 2 && <div className='할머니글1'>
+            <h1>에고.. 힐들겠다. 고생했다</h1>
           </div>}
-          
-          
-          
+          {page === 13 && 문사람감지 === true && 사람3 == true && masg3 === 3 && <div className='할머니글1'>
+            <h1>왜 이렇게 말랐니... 이거 먹고 힘내렴</h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람3 == true && masg3 === 4 && <div className='할머니글1'>
+            <h1>너네가 고생이 많다..</h1>
+          </div>}
+
+          {page === 13 && 문사람감지 === true && 사람4 == true && <h1 className='사람1'>수상한 사람</h1>}
+          {page === 13 && 문사람감지 === true && 사람4 == true && masg4 === 1 && <div className='수상한사람글1'>
+            <h1>헿 도끼를 줄개</h1>
+            <h1>설마 그냥 받아갈생각은 아니지?</h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람4 == true && masg4 === 2 && <div className='수상한사람글1'>
+            <h1>헿 진압봉을 줄게</h1>
+            <h1>설마 그냥 받아갈생각은 아니지?</h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람4 == true && masg4 === 3 && <div className='수상한사람글1'>
+            <h1>ㅎ 야구방망이을 줄게</h1>
+            <h1>설마 그냥 받아갈생각은 아니지?</h1>
+          </div>}
+          {page === 13 && 문사람감지 === true && 사람4 == true && masg4 === 4 && <div className='수상한사람글1'>
+            <h1>ㅎ 헬멧을 줄게</h1>
+            <h1>설마 그냥 받아갈생각은 아니지?</h1>
+          </div>}
+
             <div className='음식'>
               {page === 13 && <img src="a16.png" className='크기' onClick={()=> 통조림증가량()}></img>}
               {page === 13 && <img src="a17.png" className='크기' onClick={() => 물증가량()}></img>}
@@ -3570,8 +4474,29 @@ function App() {
               <h1 className='사탕13'>{eat4}/{사탕}</h1>
             </div>}
           
+            
+            {/* 라디오 */}
 
+            {etc2 == 1 && page === 8 && <img src="a33.png" className='라디오'></img>}
+            {라디오확률 == 1 && 라디오하루대사 > 0 && etc2 == 1 && page === 8 && <img src="a33.png" className='라디오' onClick={() => set라디오하루대사(prev => prev -1)}></img>}
 
+            {page == 8 && 라디오하루대사 === 5 && 라디오대사 === 1 && 라디오확률 == 1 && <h1 className="라디오텍스트1">... 드.. 안..기지를 확보하..니다.</h1>} {/*우리는 드디어 안전한 기지를 확보하였습니다.*/}
+            {page == 8 && 라디오하루대사 === 4 && 라디오대사 === 1 && 라디오확률 == 1 && <h1 className="라디오텍스트2">만약 이 신.가 잡..면</h1>} {/*만약 이 신호가 잡힌다면*/}
+            {page == 8 && 라디오하루대사 === 3 && 라디오대사 === 1 && 라디오확률 == 1 && <h1 className="라디오텍스트3">헬기. .. 계획이니</h1>} {/*헬기를 띄울 계획이니*/}
+            {page == 8 && 라디오하루대사 === 2 && 라디오대사 === 1 && 라디오확률 == 1 && <h1 className="라디오텍스트4">꼭 안전하.길</h1>} {/*꼭 안전하시길*/}
+            {page == 8 && 라디오하루대사 === 1 && 라디오대사 === 1 && 라디오확률 == 1 && <h1 className="라디오텍스트">(라디오신호가 불안전한것같다.)</h1>}
+
+            {page == 8 && 라디오하루대사 === 5 && 라디오대사 === 2 && 라디오확률 == 1 && <h1 className="라디오텍스트5">헬기를 여.번 띄울수..지는</h1>} {/*헬기를 여러번 띄울수있을지는*/}
+            {page == 8 && 라디오하루대사 === 4 && 라디오대사 === 2 && 라디오확률 == 1 && <h1 className="라디오텍스트6">..히 말해서 모르..니다.</h1>} {/*솔직히 말해서 모르겠습니다.*/}
+            {page == 8 && 라디오하루대사 === 3 && 라디오대사 === 2 && 라디오확률 == 1 && <h1 className="라디오텍스트7">위치는 북. ..을 고려.고 있습...</h1>} {/*위치는 북동쪽 병원을 고려하고 있습니다.*/}
+            {page == 8 && 라디오하루대사 === 2 && 라디오대사 === 2 && 라디오확률 == 1 && <h1 className="라디오텍스트8">..이 되면 방송하..니다.</h1>} {/*확정이 되면 방송하겠습니다*/}
+            {page == 8 && 라디오하루대사 === 1 && 라디오대사 === 2 && 라디오확률 == 1 && <h1 className="라디오텍스트">(라디오신호가 불안전한것같다.)</h1>}
+
+            {page == 8 && 라디오하루대사 === 5 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트9">동쪽 ..으로 확정이 났습니다.</h1>} {/*.동쪽 병원으로 확정이 났습니다.*/}
+            {page == 8 && 라디오하루대사 === 4 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트10">헬기는 . .번. 여.. 띄울 예정이므로</h1>} {/*헬기는 단 한번만 여러대 띄울 예정이므로*/}
+            {page == 8 && 라디오하루대사 === 3 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트11">정.. 20일뒤 오전에 오시길 바..다.</h1>} {/*정확히 20일뒤 오전에 오시길 바랍니다.*/}
+            {page == 8 && 라디오하루대사 === 2 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트12">미리 오시. 위.합니다.</h1>} {/*미리 오시면 위험합니다.*/}
+            {page == 8 && 라디오하루대사 === 1 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트13">(라디오가 고장났다.)</h1>}
       </div>
     </div>
   );
