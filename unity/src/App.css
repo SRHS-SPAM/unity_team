@@ -129,6 +129,7 @@
   height: 150px;
   right : 450px;
   top : 480px;
+  z-index: 3;
 }
 .선반{
   position: absolute;
@@ -341,10 +342,10 @@
 }
 .mainchar2{
   position: absolute;
-  width: 200px;
-  height: 200px;
-  top : 37%;
-  left : 42%;
+  width: 350px;
+  height: 350px;
+  top : 28%;
+  left : 34%;
   z-index: 1;
 }
 .mainchar3{
@@ -357,10 +358,10 @@
 }
 .mainchar4{
   position: absolute;
-  width: 200px;
-  height: 200px;
-  top : 37%;
-  left : 56%;
+  width: 350px;
+  height: 350px;
+  top : 29%;
+  left : 50%;
   z-index: 1;
 }
 .통조림{
@@ -372,7 +373,7 @@
 .통조림개수{
   position: absolute;
   top : 210px;
-  right: 700px;
+  right: 685px;
 }
 .물{
   position: absolute;
@@ -383,7 +384,7 @@
 .물개수{
   position: absolute;
   top : 280px;
-  right: 700px;
+  right: 685px;
 }
 .라면{
   position: absolute;
@@ -394,7 +395,7 @@
 .라면개수{
   position: absolute;
   top : 350px;
-  right: 690px;
+  right: 680px;
 }
 .사탕{
   position: absolute;
@@ -405,55 +406,55 @@
 .사탕개수{
   position: absolute;
   top : 420px;
-  right: 700px;
+  right: 685px;
 }
 .키트{
   position: absolute;
   top: 200px;
-  right: 600px;
+  right: 500px;
   width: 90px;
   height: 90px;
 }
 .키트개수{
   position: absolute;
   top : 210px;
-  right: 585px;
+  right: 465px;
 }
 .구급상자{
   position: absolute;
   top: 270px;
-  right: 600px;
+  right: 500px;
   width: 90px;
   height: 90px;
 }
 .구급상자개수{
   position: absolute;
   top : 280px;
-  right: 585px;
+  right: 465px;
 }
 .책{
   position: absolute;
   top: 330px;
-  right: 610px;
+  right: 510px;
   width: 90px;
   height: 90px;
 }
 .책개수{
   position: absolute;
   top : 350px;
-  right: 585px;
+  right: 464px;
 }
 .신문{
   position: absolute;
   top: 410px;
-  right: 600px;
+  right: 500px;
   width: 90px;
   height: 90px;
 }
 .신문개수{
   position: absolute;
   top : 420px;
-  right: 585px;
+  right: 465px;
 }
 .hW1{
   position: absolute;
@@ -672,10 +673,10 @@
 
 .도끼플러스{
   position: absolute;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   top : 35%;
-  left : 37%;
+  left : 38%;
   z-index: 15;
 }
 .도끼플러스텍스트{
@@ -704,9 +705,9 @@
 
 .야구방망이플러스{
   position: absolute;
-  width: 90px;
-  height: 90px;
-  top : 55%;
+  width: 70px;
+  height: 70px;
+  top : 56%;
   left : 37%;
   z-index: 15;
 }
@@ -1113,4 +1114,307 @@
   right: 160px;
   top : 415px;
   color :rgba(0, 0, 0, 0.802)
+}
+
+
+
+.튜1{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top : 0%;
+  left : 0%;
+}
+.튜2{
+  position: absolute;
+  top : 1%;
+  right : 1%;
+  width: 200px;
+  height: 200px;
+}
+.튜2세트{
+  position: absolute;
+  top : 18.5%;
+  right : 4.5%;
+}
+.튜2세트2{
+  position: absolute;
+  top : 18.5%;
+  right : 3.5%;
+  color : white;
+}
+
+.튜4{
+  position: absolute;
+  top : 1%;
+  right : 10%;
+  width: 100px;
+  height: 100px;
+}
+.튜4세트{
+  position: absolute;
+  top : 12.5%;
+  right : 10.4%;
+}
+
+.튜3{
+  position: absolute;
+  top : 3%;
+  right : 2%;
+  width: 150px;
+  height: 150px;
+}
+.튜글1{
+  position: absolute;
+  top : 40%;
+  right : 1%;
+}
+.튜글2{
+  position: absolute;
+  top : 25%;
+  right : 1%;
+}
+.튜글3{
+  position: absolute;
+  top: 10%;
+  right : 1%;
+}
+.튜글4{
+  position: absolute;
+  top : 50%;
+  left : 1%;
+}
+.튜글5{
+  position: absolute;
+  top : 1%;
+  left : 55%;
+}
+.튜글6{
+  position: absolute;
+  top : 73%;
+  left: 27%;
+}
+.튜글7{
+  position: absolute;
+  top : 71%;
+  right: 32%;
+}
+
+.튜글8{
+  position: absolute;
+  top : 83%;
+  left : 45%;
+}
+
+.튜글9{
+  position: absolute;
+  top : 86%;
+  left : 45%;
+}
+
+.튜글10{
+  position: absolute;
+  top : 6%;
+  left : 8%;
+}
+
+.튜글11{
+  position: absolute;
+  top : 17%;
+  right : 40%;
+}
+
+.튜글12{
+  position: absolute;
+  top : 35%;
+  right : 25%;
+  color : white;
+}
+
+.튜글13{
+  position: absolute;
+  top : 37%;
+  right : 7.4%;
+}
+
+.튜글14{
+  position: absolute;
+  top : 34%;
+  right : 15%;
+}
+
+
+
+.튜글15{
+  position: absolute;
+  top : 29%;
+  right : 52%;
+}
+
+.튜글16{
+  position: absolute;
+  top : 38.5%;
+  right : 52%;
+}
+
+.튜글17{
+  position: absolute;
+  top : 47%;
+  right : 52%;
+}
+
+.튜글18{
+  position: absolute;
+  top : 57%;
+  right : 52%;
+}
+
+.튜글19{
+  position: absolute;
+  top : 28.5%;
+  right : 35%;
+}
+
+.튜글20{
+  position: absolute;
+  top : 38%;
+  right : 33%;
+}
+
+.튜글21{
+  position: absolute;
+  top : 47.5%;
+  right : 36%;
+}
+
+.튜글22{
+  position: absolute;
+  top : 56.8%;
+  right : 35%;
+}
+
+.튜글23{
+  position: absolute;
+  top : 3%;
+  left : 25%;
+}
+
+.튜글24{
+  position: absolute;
+  top : 7%;
+  left : 25%;
+}
+
+.튜글25{
+  position: absolute;
+  top : 11%;
+  left : 25%;
+}
+
+.튜글26{
+  position: absolute;
+  top : 15%;
+  left : 25%;
+}
+
+.튜글27{
+  position: absolute;
+  top : 19%;
+  left : 25%;
+}
+
+.튜글28{
+  position: absolute;
+  top : 15%;
+  left : 1%;
+}
+
+.튜글29{
+  position: absolute;
+  top : 38%;
+  right : 12.3%;
+}
+
+.튜글30{
+  position: absolute;
+  top : 41%;
+  right : 6.05%;
+}
+
+.튜글31{
+  position: absolute;
+  top : 65%;
+  left : 1%;
+}
+
+.TRight{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  bottom : 20px;
+  right : 20px;
+  z-index: 10;
+}
+.TLeft{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  bottom : 20px;
+  left : 20px;
+  z-index: 10;
+  transform: rotateY(180deg);
+}
+.튜나가기{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top : 1%;
+  left: 1%;
+  z-index: 10;
+}
+.튜나가기2{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top : 8%;
+  left: 1.5%;
+  z-index: 10;
+}
+.튜다음{
+  position: absolute;
+  top : 75%;
+  right : 3%;
+  z-index: 11;
+
+}
+.튜전{
+  position: absolute;
+  top : 75%;
+  left : 3%;
+  z-index: 11;
+}
+
+.튜다음2{
+  position: absolute;
+  top : 75%;
+  right : 3%;
+  z-index: 11;
+  color : white;
+
+}
+.튜전2{
+  position: absolute;
+  top : 75%;
+  left : 3%;
+  z-index: 11;
+  color: white;
+}
+.튜나가기22{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top : 1%;
+  left: 1%;
+  z-index: 10;
+  color : white;
 }

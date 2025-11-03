@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect, use } from "react";
 /* eslint-disable */ 
 // 1~5 : 스토리 6 : 시작화면 7 : 도전과제 8 : *게임시작* 9 : 선반 10 : 지도 11 : 어둠(침대 클릭 후) 12 : 설명 13: 문입장
+// 20 : 해피엔딩 21 : 배드엔딩 22: 세드엔딩
 
 function App() {
   let [page, setpage] = useState(1);
@@ -49,7 +50,7 @@ function App() {
   //기타
   let [etc1, setetc1] = useState(0); //보드게임
   let [etc2, setetc2] = useState(0); //라디오
-  let [etc3, setetc3] = useState(0); //책
+  let [etc3, setetc3] = useState(2); //책
   let [etc4, setetc4] = useState(0); //신문
 
   let [통조림, set통조림] = useState(0);
@@ -57,18 +58,7 @@ function App() {
   let [라면, set라면] = useState(0);
   let [사탕, set사탕] = useState(0);
 
-  let [키트, set키트] = useState(0);
-  let [구급상자, set구급상자] = useState(0);
-
-  let [도끼, set도끼] = useState(0);
-  let [진압봉, set진압봉] = useState(0);
-  let [야구방망이, set야구방망이] = useState(0);
-  let [헬멧, set헬멧] = useState(0);
-
-  let [보드게임, set보드게임] = useState(0);
-  let [라디오, set라디오] = useState(0);
-  let [책, set책] = useState(0);
-  let [신문, set신문] = useState(0);
+ 
 
   let [수치, set수치] = useState(0);
 
@@ -208,6 +198,12 @@ function App() {
   let [외출제한3, set외출제한3] = useState(false);
   let [외출제한4, set외출제한4] = useState(false);
 
+  let [maxDay, setmaxDay] = useState(0);
+
+  let [tpage, settpage] = useState(0);
+
+  let [베드로딩, set베드로딩] = useState(0);
+
   const [r1, setr1] = useState(0);
   const wtime = new Date();
   const year = wtime.getFullYear();
@@ -219,9 +215,71 @@ function App() {
     
   };
 
+
+
   if (Die1 === true && Die2 === true && Die3 === true && Die4 === true) //죽음
   {
-    setpage(6);
+    setpage(21);
+
+
+    if(maxDay <= Day)
+    {
+      setmaxDay(Day);
+    }
+    
+    set문감지(false);
+
+    set문사람감지(false);
+
+    setmasg1(0);
+    setmasg2(0);
+    setmasg3(0);
+    setmasg4(0);
+
+    set통조림(0);
+    set물(0);
+    set라면(0);
+    set사탕(0);
+    set문얻는거(false);
+    set수치(0);
+    set사람1(false);
+    set사람2(false);
+    set사람3(false);
+    set사람4(false);
+    set열림(false);
+
+
+
+    set라디오하루대사(0);
+    set라디오대사(0);
+    set라디오하루대사(0);
+
+    set외출제한1(false);
+    set외출제한2(false);
+    set외출제한3(false);
+    set외출제한4(false);
+
+    set문라면랜덤(0);
+    set문물랜덤(0);
+    set문통조림랜덤(0);
+    set문사탕랜덤(0);
+    set문신문랜덤(0);
+
+    set도둑감지(false);
+    set거래완료(false);
+    set거래실패(false);
+
+    set무기("");
+    set무기1("");
+    set무기2("");
+    set무기3("");
+
+    set무기장착여부(false);
+    set무기장착여부1(false);
+    set무기장착여부2(false);
+    set무기장착여부3(false);
+
+
     setDay(0);
     setDie1(false);
     setDie2(false);
@@ -295,22 +353,32 @@ function App() {
     set식중독2(0);
     set식중독3(0);
     set식중독4(0);
+
     set감기여부1(false);
     set감기여부2(false);
     set감기여부3(false);
     set감기여부4(false);
+
     set출혈여부1(false);
     set출혈여부2(false);
     set출혈여부3(false);
     set출혈여부4(false);
+
     set독감여부1(false);
     set독감여부2(false);
     set독감여부3(false);
     set독감여부4(false);
+
     set골절여부1(false);
     set골절여부2(false);
     set골절여부3(false);
     set골절여부4(false);
+
+    set식중독여부1(false);
+    set식중독여부2(false);
+    set식중독여부3(false);
+    set식중독여부4(false);
+
 
     seteat1(3);
     seteat2(6);
@@ -2210,23 +2278,32 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
   {
     setetc2(1);
   }
-
-
+    if(charment1 <= -100 && Die1 == false)
+    {
+      //자살
+      setDie1(true);
+      set외출제한1(true);
+    }
+    if(charment2 <= -100 && Die2 == false)
+    {
+      //자살
+      setDie2(true);
+      set외출제한2(true);
+    }
+    if(charment3 <= -100 && Die3 == false)
+    {
+      //자살
+      setDie3(true);
+      set외출제한3(true);
+    }
+    if(charment4 <= -100 && Die4 == false)
+    {
+      //자살
+      setDie4(true);
+      set외출제한4(true);
+    }
   const DayUp = () => { //하루 지남
 
-    if (감기여부1 || 독감여부1 || 식중독여부1 || 출혈여부1 || 골절여부1) {
-        set외출제한1(true);
-    }
-    if (감기여부2 || 독감여부2 || 식중독여부2 || 출혈여부2 || 골절여부2) {
-        set외출제한2(true);
-
-    }
-    if (감기여부3 || 독감여부3 || 식중독여부3 || 출혈여부3 || 골절여부3) {
-        set외출제한3(true);
-    }
-    if (감기여부4 || 독감여부4 || 식중독여부4 || 출혈여부4 || 골절여부4) {
-        set외출제한4(true);
-    }
     if(etc2 >= 1)
     {
       if(라디오확률 <= 0)
@@ -2256,87 +2333,87 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
     setweap2표시(0);
     setweap3표시(0);
     setweap4표시(0);
-    if(감기1 < 0)
+    if(감기1 <= 0)
     {
       set감기여부1(false);
     }
-    if(감기2 < 0)
+    if(감기2 <= 0)
     {
       set감기여부2(false);
     }
-    if(감기3 < 0)
+    if(감기3 <= 0)
     {
       set감기여부3(false);
     }
-    if(감기4 < 0)
+    if(감기4 <= 0)
     {
       set감기여부4(false);
     }
 
-    if(출혈1 < 0)
+    if(출혈1 <= 0)
     {
       set출혈여부1(false);
     }
-    if(출혈2 < 0)
+    if(출혈2 <= 0)
     {
       set출혈여부2(false);
     }
-    if(출혈3 < 0)
+    if(출혈3 <= 0)
     {
       set출혈여부3(false);
     }
-    if(출혈4 < 0)
+    if(출혈4 <= 0)
     {
       set출혈여부4(false);
     }
 
-    if(독감1 < 0)
+    if(독감1 <= 0)
     {
       set독감여부1(false);
     }
-    if(독감2 < 0)
+    if(독감2 <= 0)
     {
       set독감여부2(false);
     }
-    if(독감3 < 0)
+    if(독감3 <= 0)
     {
       set독감여부3(false);
     }
-    if(독감4 < 0)
+    if(독감4 <= 0)
     {
       set독감여부4(false);
     }
 
-    if(골절1 < 0)
+    if(골절1 <= 0)
     {
       set골절여부1(false);
     }
-    if(골절2 < 0)
+    if(골절2 <= 0)
     {
       set골절여부2(false);
     }
-    if(골절3 < 0)
+    if(골절3 <= 0)
     {
       set골절여부3(false);
     }
-    if(골절4 < 0)
+    if(골절4 <= 0)
     {
       set골절여부4(false);
     }
 
-    if(식중독1 < 0)
+    if(식중독1 <= 0)
     {
       set식중독여부1(false);
     }
-    if(식중독2 < 0)
+    if(식중독2 <= 0)
     {
       set식중독여부2(false);
     }
-    if(식중독3 < 0)
+    if(식중독3 <= 0)
     {
       set식중독여부3(false);
     }
-    if(식중독4 < 0)
+    if(식중독4 <= 0)
     {
       set식중독여부4(false);
     }
@@ -2345,7 +2422,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
     {
       const 얻는량 = Math.floor(Math.random() * 10)+ 1;
       const 종류 = Math.floor(Math.random() * 5);
-      if (종류 === 0 && tam1 == false)
+      if (종류 === 0)
       {
         set감기1(prev => prev + 얻는량);
         set감기여부1(true);
@@ -2376,7 +2453,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
     {
       const 얻는량2 = Math.floor(Math.random() * 10)+ 1;
       const 종류2 = Math.floor(Math.random() * 5);
-      if (종류2 === 0 && tam2 == false)
+      if (종류2 === 0)
       {
         set감기2(prev => prev + 얻는량2);
         set감기여부2(true);
@@ -2403,7 +2480,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
       }
     }
     const 바이러스3 = Math.floor(Math.random() * 100)+1;
-    if(바이러스3 <= 2 && tam3 == false)
+    if(바이러스3 <= 2)
     {
       const 얻는량3 = Math.floor(Math.random() * 10)+ 1;
       const 종류3 = Math.floor(Math.random() * 5);
@@ -2434,7 +2511,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
       }
     }
     const 바이러스4 = Math.floor(Math.random() * 100)+1;
-    if(바이러스4 <= 2 && tam4 == false)
+    if(바이러스4 <= 2)
     {
       const 얻는량4 = Math.floor(Math.random() * 10)+ 1;
       const 종류4 = Math.floor(Math.random() * 5);
@@ -3572,7 +3649,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
   }
 }
   const randman = Math.floor(Math.random() * 10) + 1;
-    if(randman <= 1)
+    if(randman <= 10)
       {
         set문사람감지(true);
         const rand사람 = Math.floor(Math.random() * 4) + 1;
@@ -3650,12 +3727,6 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
       setcharwtr1(prev => prev - 10);
       set외출제한1(true);
     }
-    else if(charment1 <= -100)
-    {
-      //자살
-      setDie1(true);
-      set외출제한1(true);
-    }
 
     
     if(charment1 >= 0 && charment1 <= 50)
@@ -3705,12 +3776,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
       setcharwtr2(prev => prev - 10);
       set외출제한2(true);
     }
-    else if(charment2 <= -100)
-    {
-      //자살
-      setDie2(true);
-      set외출제한2(true);
-    }
+
 
     
     if(charment2 >= 0 && charment2 <= 50)
@@ -3759,12 +3825,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
       setcharwtr3(prev => prev - 10);
       set외출제한3(true);
     }
-    else if(charment3 <= -100)
-    {
-      //자살
-      setDie3(true);
-      set외출제한3(true);
-    }
+
 
     
     if(charment3 >= 0 && charment3 <= 50)
@@ -3813,12 +3874,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
       setcharwtr4(prev => prev - 10);
       set외출제한4(true);
     }
-    else if(charment4 <= -100)
-    {
-      //자살
-      setDie4(true);
-      set외출제한4(true);
-    }
+
 
     
     if(charment4 >= 0 && charment4 <= 50)
@@ -3907,6 +3963,298 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
       set수치(prev => prev - (4 * 사탕));
     }
   }
+  function 신문증가()
+  {
+    const rand = Math.floor(Math.random() * 3) + 1;
+    if(rand == 1)
+    {
+      setetc4(prev => prev -1);
+      if(charch1 == 1)
+      {
+        setcharment1(prev => prev + 5);
+      }
+      else if(charch1 == 2)
+      {
+        setcharment2(prev => prev + 5);
+      }
+      else if(charch1 == 3)
+      {
+        setcharment3(prev => prev + 5);
+      }
+      else if(charch1 == 4)
+      {
+        setcharment4(prev => prev + 5);
+      }
+
+    }
+    else{
+      if(charch1 == 1)
+      {
+        setcharment1(prev => prev + 5);
+      }
+      else if(charch1 == 2)
+      {
+        setcharment2(prev => prev + 5);
+      }
+      else if(charch1 == 3)
+      {
+        setcharment3(prev => prev + 5);
+      }
+      else if(charch1 == 4)
+      {
+        setcharment4(prev => prev + 5);
+      }
+    }
+  }
+
+  function 책증가()
+  {
+    const rand = Math.floor(Math.random() * 4) + 1;
+    if(rand <= 2)
+    {
+      setetc3(prev => prev -1);
+      if(charch1 == 1)
+      {
+        setcharment1(prev => prev + 10);
+      }
+      else if(charch1 == 2)
+      {
+        setcharment2(prev => prev + 10);
+      }
+      else if(charch1 == 3)
+      {
+        setcharment3(prev => prev + 10);
+      }
+      else if(charch1 == 4)
+      {
+        setcharment4(prev => prev + 10);
+      }
+
+    }
+    else{
+      if(charch1 == 1)
+      {
+        setcharment1(prev => prev + 10);
+      }
+      else if(charch1 == 2)
+      {
+        setcharment2(prev => prev + 10);
+      }
+      else if(charch1 == 3)
+      {
+        setcharment3(prev => prev + 10);
+      }
+      else if(charch1 == 4)
+      {
+        setcharment4(prev => prev + 10);
+      }
+    }
+  }
+
+
+  function 키트증가()
+  { //독감 -> 골절 -> 출혈 -> 감기 -> 식중독
+    
+    if(charch1 == 1 && (출혈1 > 0 || 골절1 > 0 || 감기1 > 0 || 독감1 > 0 || 식중독1 > 0))
+    {
+      setmed1(prev => prev -1);
+      setcharment1(prev => prev + 5);
+      if((출혈1-4) >= 0)
+      {
+        set출혈1(prev => prev - 4);
+      }
+      else if((출혈1 - 4) < 0)
+      {
+        set출혈1(0);
+      }
+
+      if((골절1-2) >= 0)
+      {
+        set골절1(prev => prev - 2);
+      }
+      else if((골절1 - 2) < 0)
+      {
+        set골절1(0);
+      }
+      
+      if((감기1-5) >= 0)
+      {
+        set감기1(prev => prev - 5);
+      }
+      else if((감기1 - 5) < 0)
+      {
+        set감기1(0);
+      }
+
+      if((독감1-2) >= 0)
+      {
+        set독감1(prev => prev - 2);
+      }
+      else if((독감1 - 2) < 0)
+      {
+        set독감1(0);
+      }
+
+      if((식중독1-6) >= 0)
+      {
+        set식중독1(prev => prev - 3);
+      }
+      else if((식중독1 - 6) < 0)
+      {
+        set식중독1(0);
+      }
+    }
+
+    if(charch1 == 2 && (출혈2 > 0 || 골절2 > 0 || 감기2 > 0 || 독감2 > 0 || 식중독2 > 0))
+    {
+      setmed1(prev => prev -1);
+      setcharment1(prev => prev + 5);
+      if((출혈2-4) >= 0)
+      {
+        set출혈2(prev => prev - 4);
+      }
+      else if((출혈2 - 4) < 0)
+      {
+        set출혈2(0);
+      }
+
+      if((골절2-2) >= 0)
+      {
+        set골절2(prev => prev - 2);
+      }
+      else if((골절2 - 2) < 0)
+      {
+        set골절2(0);
+      }
+      
+      if((감기2-5) >= 0)
+      {
+        set감기2(prev => prev - 5);
+      }
+      else if((감기2 - 5) < 0)
+      {
+        set감기2(0);
+      }
+
+      if((독감2-2) >= 0)
+      {
+        set독감2(prev => prev - 2);
+      }
+      else if((독감2 - 2) < 0)
+      {
+        set독감2(0);
+      }
+
+      if((식중독2-6) >= 0)
+      {
+        set식중독2(prev => prev - 3);
+      }
+      else if((식중독2 - 6) < 0)
+      {
+        set식중독2(0);
+      }
+    }
+
+    if(charch1 == 3 && (출혈3 > 0 || 골절3 > 0 || 감기3 > 0 || 독감3 > 0 || 식중독3 > 0))
+    {
+      setmed1(prev => prev -1);
+      setcharment1(prev => prev + 5);
+      if((출혈3-4) >= 0)
+      {
+        set출혈3(prev => prev - 4);
+      }
+      else if((출혈3 - 4) < 0)
+      {
+        set출혈3(0);
+      }
+
+      if((골절3-2) >= 0)
+      {
+        set골절3(prev => prev - 2);
+      }
+      else if((골절3 - 2) < 0)
+      {
+        set골절3(0);
+      }
+      
+      if((감기3-5) >= 0)
+      {
+        set감기3(prev => prev - 5);
+      }
+      else if((감기3 - 5) < 0)
+      {
+        set감기3(0);
+      }
+
+      if((독감3-2) >= 0)
+      {
+        set독감3(prev => prev - 2);
+      }
+      else if((독감3 - 2) < 0)
+      {
+        set독감3(0);
+      }
+
+      if((식중독3-6) >= 0)
+      {
+        set식중독3(prev => prev - 3);
+      }
+      else if((식중독3 - 6) < 0)
+      {
+        set식중독3(0);
+      }
+    }
+
+    if(charch1 == 4 && (출혈4 > 0 || 골절4 > 0 || 감기4 > 0 || 독감4 > 0 || 식중독4 > 0))
+    {
+      setmed1(prev => prev -1);
+      setcharment1(prev => prev + 5);
+      if((출혈4-4) >= 0)
+      {
+        set출혈4(prev => prev - 4);
+      }
+      else if((출혈4 - 4) < 0)
+      {
+        set출혈4(0);
+      }
+
+      if((골절4-2) >= 0)
+      {
+        set골절4(prev => prev - 2);
+      }
+      else if((골절4 - 2) < 0)
+      {
+        set골절4(0);
+      }
+      
+      if((감기4-5) >= 0)
+      {
+        set감기4(prev => prev - 5);
+      }
+      else if((감기4 - 5) < 0)
+      {
+        set감기4(0);
+      }
+
+      if((독감4-2) >= 0)
+      {
+        set독감4(prev => prev - 2);
+      }
+      else if((독감4 - 2) < 0)
+      {
+        set독감4(0);
+      }
+
+      if((식중독4-6) >= 0)
+      {
+        set식중독4(prev => prev - 3);
+      }
+      else if((식중독4 - 6) < 0)
+      {
+        set식중독4(0);
+      }
+    }
+  }
 
   return (
     <div className="App">
@@ -3931,7 +4279,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
           {page === 6 && <button className='startbutton' onClick={() => setpage(8)}>START</button>}
           {page === 6 && <button className='storybutton' onClick={() =>setpage(1)}>STORY</button>}
           {page === 6 && <button className='challbutton' onClick={() =>setpage(7)}>CHALLENGE</button>}
-          {page === 6 && <button className='ttbutton' onClick={() => setpage(12)}>TUTORIAL</button>}
+          {page === 6 && <button className='ttbutton' onClick={() => {setpage(12); settpage(0);}}>TUTORIAL</button>}
         </div>
 
 
@@ -3954,29 +4302,29 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
         {page === 8 && <img src='/a3.png' className='지도' onClick={() => setpage(10)}></img>}
         {page === 10 && <img src='/a2.png' className='img3' onClick={() => setpage(8)}></img>}
 
-        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
-        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
-        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
-        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
-        {외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
+        {!감기여부1 && !독감여부1 && !식중독여부1 && !출혈여부1 && !골절여부1 && 외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
+        {!감기여부1 && !독감여부1 && !식중독여부1 && !출혈여부1 && !골절여부1 && 외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
+        {!감기여부1 && !독감여부1 && !식중독여부1 && !출혈여부1 && !골절여부1 && 외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
+        {!감기여부1 && !독감여부1 && !식중독여부1 && !출혈여부1 && !골절여부1 && 외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
+        {!감기여부1 && !독감여부1 && !식중독여부1 && !출혈여부1 && !골절여부1 && 외출제한1 == false && charch == 1 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
 
-        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
-        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
-        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
-        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
-        {외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
+        {!감기여부2 && !독감여부2 && !식중독여부2 && !출혈여부2 && !골절여부2 && 외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
+        {!감기여부2 && !독감여부2 && !식중독여부2 && !출혈여부2 && !골절여부2 && 외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
+        {!감기여부2 && !독감여부2 && !식중독여부2 && !출혈여부2 && !골절여부2 && 외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
+        {!감기여부2 && !독감여부2 && !식중독여부2 && !출혈여부2 && !골절여부2 && 외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
+        {!감기여부2 && !독감여부2 && !식중독여부2 && !출혈여부2 && !골절여부2 && 외출제한2 == false && charch == 2 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
 
-        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
-        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
-        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
-        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
-        {외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
+        {!감기3 && !독감3 && !식중독3 && !출혈여부3 && !골절여부3 && 외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
+        {!감기3 && !독감3 && !식중독3 && !출혈여부3 && !골절여부3 && 외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
+        {!감기3 && !독감3 && !식중독3 && !출혈여부3 && !골절여부3 && 외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
+        {!감기3 && !독감3 && !식중독3 && !출혈여부3 && !골절여부3 && 외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
+        {!감기3 && !독감3 && !식중독3 && !출혈여부3 && !골절여부3 && 외출제한3 == false && charch == 3 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
 
-        {외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
-        {외출제한4 == false &&  charch == 4 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
-        {외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
-        {외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
-        {외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
+        {!감기4 && !독감4 && !식중독4 && !출혈여부4 && !골절여부4 && 외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa1} className='지도표시1'>소방서</h1>}
+        {!감기4 && !독감4 && !식중독4 && !출혈여부4 && !골절여부4 && 외출제한4 == false &&  charch == 4 && page === 10 && <h1 onClick={mapa2} className='지도표시2'>경찰서</h1>}
+        {!감기4 && !독감4 && !식중독4 && !출혈여부4 && !골절여부4 && 외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa3} className='지도표시3'>병원</h1>}
+        {!감기4 && !독감4 && !식중독4 && !출혈여부4 && !골절여부4 && 외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa4} className='지도표시4'>서로고</h1>}
+        {!감기4 && !독감4 && !식중독4 && !출혈여부4 && !골절여부4 && 외출제한4 == false && charch == 4 && page === 10 && <h1 onClick={mapa5} className='지도표시5'>산</h1>}
 
         
 
@@ -4036,92 +4384,116 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
 
         {page === 9 && <img src='/a16.png' className='통조림'></img>} 
         {tam1 === false && chareat1+75 < 100 && eat1 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='통조림' onClick={() => {setchareat1(prev => prev + 75); seteat1(prev => prev -1); }}></img>}
-        {tam1 === false && chareat1+75 >= 100 && eat1 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='통조림' onClick={() => {setchareat1(100); seteat1(prev => prev -1); }}></img>}  
+        {tam1 === false  && chareat1 != 100 && chareat1+75 >= 100 && eat1 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='통조림' onClick={() => {setchareat1(100); seteat1(prev => prev -1); }}></img>}
+
         {tam2 === false && chareat2+75 < 100 && eat1 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='통조림' onClick={() => {setchareat2(prev => prev + 75); seteat1(prev => prev -1); }}></img>} 
-        {tam2 === false && chareat2+75 >= 100 && eat1 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='통조림' onClick={() => {setchareat2(100); seteat1(prev => prev -1); }}></img>} 
+        {tam2 === false && chareat2 != 100 && chareat2+75 >= 100 && eat1 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='통조림' onClick={() => {setchareat2(100); seteat1(prev => prev -1); }}></img>} 
+
         {tam3 === false && chareat3+75 < 100 && eat1 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='통조림' onClick={() => {setchareat3(prev => prev + 75); seteat1(prev => prev -1); }}></img>}
-        {tam3 === false && chareat3+75 >= 100 && eat1 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='통조림' onClick={() => {setchareat3(100); seteat1(prev => prev -1); }}></img>}  
+        {tam3 === false&& chareat3 != 100  && chareat3+75 >= 100 && eat1 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='통조림' onClick={() => {setchareat3(100); seteat1(prev => prev -1); }}></img>}  
+
         {tam4 === false && chareat4+75 < 100 && eat1 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='통조림' onClick={() => {setchareat4(prev => prev + 75); seteat1(prev => prev -1);}}></img>} 
-        {tam4 === false && chareat4+75 >= 100 && eat1 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='통조림' onClick={() => {setchareat4(100); seteat1(prev => prev -1);}}></img>} 
+        {tam4 === false && chareat4 != 100 && chareat4+75 >= 100 && eat1 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='통조림' onClick={() => {setchareat4(100); seteat1(prev => prev -1);}}></img>} 
         {page === 9 && <h2 className='통조림개수'>: {eat1}개</h2>}
 
         {page === 9 && <img src='/a17.png' className='물'></img>}
         {tam1 === false && charwtr1+25 < 100 && eat2 > 0 && charch1 === 1 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr1(perv => perv + 25); seteat2(prev => prev -1);}}></img>} 
-        {tam1 === false &&charwtr1+25 >= 100 && eat2 > 0 && charch1 === 1 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr1(100); seteat2(prev => prev -1);}}></img>}
-        {tam2 === false &&charwtr2+25 < 100 && eat2 > 0 && charch1 === 2 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr2(perv => perv + 25); seteat2(prev => prev -1); }}></img>}
-        {tam2 === false &&charwtr2+25 >= 100 && eat2 > 0 && charch1 === 2 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr2(100); seteat2(prev => prev -1); }}></img>}
+        {tam1 === false && charwtr1 != 100 && charwtr1+25 >= 100 && eat2 > 0 && charch1 === 1 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr1(100); seteat2(prev => prev -1);}}></img>}
+
+        {tam2 === false && charwtr2+25 < 100 && eat2 > 0 && charch1 === 2 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr2(perv => perv + 25); seteat2(prev => prev -1); }}></img>}
+        {tam2 === false && charwtr2 != 100 &&charwtr2+25 >= 100 && eat2 > 0 && charch1 === 2 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr2(100); seteat2(prev => prev -1); }}></img>}
+
         {tam3 === false &&charwtr3+25 < 100 && eat2 > 0 && charch1 === 3 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr3(perv => perv + 25); seteat2(prev => prev -1); }}></img>}
-        {tam3 === false &&charwtr3+25 >= 100 && eat2 > 0 && charch1 === 3 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr3(100); seteat2(prev => prev -1); }}></img>}
+        {tam3 === false && charwtr3 != 100 && charwtr3+25 >= 100 && eat2 > 0 && charch1 === 3 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr3(100); seteat2(prev => prev -1); }}></img>}
+
         {tam4 === false &&charwtr4+25 < 100 && eat2 > 0 && charch1 === 4 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr4(perv => perv + 25); seteat2(prev => prev -1); }}></img>}
-        {tam4 === false &&charwtr4+25 >= 100 && eat2 > 0 && charch1 === 4 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr4(100); seteat2(prev => prev -1); }}></img>}
+        {tam4 === false && charwtr4 != 100 &&charwtr4+25 >= 100 && eat2 > 0 && charch1 === 4 && page === 9 && <img src='/a17.png' className='물' onClick={() => {setcharwtr4(100); seteat2(prev => prev -1); }}></img>}
         {page === 9 && <h2 className='물개수'>: {eat2}개</h2>} 
 
 
         {page === 9 && <img src='/a22.png' className='라면'></img>} 
         {tam1 === false &&chareat1+50 < 100 && eat3 > 0 && page === 9 && charch1 === 1 && <img src='/a22.png' className='라면' onClick={() => {setchareat1(prev => prev + 50); seteat3(prev => prev -1); }}></img>} 
-        {tam1 === false &&chareat1+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 1 && <img src='/a22.png' className='라면' onClick={() => {setchareat1(100); seteat3(prev => prev -1); }}></img>} 
+        {tam1 === false && chareat1 != 100 &&chareat1+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 1 && <img src='/a22.png' className='라면' onClick={() => {setchareat1(100); seteat3(prev => prev -1); }}></img>} 
+
         {tam2 === false &&chareat2+50 < 100 && eat3 > 0 && page === 9 && charch1 === 2 && <img src='/a22.png' className='라면' onClick={() => {setchareat2(prev => prev + 50); seteat3(prev => prev -1); }}></img>} 
-        {tam2 === false &&chareat2+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 2 && <img src='/a22.png' className='라면' onClick={() => {setchareat2(100); seteat3(prev => prev -1); }}></img>}
+        {tam2 === false && chareat2 != 100 &&chareat2+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 2 && <img src='/a22.png' className='라면' onClick={() => {setchareat2(100); seteat3(prev => prev -1); }}></img>}
+
         {tam3 === false &&chareat3+50 < 100 && eat3 > 0 && page === 9 && charch1 === 3 && <img src='/a22.png' className='라면' onClick={() => {setchareat3(prev => prev + 50); seteat3(prev => prev -1); }}></img>} 
-        {tam3 === false &&chareat3+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 3 && <img src='/a22.png' className='라면' onClick={() => {setchareat3(100); seteat3(prev => prev -1); }}></img>}
+        {tam3 === false && chareat3 != 100 &&chareat3+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 3 && <img src='/a22.png' className='라면' onClick={() => {setchareat3(100); seteat3(prev => prev -1); }}></img>}
+
         {tam4 === false &&chareat4+50 < 100 && eat3 > 0 && page === 9 && charch1 === 4 && <img src='/a22.png' className='라면' onClick={() => {setchareat4(prev => prev + 50); seteat3(prev => prev -1); }}></img>}
-        {tam4 === false &&chareat4+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 4 && <img src='/a22.png' className='라면' onClick={() => {setchareat4(100); seteat3(prev => prev -1); }}></img>}
+        {tam4 === false && chareat4 != 100 &&chareat4+50 >= 100 && eat3 > 0 && page === 9 && charch1 === 4 && <img src='/a22.png' className='라면' onClick={() => {setchareat4(100); seteat3(prev => prev -1); }}></img>}
         {page === 9 && <h2 className='라면개수'>: {eat3}개</h2>}
 
         {page === 9 && <img src='/a25.png' className='사탕'></img>} 
         {tam1 === false &&chareat1+10 < 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a25.png' className='사탕' onClick={() => {setchareat1(prev => prev + 10); seteat4(prev => prev -1); setcharment1(prev => prev + 7); }}></img>}
-        {tam1 === false &&chareat1+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a25.png' className='사탕' onClick={() => {setchareat1(100); seteat4(prev => prev -1); setcharment1(prev => prev + 7);}}></img>}  
+        {tam1 === false && chareat1 != 100 &&chareat1+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 1 && <img src='/a25.png' className='사탕' onClick={() => {setchareat1(100); seteat4(prev => prev -1); setcharment1(prev => prev + 7);}}></img>}  
+
         {tam2 === false &&chareat2+10 < 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a25.png' className='사탕' onClick={() => {setchareat2(prev => prev + 10); seteat4(prev => prev -1); setcharment2(prev => prev + 7); }}></img>} 
-        {tam2 === false &&chareat2+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a25.png' className='사탕' onClick={() => {setchareat2(100); seteat4(prev => prev -1); setcharment2(prev => prev + 7);}}></img>} 
+        {tam2 === false && chareat2 != 100 &&chareat2+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 2 && <img src='/a25.png' className='사탕' onClick={() => {setchareat2(100); seteat4(prev => prev -1); setcharment2(prev => prev + 7);}}></img>} 
+
         {tam3 === false &&chareat3+10 < 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a25.png' className='사탕' onClick={() => {setchareat3(prev => prev + 10); seteat4(prev => prev -1); setcharment3(prev => prev + 7); }}></img>} 
-        {tam3 === false &&chareat3+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a25.png' className='사탕' onClick={() => {setchareat3(100); seteat4(prev => prev -1); setcharment3(prev => prev + 7);}}></img>} 
+        {tam3 === false && chareat3 != 100 &&chareat3+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 3 && <img src='/a25.png' className='사탕' onClick={() => {setchareat3(100); seteat4(prev => prev -1); setcharment3(prev => prev + 7);}}></img>} 
+
         {tam4 === false &&chareat4+10 < 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a25.png' className='사탕' onClick={() => {setchareat4(prev => prev + 10); seteat4(prev => prev -1); setcharment4(prev => prev + 7);}}></img>}
-        {tam4 === false &&chareat4+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a25.png' className='사탕' onClick={() => {setchareat4(100); seteat4(prev => prev -1); setcharment4(prev => prev + 7);}}></img>} 
+        {tam4 === false && chareat4 != 100 &&chareat4+10 >= 100 && eat4 > 0 && page === 9 && charch1 === 4 && <img src='/a25.png' className='사탕' onClick={() => {setchareat4(100); seteat4(prev => prev -1); setcharment4(prev => prev + 7);}}></img>} 
         {page === 9 && <h2 className='사탕개수'>: {eat4}개</h2>}
 
         {page === 9 && <img src='/a24.png' className='키트'></img>} 
-        {tam1 === false &&charment1+10 < 100 && med1 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className='키트' onClick={() => {setcharment1(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
-        {tam1 === false &&charment1+10 >= 100 && med1 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className='키트' onClick={() => {setcharment1(100); setmed1(prev => prev -1); }}></img>} 
-        {tam2 === false &&charment2+10 < 100 && med1 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='키트' onClick={() => {setcharment2(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
-        {tam2 === false &&charment2+10 >= 100 && med1 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='키트' onClick={() => {setcharment2(100); setmed1(prev => prev -1); }}></img>} 
-        {tam3 === false &&charment3+10 < 100 && med1 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='키트' onClick={() => {setcharment3(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
-        {tam3 === false &&charment3+10 >= 100 && med1 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='키트' onClick={() => {setcharment3(100); setmed1(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+10 < 100 && med1 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='키트' onClick={() => {setcharment4(prev => prev + 10); setmed1(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+10 >= 100 && med1 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='키트' onClick={() => {setcharment4(100); setmed1(prev => prev -1); }}></img>} 
+        {tam1 === false &&charment1+10 < 100 && med1 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className='키트' onClick={() => 키트증가()}></img>} 
+        {tam1 === false && charment1+10 >= 100 && med1 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className='키트' onClick={() => 키트증가()}></img>} 
+
+        {tam2 === false &&charment2+10 < 100 && med1 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='키트' onClick={() => 키트증가()}></img>} 
+        {tam2 === false && charment2+10 >= 100 && med1 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='키트' onClick={() => 키트증가()}></img>} 
+
+        {tam3 === false &&charment3+10 < 100 && med1 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='키트' onClick={() => 키트증가()}></img>} 
+        {tam3 === false && charment3+10 >= 100 && med1 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='키트' onClick={() => 키트증가()}></img>} 
+
+        {tam4 === false &&charment4+10 < 100 && med1 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='키트' onClick={() => 키트증가()}></img>} 
+        {tam4 === false&& charment4+10 >= 100 && med1 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='키트' onClick={() => 키트증가()}></img>} 
         {page === 9 && <h2 className='키트개수'>: {med1}개</h2>}
 
         {page === 9 && <img src='/a24.png' className='구급상자'></img>} 
         {tam1 === false &&charment1+10 < 100 && med2 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className= '구급상자' onClick={() => {setcharment1(prev => prev + 10); setmed2(prev => prev -1); }}></img>} 
-        {tam1 === false &&charment1+10 >= 100 && med2 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className= '구급상자' onClick={() => {setcharment1(100); setmed2(prev => prev -1); }}></img>} 
+        {tam1 === false && charment1+10 >= 100 && med2 > 0 && page === 9 && charch1 === 1 && <img src='/a24.png' className= '구급상자' onClick={() => {setcharment1(100); setmed2(prev => prev -1); }}></img>} 
+
         {tam2 === false &&charment2+10 < 100 && med2 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment2(prev => prev + 10); setmed2(prev => prev -1); }}></img>} 
-        {tam2 === false &&charment2+10 >= 100 && med2 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment2(100); setmed2(prev => prev -1); }}></img>} 
+        {tam2 === false && charment2+10 >= 100 && med2 > 0 && page === 9 && charch1 === 2 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment2(100); setmed2(prev => prev -1); }}></img>} 
+
         {tam3 === false &&charment3+10 < 100 && med2 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment3(prev => prev + 10); setmed2(prev => prev -1); }}></img>}
-        {tam3 === false &&charment3+10 >= 100 && med2 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment3(100); setmed2(prev => prev -1); }}></img>}  
+        {tam3 === false && charment3+10 >= 100 && med2 > 0 && page === 9 && charch1 === 3 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment3(100); setmed2(prev => prev -1); }}></img>}  
+
         {tam4 === false &&charment4+10 < 100 && med2 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment4(prev => prev + 10); setmed2(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+10 >= 100 && med2 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment4(100); setmed2(prev => prev -1); }}></img>} 
+        {tam4 === false && charment4+10 >= 100 && med2 > 0 && page === 9 && charch1 === 4 && <img src='/a24.png' className='구급상자' onClick={() => {setcharment4(100); setmed2(prev => prev -1); }}></img>} 
         {page === 9 && <h2 className='구급상자개수'>: {med2}개</h2>}
 
         {page === 9 && <img src='/a23.png' className='책'></img>} 
-        {tam1 === false &&charment1+30 < 100 && etc3 > 0 && page === 9 && charch1 === 1 && <img src='/a23.png' className='책' onClick={() => {setcharment1(prev => prev + 18); setetc3(prev => prev -1); }}></img>}
-        {tam1 === false &&charment1+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 1 && <img src='/a23.png' className='책' onClick={() => {setcharment1(100); setetc3(prev => prev -1); }}></img>} 
-        {tam2 === false &&charment2+30 < 100 && etc3 > 0 && page === 9 && charch1 === 2 && <img src='/a23.png' className='책' onClick={() => {setcharment2(prev => prev + 18); setetc3(prev => prev -1); }}></img>}
-        {tam2 === false &&charment2+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 2 && <img src='/a23.png' className='책' onClick={() => {setcharment2(100); setetc3(prev => prev -1); }}></img>}  
-        {tam3 === false &&charment3+30 < 100 && etc3 > 0 && page === 9 && charch1 === 3 && <img src='/a23.png' className='책' onClick={() => {setcharment3(prev => prev + 18); setetc3(prev => prev -1); }}></img>} 
-        {tam3 === false &&charment3+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 3 && <img src='/a23.png' className='책' onClick={() => {setcharment3(100); setetc3(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+30 < 100 && etc3 > 0 && page === 9 && charch1 === 4 && <img src='/a23.png' className='책' onClick={() => {setcharment4(prev => prev + 18); setetc3(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 4 && <img src='/a23.png' className='책' onClick={() => {setcharment4(100); setetc3(prev => prev -1); }}></img>} 
+        {tam1 === false &&charment1+30 < 100 && etc3 > 0 && page === 9 && charch1 === 1 && <img src='/a23.png' className='책' onClick={() => 책증가()}></img>}
+        {tam1 === false &&charment1+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 1 && <img src='/a23.png' className='책' onClick={() => 책증가()}></img>} 
+
+        {tam2 === false &&charment2+30 < 100 && etc3 > 0 && page === 9 && charch1 === 2 && <img src='/a23.png' className='책' onClick={() => 책증가()}></img>}
+        {tam2 === false && charment2+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 2 && <img src='/a23.png' className='책' onClick={() => 책증가()}></img>}  
+
+        {tam3 === false &&charment3+30 < 100 && etc3 > 0 && page === 9 && charch1 === 3 && <img src='/a23.png' className='책' onClick={() => 책증가()}></img>} 
+        {tam3 === false &&charment3+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 3 && <img src='/a23.png' className='책' onClick={() => 책증가()}></img>} 
+
+        {tam4 === false &&charment4+30 < 100 && etc3 > 0 && page === 9 && charch1 === 4 && <img src='/a23.png' className='책' onClick={() => 책증가()}></img>} 
+        {tam4 === false &&charment4+30 >= 100 && etc3 > 0 && page === 9 && charch1 === 4 && <img src='/a23.png' className='책' onClick={() => 책증가()}></img>} 
         {page === 9 && <h2 className='책개수'>: {etc3}개</h2>}
 
         
         {page === 9 && <img src='/a16.png' className='신문'></img>} 
-        {tam1 === false &&charment1+20 < 100 && etc4 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='신문' onClick={() => {setcharment1(prev => prev + 10); setetc4(prev => prev -1); }}></img>}
-        {tam1 === false &&charment1+20 >= 100 && etc4 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='신문' onClick={() => {setcharment1(100); setetc4(prev => prev -1); }}></img>}  
-        {tam2 === false &&charment2+20 < 100 && etc4 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='신문' onClick={() => {setcharment2(prev => prev + 10); setetc4(prev => prev -1); }}></img>}
-        {tam2 === false &&charment2+20 >= 100 && etc4 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='신문' onClick={() => {setcharment2(100); setetc4(prev => prev -1); }}></img>}  
-        {tam3 === false &&charment3+20 < 100 && etc4 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='신문' onClick={() => {setcharment3(prev => prev + 10); setetc4(prev => prev -1); }}></img>} 
-        {tam3 === false &&charment3+20 >= 100 && etc4 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='신문' onClick={() => {setcharment3(100); setetc4(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+20 < 100 && etc4 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='신문' onClick={() => {setcharment4(prev => prev + 10); setetc4(prev => prev -1); }}></img>} 
-        {tam4 === false &&charment4+20 >= 100 && etc4 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='신문' onClick={() => {setcharment4(100); setetc4(prev => prev -1); }}></img>}
+        {tam1 === false &&charment1+20 < 100 && etc4 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='신문' onClick={() => 신문증가()}></img>}
+        {tam1 === false && charment1+20 >= 100 && etc4 > 0 && page === 9 && charch1 === 1 && <img src='/a16.png' className='신문' onClick={() => 신문증가()}></img>}  
+
+        {tam2 === false &&charment2+20 < 100 && etc4 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='신문' onClick={() => 신문증가()}></img>}
+        {tam2 === false && charment2+20 >= 100 && etc4 > 0 && page === 9 && charch1 === 2 && <img src='/a16.png' className='신문' onClick={() => 신문증가()}></img>}  
+
+        {tam3 === false &&charment3+20 < 100 && etc4 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='신문' onClick={() => 신문증가()}></img>} 
+        {tam3 === false && charment3+20 >= 100 && etc4 > 0 && page === 9 && charch1 === 3 && <img src='/a16.png' className='신문' onClick={() => 신문증가()}></img>} 
+
+        {tam4 === false &&charment4+20 < 100 && etc4 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='신문' onClick={() => 신문증가()}></img>} 
+        {tam4 === false && charment4+20 >= 100 && etc4 > 0 && page === 9 && charch1 === 4 && <img src='/a16.png' className='신문' onClick={() => 신문증가()}></img>}
         {page === 9 && <h2 className='신문개수'>: {etc4}개</h2>}
 
         {page === 9 && <img src='/a2.png' className='img3' onClick={() => setpage(8)}></img>}
@@ -4189,9 +4561,9 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
         {tam4 === true && charch1 === 4 && page === 9 && <h1 className='char1no'>아직 돌아오지 않았습니다.</h1>}
 
         {Die1 === false && tam1 === false && page === 8 && <img src='/a10.png' className='mainchar1'></img>}
-        {Die2 === false && tam2 === false && page === 8 && <img src='/a11.png' className='mainchar2'></img>}
+        {Die2 === false && tam2 === false && page === 8 && <img src='/a34.png' className='mainchar2'></img>}
         {Die3 === false && tam3 === false && page === 8 && <img src='/a12.png' className='mainchar3'></img>}
-        {Die4 === false && tam4 === false && page === 8 && <img src='/a13.png' className='mainchar4'></img>}
+        {Die4 === false && tam4 === false && page === 8 && <img src='/a35.png' className='mainchar4'></img>}
 
         {Die1 === false && charch1 === 1 && tam1 === false && page === 9 && <img src='/a10.png' className='char1'></img>}
         {Die1 === false && charch1 === 1 && tam1 === false && page === 9 && <h1 className='hW1'>포만감 : {chareat1} / 수분 : {charwtr1} / 정신력   : {charment1}</h1>}
@@ -4297,14 +4669,14 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
           {page === 8 && book === true && <img className='구급상자플러스' src='/a24.png'></img>}
           {page === 8 && book === true && <h1 className='구급상자플러스텍스트'> +{med2표시}</h1>}
 
-          {page === 8 && book === true && <img className='도끼플러스' src='/a16.png'></img>}
+          {page === 8 && book === true && <img className='도끼플러스' src='/a27.png'></img>}
           {page === 8 && book === true && <h1 className='도끼플러스텍스트'> +{weap1표시}</h1>}
 
           {page === 8 && book === true && <img className='진압봉플러스' src='/a16.png'></img>}
           {page === 8 && book === true && <h1 className='진압봉플러스텍스트'> +{weap2표시}</h1>}
         
         
-          {page === 8 && book === true && <img className='야구방망이플러스' src='/a16.png'></img>}
+          {page === 8 && book === true && <img className='야구방망이플러스' src='/a26.png'></img>}
           {page === 8 && book === true && <h1 className='야구방망이플러스텍스트'> +{weap3표시}</h1>}
 
           {page === 8 && book === true && <img className='헬멧플러스' src='/a16.png'></img>}
@@ -4328,7 +4700,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
           {page === 13 && 도둑감지 === true && <h1 className='도둑감지'>그는 도둑이였습니다...</h1>}
           {page === 13 && 거래실패 === true && <h1 className='거래실패'>거래가 실패하였습니다.</h1>}
 
-          {page === 8 && <div className='문감지' onClick={() => {set문감지(true); setpage(13); }}></div>}
+          {(tam1 != true || tam2 != true || tam3 != true || tam4 != true) && page === 8 && <div className='문감지' onClick={() => {set문감지(true); setpage(13); }}></div>}
           {page === 13 && <img src='a2.png' className='문나가기' onClick={() => {set문감지(false); setpage(8); set문얻는거(false); set거래완료(false); set도둑감지(false); set거래실패(false);} }></img>}
           {page === 13 && <img src='a30.png' className='문확대'></img>}
           {page === 13 && 문사람감지 === false && <h1 className='없는사람'>아무도 없다. . .</h1>}
@@ -4497,6 +4869,78 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
             {page == 8 && 라디오하루대사 === 3 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트11">정.. 20일뒤 오전에 오시길 바..다.</h1>} {/*정확히 20일뒤 오전에 오시길 바랍니다.*/}
             {page == 8 && 라디오하루대사 === 2 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트12">미리 오시. 위.합니다.</h1>} {/*미리 오시면 위험합니다.*/}
             {page == 8 && 라디오하루대사 === 1 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트13">(라디오가 고장났다.)</h1>}
+
+
+            {/* 튜토리얼 12 */}
+            {tpage < 6 && page === 12 && <img src="a.png" className='TRight' onClick={() => settpage(prev => prev +1)}></img>}
+            {tpage > 0 && page === 12 && <img src="a.png" className='TLeft' onClick={()=> settpage(prev => prev - 1)}></img>}
+
+            {tpage == 0 && page === 12 && <img src='/b1.png' className='튜1'></img>}
+            {tpage == 0 && page === 12 && <h3 className='튜글1'>하루가 지나갑니다.</h3>}
+            {tpage == 0 && page === 12 && <h3 className='튜글2'>각 캐릭터의 질병상태를 나타냅니다.</h3>}
+            {tpage == 0 && page === 12 && <h3 className='튜글3'>아이템을 사용할 수 있는 공간이 나타납니다.</h3>}
+            {tpage == 0 && page === 12 && <h3 className='튜글4'>거래를 할 수 있는 공간이 나타납니다.</h3>}
+            {tpage == 0 && page === 12 && <h3 className='튜글5'>몇일 지났는지 표시합니다.</h3>}
+            {tpage == 0 && page === 12 && <h3 className='튜글6'>하루동안 얻는 양을 나타냅니다.</h3>}
+            {tpage == 0 && page === 12 && <h3 className='튜글7'>탐험 갈 수 있는 공간을 나타냅니다.</h3>}
+
+            {tpage != 3 && page === 12 && <img src='/a2.png' className='튜나가기' onClick={()=> setpage(6)}></img>}
+            {tpage != 6 && page === 12 && <h3 className='튜다음'>다음으로 이동</h3>}
+            {tpage != 0 && page === 12 && <h3 className='튜전'>전으로 이동</h3>}
+            {page === 12 && <h3 className='튜나가기2'>나가기</h3>}
+
+            {tpage == 3 && page === 12 && <h3 className='튜다음2'>다음으로 이동</h3>}
+            {tpage == 3 && page === 12 && <h3 className='튜전2'>전으로 이동</h3>}
+
+            {tpage == 1 && page === 12 && <img src='/b2.png' className='튜1'></img>}
+            {tpage == 1 && page === 12 && <img src='/a3.png' className='튜2'></img>}
+            {tpage == 1 && page === 12 && <h3 className='튜2세트'>(클릭시 이동창)</h3>}
+            {tpage == 1 && page === 12 && <h2 className='튜글8'>텍스트를 클릭하면 그 위치로 탐험을 갑니다.</h2>}
+            {tpage == 1 && page === 12 && <h2 className='튜글9'>1~7일 사이로 돌아오고 각종 아이템을 가져옵니다.</h2>}
+            {tpage == 1 && page === 12 && <h2 className='튜글10'>캐릭터를 선택한 후 클릭시 그 캐릭터가 이동합니다.</h2>}
+
+            {tpage == 2 && page === 12 && <img src='/b3.png' className='튜1'></img>}
+            {tpage == 2 && page === 12 && <h2 className='튜글11'>하루동안 탐험으로 얻은 아이템을 표시해줍니다.</h2>}
+            {tpage == 2 && page === 12 && <img src='/a23.png' className='튜3'></img>}
+            {tpage == 2 && page === 12 && <h3 className='튜2세트'>(클릭시 이동창)</h3>}
+
+            {tpage == 3 && page === 12 && <img src='/b4.png' className='튜1'></img>}
+            {tpage == 3 && page === 12 && <h2 className='튜글12'>3번클릭시 다음날로 이동됩니다.</h2>}
+            {tpage == 3 && page === 12 && <img src='/a28.png' className='튜3'></img>}
+            {tpage == 3 && page === 12 && <h3 className='튜2세트2'>(클릭시 이동창)</h3>}
+
+            {tpage == 4 && page === 12 && <img src='/b5.png' className='튜1'></img>}
+            {tpage == 4 && page === 12 && <h2 className='튜글14'>각 캐릭터의 상태를 표시합니다.</h2>}
+            {tpage == 4 && page === 12 && <h2 className='튜글13'>키트나 구급상자를 통해 치료를 할 수 있습니다.</h2>}
+            {tpage == 4 && page === 12 && <img src='/a19.png' className='튜4'></img>}
+            {tpage == 4 && page === 12 && <h3 className='튜4세트'>(클릭시 이동창)</h3>}
+
+            {tpage == 5 && page === 12 && <img src='/b6.png' className='튜1'></img>}
+            {tpage == 5 && page === 12 && <h2 className='튜글15'>통조림</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글16'>물</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글17'>라면</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글18'>사탕</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글19'>키트</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글20'>구급상자</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글21'>책</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글22'>신문</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글23'>포만감 / 수분 / 정신력을 자세히 확인할 수 있습니다</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글24'>포만감 / 수분이 0이 되면 사망하니 관리를 잘해줘야 합니다.</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글25'>포만감 / 수분은 최소 0 최대 100입니다.</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글26'>정신력은 최소, 최대가 정해져있지는않으나 관리를 못한다면 미칠수도있으니 적당히 관리해야 합니다.</h2>}
+            {tpage == 5 && page === 12 && <h2 className='튜글27'>정신력은 무조건 많다고 좋은것이 아니며 적당히 유지할시 이로운 효과도 얻을 수 있습니다.</h2>}
+
+            {tpage == 6 && page === 12 && <img src='/b7.png' className='튜1'></img>}
+            {tpage == 6 && page === 12 && <h2 className='튜글28'>누가왔는지 어떤 아이템을 교환하는지 확인할 수 있습니다.</h2>}
+            {tpage == 6 && page === 12 && <h2 className='튜글29'>통조림 / 물 / 라면 / 사탕으로 거래를 할 수 있고</h2>}
+            {tpage == 6 && page === 12 && <h2 className='튜글30'>그림을 클릭시 가지고있는 개수/올려놓은 개수가 올라갑니다.</h2>}
+            {tpage == 6 && page === 12 && <h2 className='튜글31'>만족도가 표시가되는데 만족할경우에만 거래가 진행되며 무조건 거래가 완료되는것은 아닙니다.</h2>}
+
+
+            {/* {베드로딩 < 3 && page === 21 && <img src='/b1.png' className='튜1' onClick={set베드로딩(prev => prev + 1)}></img>}
+            {베드로딩 >= 3 && page === 21 && <img src='/b1.png' className='튜1' onClick={() => {set베드로딩(0); setpage(6);}}></img>} */}
+            
+            {/* 바로 클릭 막기 */}
       </div>
     </div>
   );
