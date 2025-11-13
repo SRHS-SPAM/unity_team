@@ -39,56 +39,106 @@
   
 }
 
+.mainbackground{
+  position: absolute;
+  top : 0%;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(137, 137, 137);
+}
+.mainbackground2{
+  position: absolute;
+  top : 0%;
+  left : 0%;
+  z-index: -10;
+  height: 100%;
+  width: 80%;
+  border-radius: 0% 0% 100%;
+  background-color: rgb(140, 140, 140);
+}
+.mainbackground3{
+  position: absolute;
+  top: 5%;
+  right: 0%;
+  z-index: -5;
+  width: 900px;
+  height: 600px;
+  transform: rotate(180deg);
+}
+.mainbackground4{
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  width: 700px;
+  z-index: -5;
+  height: 600px;
+}
 /* 버튼 */
 .startbutton{
   position: absolute;
-    display: flex;
-  top : 160px;
-  left : -90px;
-  width: 150px;
-  height: 40px;
+  display: flex;
+  top : 100px;
+  left : -160px;
+  width: 250px;
+  height: 100px;
   font-size: 30px;
   text-align: center;
-      justify-content: center;
+  line-height: 300%;
+  justify-content: center;
+  border-radius: 0% 10% 10%;
+  background-color: rgb(138, 137, 137);
+  text-shadow: 0px 0px 10px, 0px 0px 20px;
 }
 .storybutton{
   position: absolute;
   display: flex;
   top : 220px;
-  left : -90px;
-  width: 150px;
-  height: 40px;
+  left : -160px;
+  width: 250px;
+  height: 100px;
+  line-height: 300%;
   font-size: 29px;
-    text-align: center;
-        justify-content: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0% 10% 10%;
+  background-color: rgb(138, 137, 137);
+  text-shadow: 0px 0px 10px, 0px 0px 20px;
 }
 .challbutton{
   position: absolute;
-    display: flex;
-  top : 280px;
-  left : -90px;
-  width: 150px;
-  height: 40px;
+  display: flex;
+  top : 340px;
+  left : -160px;
+  width: 250px;
+  height: 100px;
   font-size: 24px;
-    text-align: center;
-    justify-content: center;
-  
+  text-align: center;
+  justify-content: center;
+  border-radius: 0% 10% 10%;
+  line-height: 350%; 
+  background-color: rgb(138, 137, 137);
+  text-shadow: 0px 0px 10px, 0px 0px 20px;
 }
 .ttbutton{
   position: absolute;
-    display: flex;
-  top : 340px;
-  left : -90px;
-  width: 150px;
-  height: 40px;
+  display: flex;
+  top : 460px;
+  left : -160px;
+  width: 250px;
+  height: 100px;
   font-size: 26px;
-    text-align: center;
-    justify-content: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0% 10% 10%;
+  line-height: 330%; 
+  background-color: rgb(138, 137, 137);
+  text-shadow: 0px 0px 10px, 0px 0px 20px;
 }
 
 .onepage{
   position: absolute;
-  top : 35%;
+  top : 10%;
 }
 
 .img2{
@@ -129,14 +179,15 @@
   height: 150px;
   right : 450px;
   top : 480px;
-  z-index: 3;
+  z-index: 2;
 }
 .선반{
   position: absolute;
-  width: 90px;
-  height: 90px;
-  right : 30px;
-  top : 60px;
+  width: 150px;
+  height: 150px;
+  right : 12px;
+  top : 10px;
+  transform: rotate(10deg);
 }
 .선반l{
   display: flex;
@@ -168,8 +219,8 @@
   height: 150px;
   z-index: 1;
   position: absolute;
-  top : 35%;
-  right: 1px;
+  top : 31%;
+  right: 9px;
 }
 .어둠{
   position: absolute;
@@ -334,10 +385,10 @@
 
 .mainchar1{
   position: absolute;
-  width: 200px;
-  height: 200px;
-  top : 35%;
-  left : 32%;
+  width: 350px;
+  height: 350px;
+  top : 31%;
+  left : 29.5%;
   z-index: 1;
 }
 .mainchar2{
@@ -504,10 +555,10 @@
 }
 .정보{
   position: absolute;
-  width: 70px;
-  height: 70px;
-  top : 23%;
-  right : 2%;
+  width: 80px;
+  height: 80px;
+  top : 19%;
+  right : 3%;
   z-index: 3;
 }
 .정보창{
@@ -566,7 +617,7 @@
   height: 100px;
   top: 68%;
   left: 30%;
-  z-index: 10;
+  z-index: 2;
 }
 .하루나가기{
   position: absolute;
@@ -841,6 +892,7 @@
   width: 200px;
   top : 30%;
   left : 1px;
+  
 }
 .문나가기{
   position: absolute;
@@ -848,18 +900,23 @@
   bottom : 30px;
   width: 90px;
   height: 90px;
+  z-index: 2;
 }
 .없는사람{
   position: absolute;
-  font-size: 90px;
-  top : 60%;
-  left : 34%;
+  font-size: 60px;
+  top : 67%;
+  left : 40%;
+  z-index: 2;
+  color: aliceblue;
 }
 .있는사람{
   position: absolute;
-  font-size: 90px;
-  top : 60%;
-  left : 35%;
+  font-size: 60px;
+  top : 67%;
+  left : 39%;
+  z-index: 2;
+  color: aliceblue;
 }
 .문확대{
   position: absolute;
@@ -877,52 +934,62 @@
 }
 .열어준다{
   position: absolute;
-  top : 83%;
+  top : 86%;
   left : 30%;
-  font-size : 50px;
+  font-size : 30px;
+  z-index: 2;
+  color: aliceblue;
 }
 .열어주지않는다
 {
   position: absolute;
-  top : 83%;
-  left : 55%;
-  font-size : 50px;
+  top : 86%;
+  left : 60%;
+  font-size : 30px;
+  z-index: 2;
+  color: aliceblue;
 }
 .사람1{
   position: absolute;
   top : 20%;
   left : 3%;
   font-size : 40px;
+  z-index: 2;
 }
 .상인글1{
   position: absolute;
   top : 32%;
   left : 50px;
   font-size : 10px;
+  z-index: 2;
 }
 .엥글1{
   position: absolute;
   top : 32%;
   left : 50px;
   font-size : 10px;
+  z-index: 2;
 }
 .할머니글1{
   position: absolute;
   top : 32%;
   left : 50px;
   font-size : 10px;
+  z-index: 2;
 }
 .수상한사람글1{
   position: absolute;
   top : 32%;
   left : 50px;
   font-size : 10px;
+  z-index: 2;
 }
 .글1{
   position: absolute;
   top : 32%;
   left : 50px;
   font-size : 10px;
+  z-index: 2;
 }
 .음식{
   position: absolute;
@@ -971,41 +1038,50 @@
   top : 32%;
   left : 50px;
   font-size : 10px;
+  z-index: 2;
 }
 .할머니글1{
   position: absolute;
   top : 32%;
   left : 50px;
   font-size : 10px;
+  z-index: 2;
 }
 .수상한사람글1{
   position: absolute;
   top : 32%;
   left : 50px;
   font-size : 10px;
+  z-index: 2;
 }
 .글1{
   position: absolute;
   top : 32%;
   left : 50px;
   font-size : 10px;
+  z-index: 2;
 }
 .수치적{
   position: absolute;
+  font-size : 20px;
   top : 80%;
   left : 10px;
+  z-index: 2;
+  color: aliceblue;
 }
 .도둑감지{
   position: absolute;
   left : 1%;
   top : 70%;
   font-size : 30px;
+  z-index: 2;
 }
 .거래완료{
   position: absolute;
   left : 1%;
   top : 70%;
   font-size : 30px;
+  z-index: 2;
 }
 .배경1{
   width: 100%;
@@ -1016,6 +1092,7 @@
   left : 1%;
   top : 70%;
   font-size : 30px;
+  z-index: 2;
 }
 .라디오{
   position: absolute;
@@ -1417,4 +1494,940 @@
   left: 1%;
   z-index: 10;
   color : white;
+}
+.책상{
+  position: absolute;
+  width: 1000px;
+  height: 350px;
+  z-index: 1;
+  top : 55%;
+  left : 20%;
+}
+
+.투명잉박스{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.369);
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+  left: 0px;
+  bottom : 10px;
+}
+.투명잉잉박스{
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 400px;
+  height: 300px;
+  z-index: 1;
+  left: 21px;
+  top: 180px;
+}
+.잉잉배경{
+  position: absolute;
+  background-color: rgb(0, 255, 38);
+  width: 410px;
+  height: 310px;
+  left: 15.5px;
+  top: 174.5px;
+}
+.잉잉선{
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  width: 400px;
+  height: 2px;
+  left: 20px;
+  z-index: 2;
+  top: 232px;
+}
+.투명블록{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.32);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  left: 0px;
+  top: 0px;
+}
+
+.작은쪽지{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top : 48%;
+  right : 1.8%;
+  transform: rotate(21deg);
+  z-index: 10;
+}
+
+
+
+
+.쪽지1글{
+  position: absolute;
+  top : 25.5%;
+  left : 31.5%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지2글{
+  position: absolute;
+  top : 25.5%;
+  left : 37.5%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지3글{
+  position: absolute;
+  top : 25.5%;
+  left : 43.4%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+
+.쪽지4글{
+  position: absolute;
+  top : 34%;
+  left : 31.5%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지5글{
+  position: absolute;
+  top : 34%;
+  left : 37.5%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지6글{
+  position: absolute;
+  top : 34%;
+  left : 43.4%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+
+.쪽지7글{
+  position: absolute;
+  top : 43%;
+  left : 31.5%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지8글{
+  position: absolute;
+  top : 43%;
+  left : 37.5%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지9글{
+  position: absolute;
+  top : 43%;
+  left : 43.4%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+
+.쪽지10글{
+  position: absolute;
+  top : 52%;
+  left : 31.1%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지11글{
+  position: absolute;
+  top : 52%;
+  left : 37.1%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지12글{
+  position: absolute;
+  top : 52%;
+  left : 42.9%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+
+.쪽지13글{
+  position: absolute;
+  top : 61%;
+  left : 31.1%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지14글{
+  position: absolute;
+  top : 61%;
+  left : 37.1%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지15글{
+  position: absolute;
+  top : 61%;
+  left : 42.9%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지16글{
+  position: absolute;
+  top : 69.8%;
+  left : 31.1%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지17글{
+  position: absolute;
+  top : 69.8%;
+  left : 37.1%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지18글{
+  position: absolute;
+  top : 69.8%;
+  left : 42.9%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+
+.쪽지19글{
+  position: absolute;
+  top : 25.5%;
+  left : 55.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지20글{
+  position: absolute;
+  top : 25.5%;
+  left : 61.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+.쪽지21글{
+  position: absolute;
+  top : 25.5%;
+  left : 67.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지22글{
+  position: absolute;
+  top : 34.5%;
+  left : 55.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지23글{
+  position: absolute;
+  top : 34.5%;
+  left : 61.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지24글{
+  position: absolute;
+  top : 34.5%;
+  left : 67.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지25글{
+  position: absolute;
+  top : 43.5%;
+  left : 55.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지26글{
+  position: absolute;
+  top : 43.5%;
+  left : 61.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지27글{
+  position: absolute;
+  top : 43.5%;
+  left : 67.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지28글{
+  position: absolute;
+  top : 52.5%;
+  left : 55.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지29글{
+  position: absolute;
+  top : 52.5%;
+  left : 61.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지30글{
+  position: absolute;
+  top : 52.5%;
+  left : 67.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지31글{
+  position: absolute;
+  top : 61.5%;
+  left : 55.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지32글{
+  position: absolute;
+  top : 61.5%;
+  left : 61.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지33글{
+  position: absolute;
+  top : 61.5%;
+  left : 67.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지34글{
+  position: absolute;
+  top : 70.3%;
+  left : 55.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지35글{
+  position: absolute;
+  top : 70.3%;
+  left : 61.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지36글{
+  position: absolute;
+  top : 70.3%;
+  left : 67.7%;
+  z-index: 10;
+  color : rgba(0, 0, 0, 0.139);
+}
+
+.쪽지1글1{
+  position: absolute;
+  top : 25.5%;
+  left : 31.5%;
+  z-index: 10;
+}
+.쪽지2글1{
+  position: absolute;
+  top : 25.5%;
+  left : 37.5%;
+  z-index: 10;
+}
+.쪽지3글1{
+  position: absolute;
+  top : 25.5%;
+  left : 43.4%;
+  z-index: 10;
+}
+
+
+.쪽지4글1{
+  position: absolute;
+  top : 34%;
+  left : 31.5%;
+  z-index: 10;
+}
+.쪽지5글1{
+  position: absolute;
+  top : 34%;
+  left : 37.5%;
+  z-index: 10;
+}
+
+.쪽지6글1{
+  position: absolute;
+  top : 34%;
+  left : 43.4%;
+  z-index: 10;
+}
+
+
+.쪽지7글1{
+  position: absolute;
+  top : 43%;
+  left : 31.5%;
+  z-index: 10;
+}
+.쪽지8글1{
+  position: absolute;
+  top : 43%;
+  left : 37.5%;
+  z-index: 10;
+}
+.쪽지9글1{
+  position: absolute;
+  top : 43%;
+  left : 43.4%;
+  z-index: 10;
+}
+
+
+.쪽지10글1{
+  position: absolute;
+  top : 52%;
+  left : 31.1%;
+  z-index: 10;
+}
+
+.쪽지11글1{
+  position: absolute;
+  top : 52%;
+  left : 37.1%;
+  z-index: 10;
+}
+.쪽지12글1{
+  position: absolute;
+  top : 52%;
+  left : 42.9%;
+  z-index: 10;
+}
+
+
+.쪽지13글1{
+  position: absolute;
+  top : 61%;
+  left : 31.1%;
+  z-index: 10;
+}
+.쪽지14글1{
+  position: absolute;
+  top : 61%;
+  left : 37.1%;
+  z-index: 10;
+}
+.쪽지15글1{
+  position: absolute;
+  top : 61%;
+  left : 42.9%;
+  z-index: 10;
+}
+
+.쪽지16글1{
+  position: absolute;
+  top : 69.8%;
+  left : 31.1%;
+  z-index: 10;
+}
+.쪽지17글1{
+  position: absolute;
+  top : 69.8%;
+  left : 37.1%;
+  z-index: 10;
+}
+.쪽지18글1{
+  position: absolute;
+  top : 69.8%;
+  left : 42.9%;
+  z-index: 10;
+}
+
+
+.쪽지19글1{
+  position: absolute;
+  top : 25.5%;
+  left : 55.7%;
+  z-index: 10;
+}
+.쪽지20글1{
+  position: absolute;
+  top : 25.5%;
+  left : 61.7%;
+  z-index: 10;
+}
+.쪽지21글1{
+  position: absolute;
+  top : 25.5%;
+  left : 67.7%;
+  z-index: 10;
+}
+
+.쪽지22글1{
+  position: absolute;
+  top : 34.5%;
+  left : 55.7%;
+  z-index: 10;
+}
+
+.쪽지23글1{
+  position: absolute;
+  top : 34.5%;
+  left : 61.7%;
+  z-index: 10;
+}
+
+.쪽지24글1{
+  position: absolute;
+  top : 34.5%;
+  left : 67.7%;
+  z-index: 10;
+}
+
+.쪽지25글1{
+  position: absolute;
+  top : 43.5%;
+  left : 55.7%;
+  z-index: 10;
+}
+
+.쪽지26글1{
+  position: absolute;
+  top : 43.5%;
+  left : 61.7%;
+  z-index: 10;
+}
+
+.쪽지27글1{
+  position: absolute;
+  top : 43.5%;
+  left : 67.7%;
+  z-index: 10;
+}
+
+.쪽지28글1{
+  position: absolute;
+  top : 52.5%;
+  left : 55.7%;
+  z-index: 10;
+}
+
+.쪽지29글1{
+  position: absolute;
+  top : 52.5%;
+  left : 61.7%;
+  z-index: 10;
+}
+
+.쪽지30글1{
+  position: absolute;
+  top : 52.5%;
+  left : 67.7%;
+  z-index: 10;
+}
+
+.쪽지31글1{
+  position: absolute;
+  top : 61.5%;
+  left : 55.7%;
+  z-index: 10;
+}
+
+.쪽지32글1{
+  position: absolute;
+  top : 61.5%;
+  left : 61.7%;
+  z-index: 10;
+}
+
+.쪽지33글1{
+  position: absolute;
+  top : 61.5%;
+  left : 67.7%;
+  z-index: 10;
+}
+
+.쪽지34글1{
+  position: absolute;
+  top : 70.3%;
+  left : 55.7%;
+  z-index: 10;
+}
+
+.쪽지35글1{
+  position: absolute;
+  top : 70.3%;
+  left : 61.7%;
+  z-index: 10;
+}
+
+.쪽지36글1{
+  position: absolute;
+  top : 70.3%;
+  left : 67.7%;
+  z-index: 10;
+}
+
+
+.쪽지열람{
+  position: absolute;
+  top : 10px;
+  z-index: 100;
+  width: 700px;
+  height: 700px;
+}
+.쪽지이름{
+  position: absolute;
+  top : 12%;
+  left : 48.5%;
+  z-index: 200;
+}
+.쪽지글1{
+  position: absolute;
+  top : 32%;
+  left : 35%;
+  z-index: 200;
+}
+
+.쪽지1{
+  position: absolute;
+  top : 24%;
+  left : 29.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지2{
+  position: absolute;
+  top : 24%;
+  left : 35.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지3{
+  position: absolute;
+  top : 24%;
+  left : 41.3%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지4{
+  position: absolute;
+  top : 33%;
+  left : 29.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지5{
+  position: absolute;
+  top : 33%;
+  left : 35.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지6{
+  position: absolute;
+  top : 33%;
+  left : 41.3%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지7{
+  position: absolute;
+  top : 42%;
+  left : 29.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지8{
+  position: absolute;
+  top : 42%;
+  left : 35.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지9{
+  position: absolute;
+  top : 42%;
+  left : 41.3%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지10{
+  position: absolute;
+  top : 51%;
+  left : 29.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지11{
+  position: absolute;
+  top : 51%;
+  left : 35.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지12{
+  position: absolute;
+  top : 51%;
+  left : 41.3%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지13{
+  position: absolute;
+  top : 60%;
+  left : 29.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지14{
+  position: absolute;
+  top : 60%;
+  left : 35.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지15{
+  position: absolute;
+  top : 60%;
+  left : 41.3%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지16{
+  position: absolute;
+  top : 69%;
+  left : 29.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지17{
+  position: absolute;
+  top : 69%;
+  left : 35.5%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지18{
+  position: absolute;
+  top : 69%;
+  left : 41.3%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지19{
+  position: absolute;
+  top : 24%;
+  left : 54%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지20{
+  position: absolute;
+  top : 24%;
+  left : 60%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지21{
+  position: absolute;
+  top : 24%;
+  left : 66%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지22{
+  position: absolute;
+  top : 33%;
+  left : 54%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지23{
+  position: absolute;
+  top : 33%;
+  left : 60%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지24{
+  position: absolute;
+  top : 33%;
+  left : 66%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지25{
+  position: absolute;
+  top : 42%;
+  left : 54%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;  
+}
+.쪽지26{
+  position: absolute;
+  top : 42%;
+  left : 60%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;  
+}
+
+.쪽지27{
+  position: absolute;
+  top : 42%;
+  left : 66%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지28{
+  position: absolute;
+  top : 51%;
+  left : 54%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지29{
+  position: absolute;
+  top : 51%;
+  left : 60%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지30{
+  position: absolute;
+  top : 51%;
+  left : 66%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지31{
+  position: absolute;
+  top : 60%;
+  left : 54%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지32{
+  position: absolute;
+  top : 60%;
+  left : 60%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지33{
+  position: absolute;
+  top : 60%;
+  left : 66%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지34{
+  position: absolute;
+  top : 69%;
+  left : 54%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지35{
+  position: absolute;
+  top : 69%;
+  left : 60%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
+}
+
+.쪽지36{
+  position: absolute;
+  top : 69%;
+  left : 66%;
+  z-index: 5;
+  width: 70px;
+  height: 70px;
 }
