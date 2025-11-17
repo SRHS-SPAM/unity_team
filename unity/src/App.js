@@ -2426,7 +2426,6 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
     {
       if(maplo1 == 3 && maplo2 == 3 && maplo3 == 3 && maplo4 == 3) //해피
       {
-        localStorage.setItem("sc", maxDay);
         setpage(20);
         setmaplo1(0);
         setmaplo2(0);
@@ -2443,7 +2442,6 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
       }
       else //세드
       {
-        localStorage.setItem("sc", maxDay);
         setpage(22);
         if(maxDay == 0)
         {
