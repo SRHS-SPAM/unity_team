@@ -218,6 +218,8 @@ function App() {
 
   let [탈출, set탈출] = useState(-100);
 
+  let [보드게임제한, set보드게임제한] = useState(3);
+
   const [r1, setr1] = useState(0);
   const wtime = new Date();
   const year = wtime.getFullYear();
@@ -2424,6 +2426,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
     }
 
   const DayUp = () => { //하루 지남
+    set보드게임제한(3);
     if(탈출 == 0)
     {
       if(maplo1 == 3 && maplo2 == 3 && maplo3 == 3 && maplo4 == 3)
@@ -5160,13 +5163,99 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
     set쪽지열람(copy2)
   }
 
+  function 보드게임용()
+  {
+      if(보드게임제한 > 0)
+      {
+        set보드게임제한(prev => prev -1);
+        if(외로움 === 1)
+        {
+          if(tam1 === false)
+          {
+            setcharment1(prev => prev + 15);
+          }
+          if(tam2 === false)
+          {
+            setcharment2(prev => prev + 15);
+          }
+          if(tam3 === false)
+          {
+            setcharment3(prev => prev + 15);
+          }
+          if(tam4 === false)
+          {
+            setcharment4(prev => prev + 15);
+          }
+        }
+        else if(외로움 === 2)
+        {
+          if(tam1 === false)
+          {
+            setcharment1(prev => prev + 10);
+          }
+          if(tam2 === false)
+          {
+            setcharment2(prev => prev + 10);
+          }
+          if(tam3 === false)
+          {
+            setcharment3(prev => prev + 10);
+          }
+          if(tam4 === false)
+          {
+            setcharment4(prev => prev + 10);
+          }          
+        }
+        else if(외로움 === 3)
+        {
+          if(tam1 === false)
+          {
+            setcharment1(prev => prev + 7);
+          }
+          if(tam2 === false)
+          {
+            setcharment2(prev => prev + 7);
+          }
+          if(tam3 === false)
+          {
+            setcharment3(prev => prev + 7);
+          }
+          if(tam4 === false)
+          {
+            setcharment4(prev => prev + 7);
+          }
+        }
+        else{
+          if(tam1 === false)
+          {
+            setcharment1(prev => prev + 5);
+          }
+          if(tam2 === false)
+          {
+            setcharment2(prev => prev + 5);
+          }
+          if(tam3 === false)
+          {
+            setcharment3(prev => prev + 5);
+          }
+          if(tam4 === false)
+          {
+            setcharment4(prev => prev + 5);
+          }
+        }
+      }
+  }
+
   return (
     <div className="App">
       {/* 스토리 스킵과 다음단계 */}
       {page < 6 && <img src='/a.png' className='img1' onClick={pagecound}></img>}
       {page < 6 && <img src='/a1.png' className='img2' onClick={() => setpage(6)}></img>}
 
+{/* // 1~5 : 스토리 6 : 시작화면 7 : 도전과제 8 : *게임시작* 9 : 선반 10 : 지도 11 : 어둠(침대 클릭 후) 12 : 설명 13: 문입장
+// 20 : 해피엔딩 21 : 배드엔딩 22: 세드엔딩 */}
 
+      {page === 10 && <div className='없는배경'></div>}
 
       {/* 스토리 형식 1~5 */}
       <div className='틀'>
@@ -5182,7 +5271,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
         <div className='onepage'>
           {page === 6 && <button className='startbutton' onClick={() => setpage(8)}>START</button>}
           {page === 6 && <button className='storybutton' onClick={() =>setpage(1)}>STORY</button>}
-          {page === 6 && <button className='challbutton' onClick={() =>setpage(7)}>CHALLENGE</button>}
+          {page === 6 && <button className='challbutton' onClick={() =>setpage(7)}>RECORD</button>}
           {page === 6 && <button className='ttbutton' onClick={() => {setpage(12); settpage(0);}}>TUTORIAL</button>}
         </div>
           {page === 6 && <div className='mainbackground'></div>}
@@ -5191,7 +5280,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
           {page === 6 && <img src='d1.png' className='mainbackground4'></img>}
           {page === 6 && <div className='mainbackground5'></div>}
         {/* 도전과제 형식 7 */}
-        {page === 7 && <h1 className='도전과제text'>도전과제</h1>}
+        {page === 7 && <h1 className='도전과제text'>기록</h1>}
         {page === 7 && <img src='/a2.png' className='img3' onClick={() => setpage(6)}></img>}
         {/* <div className='도전과제'>
           <h1>처음 죽음을 맞이하세요.</h1>
@@ -5204,6 +5293,8 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
         {page === 1 && <img src='/a32.png' className='배경1'></img>}
 
         {page === 8 && <img src='/a18.png'className='메인배경'></img>}
+        {page === 8 && <img src='/a43.png'className='메인배경'></img>}      
+        {page === 8 && <img src='a44.png' className='메인배경2'></img>}  
         {page === 8 && <h1 className='살아남은날'>Day-{Day}</h1>}
         {/* 지도 형식 10 */}
         {page === 8 && <img src='/a3.png' className='지도' onClick={() => setpage(10)}></img>}
@@ -5469,7 +5560,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
 
         {Die1 === false && tam1 === false && page === 8 && <img src='/a38.png' className='mainchar1'></img>}
         {Die2 === false && tam2 === false && page === 8 && <img src='/a34.png' className='mainchar2'></img>}
-        {Die3 === false && tam3 === false && page === 8 && <img src='/a12.png' className='mainchar3'></img>}
+        {Die3 === false && tam3 === false && page === 8 && <img src='/a40.png' className='mainchar3'></img>}
         {Die4 === false && tam4 === false && page === 8 && <img src='/a35.png' className='mainchar4'></img>}
 
         {Die1 === false && charch1 === 1 && tam1 === false && page === 9 && <img src='/a10.png' className='char1'></img>}
@@ -5682,7 +5773,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
           {page === 13 && 문사람감지 === true && 사람1 == true &&  <h1 className='사람1'>상인</h1>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 1 && <div className='상인글1'>
             <h1>오랜만에 살아 있는 인간을 보네.</h1>
-            {문클릭 <= 1 && <h1>통조림 {문통조림랜덤}개, 물 {문물랜덤}개, 보드게임을 줄께</h1>}
+            {문클릭 <= 1 && <h1>통조림 {문통조림랜덤}개, 물 {문물랜덤}개, 보드게임을 줄게</h1>}
           </div>}
           {page === 13 && 문사람감지 === true && 사람1 == true && masg1 == 2 && <div className='상인글1'>
             <h1>음식 조금만 나눠줄래?</h1>
@@ -5777,80 +5868,72 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
 
             {page == 8 && 라디오하루대사 === 5 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트9">동쪽 ..으로 확정이 났습니다.</h1>} {/*.동쪽 병원으로 확정이 났습니다.*/}
             {page == 8 && 라디오하루대사 === 4 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트10">헬기는 . .번. 여.. 띄울 예정이므로</h1>} {/*헬기는 단 한번만 여러대 띄울 예정이므로*/}
-            {page == 8 && 라디오하루대사 === 3 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트11">정.. {탈출}일뒤 오전에 오시길 바..다.</h1>} {/*정확히 20일뒤 오전에 오시길 바랍니다.*/}
+            {page == 8 && 라디오하루대사 === 3 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트11">정.. {탈출}일뒤 오전에 오시길 바..다.</h1>} {/*정확히 10~30일뒤 오전에 오시길 바랍니다.*/}
             {page == 8 && 라디오하루대사 === 2 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트12">미리 오시. 위.합니다.</h1>} {/*미리 오시면 위험합니다.*/}
             {page == 8 && 라디오하루대사 === 1 && 라디오대사 === 3 && 라디오확률 == 1 && <h1 className="라디오텍스트13">(라디오가 고장났다.)</h1>}
 
 
             {/* 튜토리얼 12 */}
-            {tpage < 6 && page === 12 && <img src="a.png" className='TRight' onClick={() => settpage(prev => prev +1)}></img>}
+            {tpage < 9 && page === 12 && <img src="a.png" className='TRight' onClick={() => settpage(prev => prev +1)}></img>}
             {tpage > 0 && page === 12 && <img src="a.png" className='TLeft' onClick={()=> settpage(prev => prev - 1)}></img>}
 
-            {tpage == 0 && page === 12 && <img src='/b1.png' className='튜1'></img>}
-            {tpage == 0 && page === 12 && <h3 className='튜글1'>하루가 지나갑니다.</h3>}
-            {tpage == 0 && page === 12 && <h3 className='튜글2'>각 캐릭터의 질병상태를 나타냅니다.</h3>}
-            {tpage == 0 && page === 12 && <h3 className='튜글3'>아이템을 사용할 수 있는 공간이 나타납니다.</h3>}
-            {tpage == 0 && page === 12 && <h3 className='튜글4'>거래를 할 수 있는 공간이 나타납니다.</h3>}
-            {tpage == 0 && page === 12 && <h3 className='튜글5'>몇일 지났는지 표시합니다.</h3>}
-            {tpage == 0 && page === 12 && <h3 className='튜글6'>하루동안 얻는 양을 나타냅니다.</h3>}
-            {tpage == 0 && page === 12 && <h3 className='튜글7'>탐험 갈 수 있는 공간을 나타냅니다.</h3>}
-
-            {tpage != 3 && page === 12 && <img src='/a2.png' className='튜나가기' onClick={()=> setpage(6)}></img>}
-            {tpage != 6 && page === 12 && <h3 className='튜다음'>다음으로 이동</h3>}
+            {page === 12 && <img src='/a42.png' className='튜나가기' onClick={()=> setpage(6)}></img>}
+            {tpage != 9 && page === 12 && <h3 className='튜다음'>다음으로 이동</h3>}
             {tpage != 0 && page === 12 && <h3 className='튜전'>전으로 이동</h3>}
             {page === 12 && <h3 className='튜나가기2'>나가기</h3>}
+            {page === 12 && <div className='튜배경'></div>}
 
-            {tpage == 3 && page === 12 && <h3 className='튜다음2'>다음으로 이동</h3>}
-            {tpage == 3 && page === 12 && <h3 className='튜전2'>전으로 이동</h3>}
+            {tpage === 0 && page === 12 && <h1 className='튜1'>튜토리얼</h1>}
+            {tpage === 0 && page === 12 && <h2 className='튜2'>클릭 가능한 아이템</h2>}
 
-            {tpage == 1 && page === 12 && <img src='/b2.png' className='튜1'></img>}
-            {tpage == 1 && page === 12 && <img src='/a3.png' className='튜2'></img>}
-            {tpage == 1 && page === 12 && <h3 className='튜2세트'>(클릭시 이동창)</h3>}
-            {tpage == 1 && page === 12 && <h2 className='튜글8'>텍스트를 클릭하면 그 위치로 탐험을 갑니다.</h2>}
-            {tpage == 1 && page === 12 && <h2 className='튜글9'>1~7일 사이로 돌아오고 각종 아이템을 가져옵니다.</h2>}
-            {tpage == 1 && page === 12 && <h2 className='튜글10'>캐릭터를 선택한 후 클릭시 그 캐릭터가 이동합니다.</h2>}
 
-            {tpage == 2 && page === 12 && <img src='/b3.png' className='튜1'></img>}
-            {tpage == 2 && page === 12 && <h2 className='튜글11'>하루동안 탐험으로 얻은 아이템을 표시해줍니다.</h2>}
-            {tpage == 2 && page === 12 && <img src='/a23.png' className='튜3'></img>}
-            {tpage == 2 && page === 12 && <h3 className='튜2세트'>(클릭시 이동창)</h3>}
+            {tpage === 1 && page === 12 && <img src='a3.png' className='튜이1'></img>}
+            {tpage === 1 && page === 12 && <h1 className='튜3'>지도</h1>}
 
-            {tpage == 3 && page === 12 && <img src='/b4.png' className='튜1'></img>}
-            {tpage == 3 && page === 12 && <h2 className='튜글12'>3번클릭시 다음날로 이동됩니다.</h2>}
-            {tpage == 3 && page === 12 && <img src='/a28.png' className='튜3'></img>}
-            {tpage == 3 && page === 12 && <h3 className='튜2세트2'>(클릭시 이동창)</h3>}
+            {tpage === 1 && page === 12 && <h1 className='튜4'>지도를 클릭시 탐험을 보낼수 있는 공간으로 이동됩니다.</h1>}            
 
-            {tpage == 4 && page === 12 && <img src='/b5.png' className='튜1'></img>}
-            {tpage == 4 && page === 12 && <h2 className='튜글14'>각 캐릭터의 상태를 표시합니다.</h2>}
-            {tpage == 4 && page === 12 && <h2 className='튜글13'>키트나 구급상자를 통해 치료를 할 수 있습니다.</h2>}
-            {tpage == 4 && page === 12 && <img src='/a19.png' className='튜4'></img>}
-            {tpage == 4 && page === 12 && <h3 className='튜4세트'>(클릭시 이동창)</h3>}
 
-            {tpage == 5 && page === 12 && <img src='/b6.png' className='튜1'></img>}
-            {tpage == 5 && page === 12 && <h2 className='튜글15'>통조림</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글16'>물</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글17'>라면</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글18'>사탕</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글19'>키트</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글20'>구급상자</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글21'>책</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글22'>신문</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글23'>포만감 / 수분 / 정신력을 자세히 확인할 수 있습니다</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글24'>포만감 / 수분이 0이 되면 사망하니 관리를 잘해줘야 합니다.</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글25'>포만감 / 수분은 최소 0 최대 100입니다.</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글26'>정신력은 최소, 최대가 정해져있지는않으나 관리를 못한다면 미칠수도있으니 적당히 관리해야 합니다.</h2>}
-            {tpage == 5 && page === 12 && <h2 className='튜글27'>정신력은 무조건 많다고 좋은것이 아니며 적당히 유지할시 이로운 효과도 얻을 수 있습니다.</h2>}
+            {tpage === 2 && page === 12 && <img src='a14.png' className='튜이2'></img>}
+            {tpage === 2 && page === 12 && <h1 className='튜3'>펼친 지도</h1>}
+            {tpage === 2 && page === 12 && <h1 className='튜4'>산, 서로고, 소방서, 경찰서, 병원등의 텍스트가 있는데</h1>}
+            {tpage === 2 && page === 12 && <h1 className='튜5'>그 텍스트를 클릭시 선택된 캐릭터가 이동합니다.</h1>}
 
-            {tpage == 6 && page === 12 && <img src='/b7.png' className='튜1'></img>}
-            {tpage == 6 && page === 12 && <h2 className='튜글28'>누가왔는지 어떤 아이템을 교환하는지 확인할 수 있습니다.</h2>}
-            {tpage == 6 && page === 12 && <h2 className='튜글29'>통조림 / 물 / 라면 / 사탕으로 거래를 할 수 있고</h2>}
-            {tpage == 6 && page === 12 && <h2 className='튜글30'>그림을 클릭시 가지고있는 개수/올려놓은 개수가 올라갑니다.</h2>}
-            {tpage == 6 && page === 12 && <h2 className='튜글31'>만족도가 표시가되는데 만족할경우에만 거래가 진행되며 무조건 거래가 완료되는것은 아닙니다.</h2>}
+            {tpage === 3 && page === 12 && <img src='a26.png' className='튜이2'></img>}
+            {tpage === 3 && page === 12 && <h1 className='튜3'>무기</h1>}
+            {tpage === 3 && page === 12 && <h1 className='튜12'>무기를 장착시 죽을 확률이 조금 더 떨어집니다.</h1>}
+
+            {tpage === 4 && page === 12 && <img src='a16.png' className='튜이3'></img>}
+            {tpage === 4 && page === 12 && <h1 className='튜3'>제어</h1>}
+            {tpage === 4 && page === 12 && <h1 className='튜6'>통조림을 클릭시 캐릭터의 상태를 제어할 수 있는 공간으로 이동됩니다.</h1>}
+
+            {tpage === 5 && page === 12 && <img src='a16.png' className='튜이3'></img>}
+            {tpage === 5 && page === 12 && <img src='a17.png' className='튜이4'></img>}
+            {tpage === 5 && page === 12 && <img src='a22.png' className='튜이5'></img>}
+            {tpage === 5 && page === 12 && <img src='a25.png' className='튜이6'></img>}
+            {tpage === 5 && page === 12 && <h1 className='튜7'>음식들</h1>}
+            {tpage === 5 && page === 12 && <h1 className='튜8'>음식들을 클릭시 포만감이 증가합니다.</h1>}
+
+            {tpage === 6 && page === 12 && <img src='a24.png' className='튜이7'></img>}
+            {tpage === 6 && page === 12 && <h1 className='튜9'>기타 아이템</h1>}
+            {tpage === 6 && page === 12 && <h1 className='튜10'>신문, 책들은 25%, 50%확률로 소모가 안되고 정신력을 증가시킵니다.</h1>}
+            {tpage === 6 && page === 12 && <h1 className='튜11'>키트, 구급상자는 부상이있으면 질병이 조금 더 빨리 치료됩니다.</h1>}
+
+            {tpage === 7 && page === 12 && <img src='a28.png' className='튜이7'></img>}
+            {tpage === 7 && page === 12 && <h1 className='튜9'>침대</h1>}
+            {tpage === 7 && page === 12 && <h1 className='튜13'>하루를 넘깁니다.</h1>}
+
+            {tpage === 8 && page === 12 && <div className='튜14'></div>}
+            {tpage === 8 && page === 12 && <img src='a19.png' className='튜이8'></img>}
+            {tpage === 8 && page === 12 && <h1 className='튜9'>정보</h1>}
+            {tpage === 8 && page === 12 && <h1 className='튜15'>캐릭터의 상태를 나타냅니다.</h1>}
+
+            {tpage === 9 && page === 12 && <img src='a37.png' className='튜이8'></img>}
+            {tpage === 9 && page === 12 && <h1 className='튜17'>쪽지</h1>}
+            {tpage === 9 && page === 12 && <h1 className='튜16'>탐험을 갔을때 10%의 확률로 얻어 재밌는 말이 있습니다.</h1>}
 
 
             {page === 21 && <img src='/b1.png' className='튜1'></img>}
             {page === 21 && <img src='/a2.png' className="튜나가기"></img>}
-            
             {page === 8 && 큰쪽지 === false && <img src = 'a36.png' className='작은쪽지' onClick={()=> set큰쪽지(true)}></img>}
             {page === 8 && 큰쪽지 === true && <img src = 'a36.png' className='작은쪽지' onClick={()=> set큰쪽지(false)}></img>}
 
@@ -6373,7 +6456,16 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
         {쪽지[33] == false && page === 8 && 큰쪽지 === true && <h2 className='쪽지34글'>34</h2>}
         {쪽지[34] == false && page === 8 && 큰쪽지 === true && <h2 className='쪽지35글'>35</h2>}  
         {쪽지[35] == false && page === 8 && 큰쪽지 === true && <h2 className='쪽지36글'>36</h2>}
+
+        {etc1 === 1 && page === 8 && <img src='a41.png' className='보드게임' onClick={() => 보드게임용()}></img>}
+        {etc1 === 1 && page === 8 && <p className='보드게임2'>{보드게임제한}</p>}
+
+        {tam1 == false && page === 8 && <h3 className='섭'>{chareat1}/{charwtr1}/{charment1 }</h3>}
+        {tam2 == false && page === 8 && <h3 className='정'>{chareat2}/{charwtr2}/{charment2}</h3>}       
+        {tam3 == false && page === 8 && <h3 className='택'>{chareat3}/{charwtr3}/{charment3}</h3>}       
+        {tam4 == false && page === 8 && <h3 className='린'>{chareat4}/{charwtr4}/{charment4}</h3>}      
       </div>
+       
     </div>
   );
 
