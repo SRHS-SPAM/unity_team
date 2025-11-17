@@ -3,7 +3,6 @@ import React, { useState, useEffect, use } from "react";
 /* eslint-disable */ 
 // 1~5 : 스토리 6 : 시작화면 7 : 도전과제 8 : *게임시작* 9 : 선반 10 : 지도 11 : 어둠(침대 클릭 후) 12 : 설명 13: 문입장
 // 20 : 해피엔딩 21 : 배드엔딩 22: 세드엔딩
-
 function App() {
   let [page, setpage] = useState(1);
   let [loading, setloading] = useState(1);
@@ -16,7 +15,7 @@ function App() {
   let [Die2, setDie2] = useState(false);
   let [Die3, setDie3] = useState(false);
   let [Die4, setDie4] = useState(false);
-  let [Day, setDay] = useState(0);
+  let [Day, setDay] = useState(10);
   let [Day1, setDay1] = useState(2);
   let [Day2, setDay2] = useState(2);
   let [Day3, setDay3] = useState(2);
@@ -203,7 +202,8 @@ function App() {
   let [외출제한1, set외출제한1] = useState(false);
   let [외출제한2, set외출제한2] = useState(false);
   let [외출제한3, set외출제한3] = useState(false);
-  let [외출제한4, set외출제한4] = useState(false);
+  let [외출제한4, set외출제한4] = useState(false);  
+
 
   let [maxDay, setmaxDay] = useState(0);
 
@@ -216,7 +216,7 @@ function App() {
   let [큰쪽지, set큰쪽지] = useState(false);
 
 
-  let [탈출, set탈출] = useState(-100);
+  let [탈출, set탈출] = useState(0);
 
   let [보드게임제한, set보드게임제한] = useState(3);
 
@@ -237,11 +237,6 @@ function App() {
   {
     setpage(21);
 
-
-    if(maxDay <= Day)
-    {
-      setmaxDay(Day);
-    }
     
     set문감지(false);
 
@@ -2429,20 +2424,41 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
     set보드게임제한(3);
     if(탈출 == 0)
     {
-      if(maplo1 == 3 && maplo2 == 3 && maplo3 == 3 && maplo4 == 3)
+      if(maplo1 == 3 && maplo2 == 3 && maplo3 == 3 && maplo4 == 3) //해피
       {
+        localStorage.setItem("sc", maxDay);
         setpage(20);
         setmaplo1(0);
         setmaplo2(0);
         setmaplo3(0);
         setmaplo4(0);
+        if(maxDay == 0)
+        {
+          setmaxDay(Day);
+        }
+        if(maxDay >= Day)
+        {
+          setmaxDay(Day);
+        }
       }
-      else
+      else //세드
       {
+        localStorage.setItem("sc", maxDay);
         setpage(22);
+        if(maxDay == 0)
+        {
+          setmaxDay(Day);
+        }
+        if(maxDay >= Day)
+        {
+          setmaxDay(Day);
+        }
       }
     }
-
+    else {
+      setpage(11);
+    }
+    
     if((감기1-3) >= 0)
     {
       set감기1(prev => prev - 3);
@@ -3001,7 +3017,6 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
 
 
   setDay(prev => prev +1);
-  setpage(11); 
   const rand = Math.floor(Math.random() * 10);
   setr1(rand);
   if (tam1 == true && Die1 == false){
@@ -4599,7 +4614,18 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
     return () => clearTimeout(timer); // cleanup
   }, [page]);
 
-
+    useEffect(() => {
+    if (maxDay > 0) {
+        fetch("http://localhost:1212/save_max_day", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username: "현재로그인한아이디",
+                maxDay: maxDay
+            })
+        });
+    }
+    }, [maxDay]);
 
 
 
@@ -6465,7 +6491,7 @@ else if(수치 < 15 && 열림 === true && 사람2 === true && masg2 == 2)
         {tam3 == false && page === 8 && <h3 className='택'>{chareat3}/{charwtr3}/{charment3}</h3>}       
         {tam4 == false && page === 8 && <h3 className='린'>{chareat4}/{charwtr4}/{charment4}</h3>}      
       </div>
-       
+       {maxDay} {탈출}
     </div>
   );
 

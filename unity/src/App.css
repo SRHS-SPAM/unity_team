@@ -7,6 +7,7 @@
   width: 100px;
   height: 150px;
 }
+
 .틀{
   display: flex;
   justify-content: center;
@@ -147,7 +148,7 @@
 
 .onepage{
   position: absolute;
-  top : 10%;
+  top : 20%;
 }
 
 .img2{
@@ -1105,7 +1106,8 @@
 }
 .배경1{
   width: 100%;
-  height: 738px;
+  height: 728px;
+  
 }
 .거래실패{
   position: absolute;
